@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN"> 
+<head>
+  <title>RailsOnWeb</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head> 
+ 
+<body> 
+<!-- skip link navigation -->
+<ul id="skiplinks">
+  <li><a class="skip" href="#nav">跳过导航</a></li>
+  <li><a class="skip" href="#col3">跳过内容.</a></li>
+</ul>
+
+<div id="header" role="banner">
+  <div class="page_margins">
+    <div class="page">
+      <div id="topnav" role="contentinfo">
+        <span><a href="#">登录</a> | <a href="#">联系</a> | <a href="#">站点地图</a></span>
+      </div>
+      <h1>站名</h1>
+      <span>www.domain.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- begin: main navigation #nav -->
+<div id="nav" role="navigation">
+  <div class="page_margins">
+    <div class="page">
+      <div class="hlist">
+        <% if params[:action] == "en" %><ul><li><a href='/'>Home</a></li><li><a href='/en/english:about_us'>About Us</a></li><li><a href='/en/english:franchise'>Franchise</a></li></ul><% else %><ul><li><a href='/'>首页</a></li><li><a href='/news_cates/'>新闻资讯</a></li><li><a href='/pages/about'>关于我们</a></li><li><a href='/pages/product'>产品中心</a></li><li><a href='/pages/english'>English</a></li></ul><% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end: main navigation -->
+
+<!-- begin: main content area #main -->
+<div id="main">
+  <div class="page_margins">
+    <div class="page">
+      <!-- begin: #col1 - first float column -->
+      <div id="col1" role="complementary">
+        <div id="col1_content" class="clearfix">
+          <div class="info">
+            [side_left]
+          </div>
+        </div>
+      </div>
+      <!-- end: #col1 -->
+      <!-- begin: #col2 second float column -->
+      <div id="col2" role="complementary">
+        <div id="col2_content" class="clearfix">
+          [side_right]
+         
+        </div>
+      </div>
+      <!-- end: #col2 -->
+      <!-- begin: #col3 static column -->
+      <div id="col3" role="main">
+        <div id="col3_content" class="clearfix">
+            <% if notice %><p class="notice"><%= notice %></p><% end %>
+            <% if alert %><p class="alert"><%= alert %></p><% end %>
+            <%= yield %>
+        </div>
+        <div id="ie_clearing">&nbsp;</div>
+        <!-- End: IE Column Clearing -->
+      </div>
+      <!-- end: #col3 -->
+    </div>
+  </div>
+</div>
+<!-- end: #main -->
+
+<!-- begin: #footer -->
+<div id="footer" role="contentinfo">
+  <div class="page_margins">
+    <div class="page">
+      [footer]
+    </div>
+  </div>
+</div>
+<!-- full skiplink functionality in webkit browsers -->
+<script src="../../yaml/core/js/yaml-focusfix.js" type="text/javascript"></script>
+</body>
+</html>

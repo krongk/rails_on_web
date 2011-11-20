@@ -1,0 +1,22 @@
+---
+zh-CN:
+  active_record:
+    models:
+      page: 页面
+    attributes:
+      page:
+        title: 标题
+        body: 内容
+        parent_id: 父级
+        position: 位置
+        path: Path
+        meta_keywords: Meta keywords
+        meta_description: Meta description
+        link_url: Link url
+        menu_match: Menu match
+        show_in_menu: Show in menu
+        deletable: Deletable
+    errors:
+      page: !!null 
+  helpers:
+    page: !!null 

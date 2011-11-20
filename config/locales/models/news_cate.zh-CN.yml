@@ -1,0 +1,12 @@
+---
+zh-CN:
+  active_record:
+    models:
+      news_cate: 新闻类型
+    attributes:
+      news_cate:
+        name: 名称
+    errors:
+      news_cate: !!null 
+  helpers:
+    news_cate: !!null 

@@ -1,0 +1,66 @@
+site:
+  site_name: 欧美龙洗衣连锁
+  site_domain: www.omero-china.com
+  site_email: master@omero-china.com
+  site_phone: 400-123-800
+  admin_email: admin@omero-china.com
+  admin_confirm_email: omero.china@gmail.com
+meta:
+  keywords: 加盟,创业,洗衣加盟店,创业加盟,连锁,连锁加盟,招商,干洗,干洗机,干洗店设备,洗衣店设备,干洗店加盟连锁,洗衣店加盟连锁
+  description: 欧美龙洗衣连锁为国际品牌,继承国际先进干洗设备和管理模式,成为目前中国最高端的干洗连锁加盟集团企业！全国加盟分店覆盖23个省市，覆盖互联网加盟干洗连锁创业项目人群的80%
+menu:
+    about:
+      title: '关于我们'
+      menu_match: 'about'
+      show_in_menu: 1
+      menu:
+        about_us:
+          title: 背景介绍
+          menu_match: 'about:us'
+          show_in_menu: 1
+        culture:
+          title: 企业文化
+          menu_match: 'about:culture'
+          show_in_menu: 1
+        brand:
+          title: 品牌定位
+          menu_match: 'about:brand'
+        address:
+          title: 公司地址
+          menu_match: 'about:address'
+        history:
+          title: 发展历程
+          menu_match: 'about:history'
+    product:
+      title: 产品中心
+      menu:
+        washing_eqipment:
+          title: 洗涤设备
+          menu_match: 'product:washing_eqipment'
+          show_in_menu: 1
+        dry_cleaning_supplies:
+          title: 干洗用品
+          menu_match: 'product:dry_cleaning_supplies'
+          show_in_menu: 1
+    english:
+      title: English
+      menu:
+        about_us: 
+          title: 'About Us'
+          menu_match: 'english:about_us'
+          show_in_menu: 1
+        franchise:
+          title: 'Franchise'
+          menu_match: 'english:franchise'
+          show_in_menu: 1
+ #  t.string :title!
+      # t.text :body
+      # t.integer :parent_id, :default => 0
+      # t.integer :position, :default => 0
+      # t.string :path
+      # t.string :meta_keywords !
+      # t.string :meta_description!
+      # t.string :link_url!
+      # t.string :menu_match
+      # t.integer :show_in_menum, :default => 1
+      # t.integer :deletable, :default => 1
