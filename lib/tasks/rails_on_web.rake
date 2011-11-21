@@ -40,19 +40,19 @@ namespace :rails_on_web do
   #create pages to store in database
   def create_page(menu, parent = 0, position = 0)
       unless menu[1].nil?
-        if Page.find_by_link_url(menu[0])
+        if Page.find_by_path_name(menu[0])
           puts "duplicate of menu: #{menu[0]}, skip"
           return
         end
-        link_url = nil
+        path_name = nil
         if parent > 0
-          link_url = Page.find(parent).link_url if Page.find(parent)
+          path_name = Page.find(parent).path_name if Page.find(parent)
         end
         meta_keywords = @conf['meta']['keywords']
         meta_description= @conf['meta']['description']
         page = Page.create!(
           :parent_id => parent,
-          :link_url => link_url.nil? ? menu[0] : "#{link_url}:#{menu[0]}",
+          :path_name => path_name.nil? ? menu[0] : "#{path_name}:#{menu[0]}",
           :position => position,
           :title => menu[1]['title'],
           :menu_match => menu[1]['menu_match'],
@@ -90,10 +90,10 @@ namespace :rails_on_web do
     site_map_page = File.open(@site_map_path, "w")
     str_html_arr = ["<ul>"]
     Page.where(:parent_id => 0).each do |parent_menu|
-      str_html_arr << "<li><a href='/pages/#{parent_menu.link_url}'>#{parent_menu.title}</a></li>"
+      str_html_arr << "<li><a href='/pages/#{parent_menu.path_name}'>#{parent_menu.title}</a></li>"
       sub_str_arr = ["<ul>"]
       Page.where(:parent_id => parent_menu.id).each do |sub_menu|
-        sub_str_arr << "<li><a href='/pages/#{sub_menu.link_url}'>#{sub_menu.title}</a></li>"
+        sub_str_arr << "<li><a href='/pages/#{sub_menu.path_name}'>#{sub_menu.title}</a></li>"
       end
       sub_str_arr << "</ul>"
       str_html_arr << sub_str_arr.join('') if sub_str_arr.size > 2
@@ -117,15 +117,15 @@ namespace :rails_on_web do
     cn_html_arr << "<li><a href='/'>首页</a></li>"
     cn_html_arr << "<li><a href='/news_cates/'>新闻资讯</a></li>"
     Page.where(:parent_id => 0).each do |parent_menu|
-      cn_html_arr << "<li><a href='/pages/#{parent_menu.link_url}'>#{parent_menu.title}</a></li>"
+      cn_html_arr << "<li><a href='/pages/#{parent_menu.path_name}'>#{parent_menu.title}</a></li>"
     end
     cn_html_arr << "</ul>"
 
     #English menu
     en_html_arr = ["<ul>"]
     en_html_arr << "<li><a href='/'>Home</a></li>"
-    Page.where("link_url regexp 'english:'").each do |parent_menu|
-      en_html_arr << "<li><a href='/en/#{parent_menu.link_url}'>#{parent_menu.title}</a></li>"
+    Page.where("path_name regexp 'english:'").each do |parent_menu|
+      en_html_arr << "<li><a href='/en/#{parent_menu.path_name}'>#{parent_menu.title}</a></li>"
     end
     en_html_arr << ["</ul>"]
 
@@ -153,7 +153,7 @@ end
       # t.string :path
       # t.string :meta_keywords !
       # t.string :meta_description!
-      # t.string :link_url!
+      # t.string :path_name!
       # t.string :menu_match
       # t.integer :show_in_menum, :default => 1
       # t.integer :deletable, :default => 1

@@ -1,5 +1,9 @@
 RailsOnWeb::Application.routes.draw do
 
+  resources :resource_items
+
+  resources :resource_cates
+
   resources :product_items
 
   resources :product_cates
@@ -13,7 +17,7 @@ RailsOnWeb::Application.routes.draw do
   get "home/help"
 
   get "home/site_map"
-
+  match "upload" => "resource_items#upload"
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

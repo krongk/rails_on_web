@@ -4,8 +4,8 @@ class CreateNewsItems < ActiveRecord::Migration
       t.references :news_cate
       t.string :title
       t.text :body
-      t.string :external_url
-      t.string :image_url
+      t.string :external_path
+      t.string :image_path
 
       t.timestamps
     end

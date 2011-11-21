@@ -5,10 +5,9 @@ class CreatePages < ActiveRecord::Migration
       t.text :body
       t.integer :parent_id, :default => 0
       t.integer :position, :default => 0
-      t.string :path
+      t.string :path_name
       t.string :meta_keywords
       t.string :meta_description
-      t.string :link_url
       t.string :menu_match
       t.integer :show_in_menu, :default => 1 #1:yes 0:no
       t.integer :deletable, :default => 1
@@ -17,6 +16,6 @@ class CreatePages < ActiveRecord::Migration
     end
     add_index :pages, :parent_id
     add_index :pages, :title
-    add_index :pages, :link_url, :unique => true
+    add_index :pages, :path_name, :unique => true
   end
 end

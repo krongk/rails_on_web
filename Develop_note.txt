@@ -90,6 +90,8 @@ rails g controller home index help site_map
   >rails g active_admin:resource news_item
   >rails g active_admin:resource product_cate
   >rails g active_admin:resource product_item
+  >rails g active_admin:resource resource_cate
+  >rails g active_admin:resource resource_item
 
 10. integrate WYSWYG editor to ActiveAdmin
    1. add Gemfile
@@ -147,3 +149,12 @@ rails g controller home index help site_map
 13. add product(cate and item)
   rails g scaffold product_cate name:string
   rails g scaffold product_item product_cate:references name:string description:text price:decimal image_url:string is_visible:boolean
+
+14. add resource management
+  rails g scaffold resource_cate name:string
+  rails g scaffold resource_item resource_type:string resource_cate:references resource_name:string resource_path:string resource_note:string
+
+  The structure of path:
+  |-resource_type
+    |-resource_cate
+      |-resource_item

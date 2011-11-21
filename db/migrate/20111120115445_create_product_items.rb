@@ -2,10 +2,10 @@ class CreateProductItems < ActiveRecord::Migration
   def change
     create_table :product_items do |t|
       t.references :product_cate
-      t.string :name
+      t.string :title
       t.text :description
       t.decimal :price, :precision => 10, :scale => 2
-      t.string :image_url
+      t.string :image_path
       t.boolean :is_visible, :default => true
       
       t.timestamps

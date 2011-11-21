@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111120115445) do
+ActiveRecord::Schema.define(:version => 20111121165600) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20111120115445) do
     t.integer  "news_cate_id"
     t.string   "title"
     t.text     "body"
-    t.string   "external_url"
-    t.string   "image_url"
+    t.string   "external_path"
+    t.string   "image_path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,10 +78,9 @@ ActiveRecord::Schema.define(:version => 20111120115445) do
     t.text     "body"
     t.integer  "parent_id",        :default => 0
     t.integer  "position",         :default => 0
-    t.string   "path"
+    t.string   "path_name"
     t.string   "meta_keywords"
     t.string   "meta_description"
-    t.string   "link_url"
     t.string   "menu_match"
     t.integer  "show_in_menu",     :default => 1
     t.integer  "deletable",        :default => 1
@@ -89,8 +88,8 @@ ActiveRecord::Schema.define(:version => 20111120115445) do
     t.datetime "updated_at"
   end
 
-  add_index "pages", ["link_url"], :name => "index_pages_on_link_url", :unique => true
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
+  add_index "pages", ["path_name"], :name => "index_pages_on_path_name", :unique => true
   add_index "pages", ["title"], :name => "index_pages_on_title"
 
   create_table "parts", :force => true do |t|
@@ -98,8 +97,7 @@ ActiveRecord::Schema.define(:version => 20111120115445) do
     t.text   "body"
   end
 
-  add_index "parts", ["title"], :name => "index_parts_on_title"
-  add_index "parts", ["title"], :name => "title", :unique => true
+  add_index "parts", ["title"], :name => "index_parts_on_title", :unique => true
 
   create_table "product_cates", :force => true do |t|
     t.string "name"
@@ -107,10 +105,10 @@ ActiveRecord::Schema.define(:version => 20111120115445) do
 
   create_table "product_items", :force => true do |t|
     t.integer  "product_cate_id"
-    t.string   "name"
+    t.string   "title"
     t.text     "description"
     t.decimal  "price",           :precision => 10, :scale => 2
-    t.string   "image_url"
+    t.string   "image_path"
     t.boolean  "is_visible",                                     :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -118,12 +116,29 @@ ActiveRecord::Schema.define(:version => 20111120115445) do
 
   add_index "product_items", ["product_cate_id"], :name => "index_product_items_on_product_cate_id"
 
+  create_table "resource_cates", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "resource_items", :force => true do |t|
+    t.string   "resource_type"
+    t.integer  "resource_cate_id"
+    t.string   "resource_name"
+    t.string   "resource_path"
+    t.string   "resource_note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "resource_items", ["resource_cate_id"], :name => "index_resource_items_on_resource_cate_id"
+  add_index "resource_items", ["resource_type"], :name => "index_resource_items_on_resource_type"
+
   create_table "sites", :force => true do |t|
     t.string "name"
     t.string "value"
   end
 
-  add_index "sites", ["name"], :name => "name", :unique => true
+  add_index "sites", ["name"], :name => "index_sites_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
