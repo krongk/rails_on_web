@@ -124,7 +124,7 @@ namespace :rails_on_web do
     #English menu
     en_html_arr = ["<ul>"]
     en_html_arr << "<li><a href='/'>Home</a></li>"
-    Page.where("path_name regexp 'english:'").each do |parent_menu|
+    Page.where("path_name like 'english:%'").each do |parent_menu|
       en_html_arr << "<li><a href='/en/#{parent_menu.path_name}'>#{parent_menu.title}</a></li>"
     end
     en_html_arr << ["</ul>"]
