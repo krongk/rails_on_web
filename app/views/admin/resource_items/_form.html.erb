@@ -1,4 +1,39 @@
-<%= form_for :file_upload, :url => :upload, :html => {:multipart => true} do |f| %>
-  <%= f.file_field :my_file %>
-  <%= f.submit "Upload" %>
+<%= form_for(@resource_item, :html => {:multipart => true}) do |f| %>
+  <% if @resource_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resource_item.errors.count, "error") %> prohibited this resource_item from being saved:</h2>
+
+      <ul>
+      <% @resource_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.file_field :upload_file %>
+
+  <div class="field">
+    <%= f.label :resource_type %><br />
+    <%= f.select :resource_type, [['图片', 1], ['文件', 2], ['视频', 2], ['音频', 2]] %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_cate %><br />
+    <%= f.select :resource_cate_id, ResourceCate.all.map{|cate| [cate.name, cate.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_name %><br />
+    <%= f.text_field :resource_name %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_path %><br />
+    <%= f.text_field :resource_path %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_note %><br />
+    <%= f.text_field :resource_note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

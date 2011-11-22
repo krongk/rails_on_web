@@ -13,16 +13,16 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    #params can be id or link_url
+    #params can be id or path_name
     if params[:id] =~ /^\d+$/
       @page = Page.where(:id => params[:id]).limit(1).first
     else
-      @page = Page.where(:link_url => params[:id]).limit(1).first
+      @page = Page.where(:path_name => params[:id]).limit(1).first
     end
     @page = Page.find(1) if @page.nil?
 
     #special action 
-    case @page.link_url
+    case @page.path_name
     when 'english'
       redirect_to "/en/#{params[:id]}"
       return
@@ -38,11 +38,11 @@ class PagesController < ApplicationController
   end
 
   def en
-    #params can be id or link_url
+    #params can be id or path_name
     if params[:id] =~ /^\d+$/
       @page = Page.where(:id => params[:id]).limit(1).first
     else
-      @page = Page.where(:link_url => params[:id]).limit(1).first
+      @page = Page.where(:path_name => params[:id]).limit(1).first
     end
     @page = Page.find(1) if @page.nil?
 
