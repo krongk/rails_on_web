@@ -12,17 +12,17 @@
 
 <p>
   <b>Body:</b>
-  <%= @news_item.body %>
+  <%= simple_format @news_item.body %>
 </p>
 
 <p>
   <b>External url:</b>
-  <%= @news_item.external_url %>
+  <%= @news_item.external_path %>
 </p>
 
 <p>
   <b>Image url:</b>
-  <%= @news_item.image_url %>
+  <%= @news_item.image_path %>
 </p>
 
 
