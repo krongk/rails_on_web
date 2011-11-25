@@ -165,3 +165,11 @@ rails g controller home index help site_map
  - shop表设计
  - member表设计
  
+ 16. IP to Location
+   1. #http://www.ip2locationapi.com/geoip-location-api/index.php
+      User name: inruby
+      API Key:220248ff44f096b92220ff728f7385224598276a
+      mail: master@inruby.com
+   ==> 安装gem失败，二是搜索成都，没有精确结果
+   2. http://www.maxmind.com/app/lookup_city
+   
