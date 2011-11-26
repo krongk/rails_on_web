@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111121165600) do
+ActiveRecord::Schema.define(:version => 20111121165600003) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -45,6 +45,22 @@ ActiveRecord::Schema.define(:version => 20111121165600) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "cities", :force => true do |t|
+    t.string  "name"
+    t.string  "en_name"
+    t.integer "region_id"
+  end
+
+  add_index "cities", ["region_id"], :name => "index_cities_on_region_id"
+
+  create_table "districts", :force => true do |t|
+    t.string  "name"
+    t.string  "en_name"
+    t.integer "city_id"
+  end
+
+  add_index "districts", ["city_id"], :name => "index_districts_on_city_id"
 
   create_table "news_cates", :force => true do |t|
     t.string "name"
@@ -116,6 +132,11 @@ ActiveRecord::Schema.define(:version => 20111121165600) do
 
   add_index "product_items", ["product_cate_id"], :name => "index_product_items_on_product_cate_id"
 
+  create_table "regions", :force => true do |t|
+    t.string "name"
+    t.string "en_name"
+  end
+
   create_table "resource_cates", :force => true do |t|
     t.string "name"
   end
@@ -132,6 +153,28 @@ ActiveRecord::Schema.define(:version => 20111121165600) do
 
   add_index "resource_items", ["resource_cate_id"], :name => "index_resource_items_on_resource_cate_id"
   add_index "resource_items", ["resource_type"], :name => "index_resource_items_on_resource_type"
+
+  create_table "shops", :force => true do |t|
+    t.string   "name"
+    t.integer  "region_id"
+    t.integer  "city_id"
+    t.integer  "district_id"
+    t.string   "short_address"
+    t.string   "full_address"
+    t.string   "tel_phone"
+    t.string   "mobile_phone"
+    t.string   "fax"
+    t.string   "email"
+    t.integer  "qq"
+    t.string   "bus_list"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shops", ["city_id"], :name => "index_shops_on_city_id"
+  add_index "shops", ["district_id"], :name => "index_shops_on_district_id"
+  add_index "shops", ["region_id"], :name => "index_shops_on_region_id"
 
   create_table "sites", :force => true do |t|
     t.string "name"

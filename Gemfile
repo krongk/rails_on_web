@@ -41,3 +41,11 @@ gem "meta_search",    '>= 1.1.0.pre'
 
 #===WYSIWYG Editor
 gem 'tinymce-rails', '3.4.7'
+
+#===IP Location
+gem 'geo_location'
+ #dependenc
+gem 'nokogiri'
+
+#===
+gem 'chinese_pinyin'

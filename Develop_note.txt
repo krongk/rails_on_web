@@ -163,7 +163,9 @@ rails g controller home index help site_map
  - 省市区联动数据库
  - 我要洗衣、网上预约表单设计
  - shop表设计
+   C:\Sites\rails_on_web>rails g scaffold shop name:string region:references city:references district:references short_address:string full_address:string tel_phone:string mobile_phone:string fax:string email:string qq.integer bus_list:string description:string
  - member表设计
+   rails g scaffold member email:string password:string activation_code:string activated_at:time 
  
  16. IP to Location
    1. #http://www.ip2locationapi.com/geoip-location-api/index.php
@@ -172,4 +174,31 @@ rails g controller home index help site_map
       mail: master@inruby.com
    ==> 安装gem失败，二是搜索成都，没有精确结果
    2. http://www.maxmind.com/app/lookup_city
-   
+   ==> 对比后，发现不方便使用
+   3. git://github.com/chrisyour/geo_location.git
+   =＝> 就这个了！
+     http://www.hostip.info/ => 免费
+     http://www.maxmind.com/app/city =>这个需要付费
+17. Add 'admin' model to devise
+  1. rails g model admin
+  2. # Create a migration with the required fields
+      create_table :admins do |t|
+        t.database_authenticatable
+        t.lockable
+        t.trackable
+        t.timestamps
+      end
+
+      # Inside your Admin model
+      devise :database_authenticatable, :trackable, :timeoutable, :lockable
+
+      # Inside your routes
+      devise_for :admins
+
+      # Inside your protected controller
+      before_filter :authenticate_admin!
+
+      # Inside your controllers and views
+      admin_signed_in?
+      current_admin
+      admin_session

@@ -1,6 +1,6 @@
 class CreateProductItems < ActiveRecord::Migration
   def change
-    create_table :product_items do |t|
+    create_table :product_items,:options=>'charset=utf8' do |t|
       t.references :product_cate
       t.string :title
       t.text :description

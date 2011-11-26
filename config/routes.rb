@@ -1,5 +1,7 @@
 RailsOnWeb::Application.routes.draw do
 
+  resources :shops
+
   resources :resource_items
 
   resources :resource_cates
@@ -13,9 +15,7 @@ RailsOnWeb::Application.routes.draw do
   resources :news_cates
 
   get "home/index"
-
-  get "home/help"
-
+  get "home/location"
   get "home/site_map"
   match "upload" => "resource_items#upload"
   ActiveAdmin.routes(self)

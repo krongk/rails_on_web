@@ -1,6 +1,6 @@
 class CreateNewsItems < ActiveRecord::Migration
   def change
-    create_table :news_items do |t|
+    create_table :news_items,:options=>'charset=utf8' do |t|
       t.references :news_cate
       t.string :title
       t.text :body

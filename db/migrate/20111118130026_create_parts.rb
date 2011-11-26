@@ -1,6 +1,6 @@
 class CreateParts < ActiveRecord::Migration
   def change
-    create_table :parts,:options=>'charset=utf8'  do |t|
+    create_table :parts, :options=>'charset=utf8' do |t|
       t.string :title
       t.text :body
     end

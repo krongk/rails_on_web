@@ -1,6 +1,6 @@
 class CreateResourceItems < ActiveRecord::Migration
   def change
-    create_table :resource_items do |t|
+    create_table :resource_items,:options=>'charset=utf8' do |t|
       t.string :resource_type
       t.references :resource_cate
       t.string :resource_name
