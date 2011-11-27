@@ -180,25 +180,5 @@ rails g controller home index help site_map
      http://www.hostip.info/ => 免费
      http://www.maxmind.com/app/city =>这个需要付费
 17. Add 'admin' model to devise
-  1. rails g model admin
-  2. # Create a migration with the required fields
-      create_table :admins do |t|
-        t.database_authenticatable
-        t.lockable
-        t.trackable
-        t.timestamps
-      end
-
-      # Inside your Admin model
-      devise :database_authenticatable, :trackable, :timeoutable, :lockable
-
-      # Inside your routes
-      devise_for :admins
-
-      # Inside your protected controller
-      before_filter :authenticate_admin!
-
-      # Inside your controllers and views
-      admin_signed_in?
-      current_admin
-      admin_session
+   => no need
+   aready have 'user' and 'admin_user'

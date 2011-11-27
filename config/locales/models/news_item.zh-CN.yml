@@ -2,14 +2,14 @@
 zh-CN:
   active_record:
     models:
-      news_item: News item
+      news_item: 新闻
     attributes:
       news_item:
-        news_cate: News cate
-        title: Title
-        body: Body
-        external_url: External url
-        image_url: Image url
+        news_cate: 新闻分类
+        title: 标题
+        body: 内容
+        external_url: 扩展链接地址
+        image_url: 图片链接地址
     errors:
       news_item: !!null 
   helpers:

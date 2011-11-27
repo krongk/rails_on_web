@@ -2,7 +2,7 @@
 zh-CN:
   active_record:
     models:
-      city: City
+      city: 城市
     attributes:
       city: {}
     errors:

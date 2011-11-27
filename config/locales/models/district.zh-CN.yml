@@ -2,7 +2,7 @@
 zh-CN:
   active_record:
     models:
-      district: District
+      district: 地区
     attributes:
       district: {}
     errors:
