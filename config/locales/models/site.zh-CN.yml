@@ -1,13 +1,10 @@
----
+#encoding: utf-8
+
 zh-CN:
-  active_record:
+  activerecord:
     models:
-      site: Site
+      site: '网站设置'
     attributes:
       site:
-        name: Name
-        value: Value
-    errors:
-      site: !!null 
-  helpers:
-    site: !!null 
+        name: '名称'
+        value: '值'

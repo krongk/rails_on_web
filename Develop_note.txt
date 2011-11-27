@@ -142,6 +142,9 @@ rails g controller home index help site_map
     #   I18n.available_locales.each do |locale|
     #     next unless ['en', 'zh-CN'].include?(locale.to_s)
 
+    失败经验总结在：http://hi.baidu.com/kenrome/blog/item/5619de2a54caab30d52af1f5.html?timeStamp=1322406716612　
+    ＝> i18n_yaml_generator 的bug: YML文件中的'active_record：' 应该改为 'activerecord：'
+
 12. add News/Blog (only and news)
   rails g scaffold news_cate name:string
   rails g scaffold news_item news_cate:references title:string body:text external_url:string image_url:string

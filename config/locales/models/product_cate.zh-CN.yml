@@ -1,11 +1,14 @@
----
+#encoding: utf-8
 zh-CN:
-  active_record:
+  activerecord:
     models:
-      product_cate: Product cate
+      product_cate: 产品分类
     attributes:
       product_cate:
-        name: Name
+        name: 名称
+        id: 编号
+        created_at: 添加时间
+        updated_at: 更新时间
     errors:
       product_cate: !!null 
   helpers:

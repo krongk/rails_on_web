@@ -1,16 +1,19 @@
----
+#encoding: utf-8
 zh-CN:
-  active_record:
+  activerecord:
     models:
-      product_item: Product item
+      product_item: 产品
     attributes:
       product_item:
-        product_cate: Product cate
-        name: Name
-        description: Description
-        price: Price
-        image_url: Image url
-        is_visible: Is visible
+        id: 编号
+        product_cate: 产品分类
+        title: 名称
+        description: 描述
+        price: 价格
+        image_path: 图片地址
+        is_visible: 是否显示
+        created_at: 添加时间
+        updated_at: 更新时间
     errors:
       product_item: !!null 
   helpers:

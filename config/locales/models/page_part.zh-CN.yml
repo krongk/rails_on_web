@@ -1,13 +1,13 @@
----
+#encoding: utf-8
 zh-CN:
-  active_record:
+  activerecord:
     models:
-      page_part: Page part
+      page_part: 网页片段
     attributes:
       page_part:
-        page: Page
-        part: Part
-        position: Position
+        page: 网页
+        part: 片段
+        position: 位置
     errors:
       page_part: !!null 
   helpers:

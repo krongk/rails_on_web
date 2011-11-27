@@ -1,10 +1,11 @@
----
+#encoding: utf-8
 zh-CN:
-  active_record:
+  activerecord:
     models:
-      region: Region
+      region: 省份
     attributes:
-      region: {}
+      region:
+        name: 名称
     errors:
       region: !!null 
   helpers:

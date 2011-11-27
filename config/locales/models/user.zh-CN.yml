@@ -3,10 +3,10 @@
 zh-CN:
   activerecord:
     models:
-      news_cate: 新闻分类
+      user: 分店用户
     attributes:
-      news_cate:
-        name: 名称
+      user:
+        email: 邮件地址
     errors:
       news_cate: '失败'
   helpers:

@@ -1,6 +1,6 @@
----
+#encoding: utf-8
 zh-CN:
-  active_record:
+  activerecord:
     models:
       news_item: 新闻
     attributes:
@@ -8,8 +8,8 @@ zh-CN:
         news_cate: 新闻分类
         title: 标题
         body: 内容
-        external_url: 扩展链接地址
-        image_url: 图片链接地址
+        external_path: 扩展链接地址
+        image_path: 图片链接地址
     errors:
       news_item: !!null 
   helpers:
