@@ -15,9 +15,9 @@ ActiveAdmin.register Page do
       strip_tags(item.body).truncate(80) unless item.body.blank?
     end
     column :path_name
-    column :show_in_menu
-    column :deletable
-    column :updated_at
+    column :updated_at do |item|
+      item.updated_at.strftime("%Y-%m-%d")
+    end
     default_actions
   end
 

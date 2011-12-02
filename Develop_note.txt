@@ -185,3 +185,8 @@ rails g controller home index help site_map
 17. Add 'admin' model to devise
    => no need
    aready have 'user' and 'admin_user'
+
+18. CSS 图片处理
+  
+
+   <% if params[:action] == "en" %><ul><li><a href='/'>Home</a></li><li><a href='/en/english:about_us'>About Us</a></li><li><a href='/en/english:consumer'>Consumer</a></li><li><a href='/en/english:contact_us'>Contact Us</a></li><li><a href='/en/english:franchise'>Franchise</a></li><li><a href='/en/english:stories'>Stories</a></li></ul><% else %><ul><li><a href='/'>首页</a></li><li><a href='/news_cates/'>新闻资讯</a></li><li><a href='/pages/about'>关于欧美龙</a></li><li><a href='/pages/join'>加盟政策</a></li><li><a href='/pages/ensure'>保障体系</a></li><li><a href='/pages/stores'>全国加盟店分布</a></li><li><a href='/pages/product'>产品中心</a></li><li><a href='/pages/customer'>我要洗衣</a></li><li><a href='/pages/english'>English</a></li></ul><% end %>

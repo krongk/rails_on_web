@@ -17,6 +17,11 @@ RailsOnWeb::Application.routes.draw do
   get "home/index"
   get "home/location"
   get "home/site_map"
+  get "home/img"
+  get "home/slide_nav"
+  get "home/nav_img_and_jquery"
+  get "home/nav_img_and_jquery2"
+
   match "upload" => "resource_items#upload"
   ActiveAdmin.routes(self)
 

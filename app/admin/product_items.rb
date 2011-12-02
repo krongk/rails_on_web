@@ -25,7 +25,7 @@ ActiveAdmin.register ProductItem do
                   end
                   tr do
                     th '产品分类'
-                    td item.product_cate_id
+                    td ProductCate.find(item.product_cate_id).name unless ProductCate.find(item.product_cate_id).nil?
                   end
                   tr do
                     th '产品名称'

@@ -14,7 +14,21 @@ class HomeController < ApplicationController
   def site_map
   end
 
- 
+  #==========================================
+  #HTML Design Demo
+  #==========================================
+  def img
+    #handle css3 img style
+  end
+  def slide_nav
+    #handle css3 slide img
+  end
+  def nav_img_and_jquery
+    #handle css3 slide img
+  end
+  def nav_img_and_jquery2
+    #handle css3 slide img
+  end
 end
 
 

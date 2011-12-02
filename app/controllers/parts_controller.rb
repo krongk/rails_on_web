@@ -1,4 +1,5 @@
 class PartsController < ApplicationController
+  before_filter :authenticate_admin_user!, :except => [:index, :show]
   # GET /parts
   # GET /parts.json
   def index

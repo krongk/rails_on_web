@@ -37,7 +37,7 @@
 
   /* (en) Marginal areas & page background */
   /* (de) Randbereiche & Seitenhintergrund */
-  body { background: #f9f9f9; }
+  body { background: #fff; }
 
   /* (en) Centering layout in old IE-versions */
   /* (de) Zentrierung des Layouts in alten IE-versionen */
@@ -46,28 +46,29 @@
 
   /* (en) Layout: width, background, borders */
   /* (de) Layout: Breite, Hintergrund, Rahmen */
-  .page_margins { max-width: 80em; }
-  #header, #nav, #main, #footer { overflow:hidden; min-width: 720px; }
+  /*.page_margins { max-width: 80em; }*/
+  .page_margins { max-width: 85em; }
+  #header, #nav, #main, #footer { overflow:hidden; min-width: 800px; }
 
   /* (en) Designing main layout elements */
   /* (de) Gestaltung der Hauptelemente des Layouts */
   #header {
-    color: #fff;
+    background:transparent;
   }
 
-  #header .page { position:relative; padding: 45px 2em 1em 20px; }
+  #header .page { position:relative; padding: 25px 2em 1em 20px; }
 
   #topnav { position:absolute; top: 10px; right: 10px; color: #88a; background: transparent; }
 
-  #nav { background: #e8e8e8; }
+  #nav { background: #fff; }
 
-  #main { background: #fff;padding:10px 0; }
+  #main { background: #fff; padding:10px 0; }
 
   #footer {
     color:#666;
     background: #f9f9f9;
     border-top: 5px #efefef solid;
-  line-height: 1.5em;
+    line-height: 1.5em;
   }
 
   #footer .page { padding: 10px 20px; }
@@ -75,29 +76,51 @@
   /*------------------------------------------------------------------------------------------------------*/
 
   /**
-   * (en) Formatting content container
-   * (de) Formatierung der Inhalts-Container
+   * (en) Repositioning content container
+   * (de) Neupositionierung der Content Container
    *
    * |-------------------------------|
    * | #header                       |
    * |-------------------------------|
-   * | #col1   | #col3     | #col2   |
-   * | 25%     | flexible  | 25%     |
+   * | #col1               | #col3   |
+   * | 75%                 | flexible|
    * |-------------------------------|
    * | #footer                       |
    * |-------------------------------|
    */
 
+  /* #col1 becomes main column | Linke float-Spalte wird zur Inhaltsspalte */
+  #col1 { width: 75%; }
 
-  #col1 { width: 25%; }
-  #col1_content { padding: 10px 10px 10px 20px; }
+  /* hide #col2 | Rechte Spalte abschalten */
+  #col2, #col2_content { display:none }
 
-  #col2 { width: 25%; }
-  #col2_content { padding: 10px 20px 10px 10px; }
+  /* #col3 moves to the right | Linken Randabstand anpassen - #col3 wird zur Randspalte */
+  #col3 { margin-left:75%; margin-right:0; }
+  #col3_content { padding-left: 10px; padding-right: 20px; }
 
-  #col3 { margin: 0 25%; }
-  #col3_content { padding: 10px; }
+ /**
+   * (en) Repositioning content container
+   * (de) Neupositionierung der Content Container
+   *
+   * |-------------------------------|
+   * | #header                       |
+   * |-------------------------------|
+   * | #col1   | #col3               |
+   * | 25%     | flexible            |
+   * |-------------------------------|
+   * | #footer                       |
+   * |-------------------------------|
+   */
 
+  /* Fixed width for left column | Fixe Breite für Linke Spalte */
+  #header #col1 { width: 23%; }
+
+  /* Hide right column | Rechte Spalte abschalten */
+  #header  #col2, #col2_content { display:none; }
+
+  #header  #col3 { margin-left: 23%; margin-right: 0; }
+  #header  #col3_content { padding: 45px 20px 10px 10px; }
  /**
   * ------------------------------------------------------------------------------------------------- #
   *
@@ -106,7 +129,7 @@
   */
 
   #nav * { border: 0px none !important; }
-  .hlist { background: #e8e8e8; }
+  .hlist { background: #fff; }
   .hlist ul { margin-left: 20px; }
   .hlist ul li { line-height: 1.2em; }
 
@@ -137,12 +160,12 @@
     font-size:2.5em;
     letter-spacing:-2px;
     line-height:65%;
-    color:#fff;
+    color:#000;
   }
 
-  #header span { color:#88c; }
+  #header span { color:#000;}
 
-  #topnav a { color: #ccc; font-weight: normal; background:transparent; text-decoration:none; }
+  #topnav a { color: #000; font-weight: normal; background:transparent; text-decoration:none; }
   #topnav a:focus,
   #topnav a:hover,
   #topnav a:active { text-decoration:underline; background-color: transparent; }
