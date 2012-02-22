@@ -5,16 +5,16 @@
 #   2. rake rails_on_web:generate_all_page
 
 namespace :rails_on_web do
-	desc "init all data"
+	desc "init all data(load_yaml, init_site_data, init_page_data)"
 	task :init_all_data => [:load_yaml, :init_site_data, :init_page_data]
 
-	desc "load yaml"
+	desc "load yaml(private method: loading site_map.yml)"
 	task :load_yaml => :environment do
 	  puts 'loading yaml'
 	  @conf = YAML.load_file("#{Rails.root}/config/site_map.yml")
 	end
 
-	desc "init site"
+	desc "init site(insert site_map.yml menu of site into site page table)"
 	task :init_site_data do
 	  puts 'init site'
 	  unless @conf['site'].nil?
@@ -28,7 +28,7 @@ namespace :rails_on_web do
 	  end
 	end
 
-	desc "init page"
+	desc "init page(insert site_map.yml menu into page table)"
 	task :init_page_data do
 	  puts 'init page'
 	  unless @conf['menu'].nil?
@@ -75,12 +75,12 @@ namespace :rails_on_web do
       end
   end
 #========================================================================
-  desc "generate all pages"
-  task :generate_all_page => [:load_page, :generate_site_map, :generate_layout_page]
+  desc "generate all pages(load_page, generate_layout_page, generate_site_map)"
+  task :generate_all_page => [:load_page, :generate_layout_page, :generate_site_map]
   
-  desc "load pages"
+  desc "load pages(private method: loading erb pages to prepare generate page)"
   task :load_page => :environment do
-    puts 'loading pages'
+    puts 'loading erb pages to prepare generate page'
     @site_map_path = "#{Rails.root}/app/views/home/site_map.html.erb"
     @layout_path = "#{Rails.root}/app/views/layouts/application.html.erb"
   end
