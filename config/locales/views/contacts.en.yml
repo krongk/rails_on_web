@@ -1,16 +1,16 @@
 ---
-zh-CN:
-  shops:
+en:
+  contacts:
     index:
-      title: Shops
+      title: Contacts
     show:
-      title: Shop
+      title: Contact
     edit:
-      title: Editing Shop
+      title: Editing Contact
     new:
-      title: New Shop
+      title: New Contact
   flash:
-    shops:
+    contacts:
       create:
         notice: ! '%{resource_name} was successfully created.'
       update:

@@ -54,6 +54,24 @@ ActiveRecord::Schema.define(:version => 20111121165600003) do
 
   add_index "cities", ["region_id"], :name => "index_cities_on_region_id"
 
+  create_table "contacts", :force => true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "qq"
+    t.string   "company"
+    t.string   "address"
+    t.string   "title"
+    t.text     "message"
+    t.string   "cate"
+    t.text     "note"
+    t.boolean  "is_verfied"
+    t.string   "verfied_by"
+    t.boolean  "is_deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "districts", :force => true do |t|
     t.string  "name"
     t.string  "en_name"

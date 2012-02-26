@@ -161,6 +161,7 @@ rails g controller home index help site_map
   |-resource_type
     |-resource_cate
       |-resource_item
+14.1. add comment
 
 15. 
  - 省市区联动数据库
