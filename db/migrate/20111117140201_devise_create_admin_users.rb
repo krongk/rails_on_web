@@ -1,6 +1,6 @@
 class DeviseCreateAdminUsers < ActiveRecord::Migration
   def self.up
-    create_table(:admin_users,:options=>'charset=utf8' ) do |t|
+    create_table(:admin_users ) do |t|
       t.database_authenticatable :null => false
       t.recoverable
       t.rememberable
