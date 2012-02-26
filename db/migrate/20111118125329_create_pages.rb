@@ -10,7 +10,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :meta_description
       t.string :menu_match
       t.integer :show_in_menu, :default => 1 #1:yes 0:no
-      t.integer :deletable, :default => 1
+      t.integer :deletable, :default => 1 #1:yes 0:no
 
       t.timestamps
     end

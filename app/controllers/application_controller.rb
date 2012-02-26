@@ -15,6 +15,20 @@ class ApplicationController < ActionController::Base
 	  end
   end
 
+ # #global varite
+ # {"site_name"=>"欧美龙洗衣连锁", 
+ #   "site_domain"=>"www.omero-china.com", 
+ #   "site_email"=>"master@omero-china.com", 
+ #   "site_phone"=>"400-123-800", 
+ #   "admin_email"=>"admin@omero-china.com", 
+ #   "admin_confirm_email"=>"omero.china@gmail.com"}
+  unless $sites
+    $sites = {}
+    Site.all.each do |s|
+      $sites[s.name.to_sym] = s.value
+    end
+  end
+
   private
   def find_region(region)
     regions = Region.where("en_name regexp '^#{region}'").limit(1)

@@ -3,7 +3,7 @@
 zh-CN:
   activerecord:
     models:
-      user: 分店用户
+      user: 会员
     attributes:
       user:
         email: 邮件地址

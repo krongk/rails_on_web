@@ -8,3 +8,4 @@ zh-CN:
       site:
         name: '名称'
         value: '值'
+        id: '编号'

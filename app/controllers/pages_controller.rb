@@ -1,4 +1,6 @@
+#encoding: utf-8
 class PagesController < ApplicationController
+  before_filter :authenticate_admin_user!, :except => [:index, :show, :en]
   # GET /pages
   # GET /pages.json
   def index
@@ -104,7 +106,7 @@ class PagesController < ApplicationController
   # DELETE /pages/1.json
   def destroy
     @page = Page.find(params[:id])
-    @page.destroy
+    @page.destroy unless @page.deletable != 0
 
     respond_to do |format|
       format.html { redirect_to pages_url }

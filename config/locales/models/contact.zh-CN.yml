@@ -19,6 +19,8 @@ zh-CN:
         is_verfied: 是否审核
         verfied_by: 审核人
         is_deleted: 是否注销
+        created_at: 添加时间
+        updated_at: 更新时间
     errors:
       contact: !!null 
   helpers:

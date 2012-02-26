@@ -1,6 +1,7 @@
 #encoding: utf-8
 ActiveAdmin.register ProductItem do
-  
+  menu :parent => "产品中心"
+
   index do
     column :id
     column :title do |item|

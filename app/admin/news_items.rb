@@ -1,5 +1,6 @@
 #encoding: utf-8
 ActiveAdmin.register NewsItem do
+  menu :parent => "新闻中心"
   filter :title
   filter :external_path
   filter :created_at
