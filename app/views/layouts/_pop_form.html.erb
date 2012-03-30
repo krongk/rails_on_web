@@ -1,0 +1,50 @@
+<!-- pop form -->
+ <style type="text/css">
+    * { font-family: Verdana; font-size: 96%; }
+    label { width: 10em; float: left; }
+    label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
+    p { clear: both; }
+    .submit { margin-left: 12em; }
+    em { font-weight: bold; padding-right: 1em; vertical-align: top; }
+  </style>
+  <script>
+      $(document).ready(function(){
+        $("#new_contact").validate();
+      });
+  </script>
+
+<div id='content'>
+        <!-- modal content -->
+        <div id="basic-modal-content">
+            <h3>在线咨询保险业务</h3>
+            <p>成都保险咨询网为您提供保险/投资/理财咨询服务。轻松提问，业务员将快速响应您的问题</p>
+            <form accept-charset="UTF-8" action="/contacts" class="new_contact" id="new_contact" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="sGgSZw5S/qfms6yimedEM0niXSCY1XwW+p+fYsGzhrE=" /></div>
+
+              <div class="field">
+                <label for="contact_name">姓名</label><br />
+                <input class="required" id="contact_name" name="contact[name]" size="30" type="text" />
+              </div>
+              <div class="field">
+                <label for="contact_phone">电话</label><br />
+                <input class="required number" id="contact_phone" name="contact[phone]" size="30" type="text" />
+              </div>
+              <div class="field">
+                <label for="contact_qq">QQ</label><br />
+                <input class="number" id="contact_qq" name="contact[qq]" size="30" type="text" />
+              </div>
+              <div class="field">
+                <label for="contact_message">信息</label><br />
+                <textarea class="required" cols="60" id="contact_message" name="contact[message]" rows="8"></textarea>
+              </div>
+              <div class="actions">
+                <input name="commit" type="submit" value="提 交" />
+              </div>
+            </form>
+        </div>
+
+        <!-- preload the images -->
+        <div style='display:none'>
+            <img src='/assets/x.png' alt='' />
+        </div>
+    </div>
+<!-- pop form -->

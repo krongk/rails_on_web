@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
  *
@@ -9,14 +10,14 @@
  *
  * @note:           Many thanks to Alexander Hass (http://www.yaml-fuer-drupal.de/) for contribution
  *
- * @copyright       Copyright 2005-2011, Dirk Jesse
+ * @copyright       Copyright 2005-2010, Dirk Jesse
  * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.3.1
- * @revision        $Revision: 501 $
- * @lastmodified    $Date: 2011-06-18 17:27:44 +0200 (Sa, 18 Jun 2011) $
+ * @version         3.2.1
+ * @revision        $Revision: 443 $
+ * @lastmodified    $Date: 2009-12-31 18:05:05 +0100 (Do, 31. Dez 2009) $
  */
 
 @media all
@@ -46,6 +47,21 @@
 
  /*------------------------------------------------------------------------------------------------------*/
 
+ /**
+  * @section base layout | Basis Layout
+  * @see     http://www.yaml.de/en/documentation/css-components/base-stylesheet.html
+  *
+  * Changing positions of #topnav container when paced within #header
+  */
+
+  #header #topnav {
+    left: 10px;
+    right: 0;
+    text-align: left;
+  }
+
+ /*------------------------------------------------------------------------------------------------------*/
+
   /**
    * (en) skip links cause large horizontal scrollbars in RTL mode in several browsers
    * (de) skip links erzeugen große horziontale Scrollbalken in verschiedenen Browserin im RTL-Modus
@@ -56,10 +72,9 @@
    * @valid      yes
    */
 
-  #skiplinks { left: 32768px; }
-  #skiplinks .skip:focus,
-  #skiplinks .skip:active { left: -32768px; }
-  .skip, .hideme, .print { left: 32768px; }
+  .skip, .hideme, .print {
+    left: 0;
+  }
 
  /*------------------------------------------------------------------------------------------------------*/
 

@@ -4,8 +4,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="Content-Language" content="zh-cn" />
   <meta name="robots" content="all" />
-  <meta name="author" content="omero" />
-  <meta name="Copyright" content="Omero Lcd, All Rights Reserved." />
+  <meta name="author" content="baoxian028.com" />
+  <meta name="Copyright" content="Cd Baoxian028 Lcd, All Rights Reserved." />
   <title><%= yield(:title)%> </title>
   <meta name="keywords" content="<%= yield(:meta_keywords)%>" />
   <meta name="description" content="<%= yield(:meta_description)%>" />
@@ -13,28 +13,45 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-
-  <script type="text/javascript">
-
-  </script>
-
 </head> 
  
 <body> 
- <h1><%=$sites[:site_name]%></h1>
- 
- <%=yield %>
+  <ul id="skiplinks">
+    <li><a class="skip" href="#nav">跳过导航 </a></li>
+    <li><a class="skip" href="#col3">跳过内容</a></li>
+  </ul>
+<div class="page_margins">
+  <div class="page">
+    <%= render :partial => "layouts/header" %>
+    <!-- begin: main content area #main -->
+    <div id="main">
+      <!-- begin: #col1 - first float column -->
+      <div id="col1" role="complementary">
+      <div id="col1_content" class="clearfix">
+        
+        <%= yield %>
+      </div>
+      </div>
+      <!-- end: #col1 -->
+      <!-- begin: #col3 static column -->
+      <div id="col3" role="main">
+      <div id="col3_content" class="clearfix">
+        <%= render :partial => "layouts/scroll_news" %>
+        <%= render :partial => "layouts/side_general" %>
+      </div>
+      <div id="ie_clearing">&nbsp;</div>
+      <!-- End: IE Column Clearing -->
+      </div><!-- end: #col3 -->
+    </div><!-- end: #main -->
 
- <div class="footer">
-  <p style="line-height:20px; text-align:left;">
-    <a href="#" title="关于我们">关于我们</a> | 
-    <a href="#服务团队">服务团队</a> | 
-    <a href="#" title="联系我们">联系我们</a> | 
-    <a href="#" title="我们优势">我们优势</a><br />
-    Email: <%=$sites[:site_email]%>  Phone: <%=$sites[:site_phone]%><br/>
-    Copyright @ 2008 - 2012 <br/>
-    <%=$sites[:site_name]%>(<%=$sites[:site_domain]%>) All Rights Reserved.  
-    </p>
- </div>
+     <%= render :partial => "layouts/pop_form" %>
+     <!-- begin: #footer -->
+     <%= render :partial => "layouts/footer" %>
+    <!-- end: #footer -->
+  </div><!-- end: .page -->
+</div><!-- end: .page_margins -->
+
+<!--display QQ list and google counter and beian info-->
+<center><script src="/foot.js" type="text/javascript"></script></center>
 </body>
 </html>

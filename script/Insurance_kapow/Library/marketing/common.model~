@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="kapow.robot.common.domain.DomainModel">
+  <property name="entityModels" class="kapow.robot.common.domain.EntityModels">
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">job_input</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">job_id</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.IntegerAttributeType"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">title</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType" id="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">description</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.TextAttributeType" id="1"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">contact_user</property>
+          <property name="type" idref="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">contact_phone</property>
+          <property name="type" idref="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">company_name</property>
+          <property name="type" idref="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">company_nike_name</property>
+          <property name="type" idref="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">company_contact_phone</property>
+          <property name="type" idref="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">company_address</property>
+          <property name="type" idref="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">company_description</property>
+          <property name="type" idref="1"/>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.common.domain.QueryEntityModelType"/>
+    </object>
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">account_input</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">login</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType" id="2"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">password</property>
+          <property name="type" idref="2"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">email</property>
+          <property name="type" idref="2"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">phone</property>
+          <property name="type" idref="2"/>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.common.domain.QueryEntityModelType"/>
+    </object>
+  </property>
+  <property name="roboTechVersion" class="Version">8.0</property>
+</object>

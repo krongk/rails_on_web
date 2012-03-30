@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="kapow.robot.common.domain.DomainModel">
+  <property name="entityModels" class="kapow.robot.common.domain.EntityModels">
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">blog_input</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">title</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType"/>
+          <property name="defaultValue" class="String">成都保险咨询网近期动态</property>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">content</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.TextAttributeType"/>
+          <property name="defaultValue" class="String">成都保险咨询网(www.baoxian028.com)， 近期推出保险咨询、投保免费策划服务。
+为需要买保险的用户免费提供一套（3-5份）保险策划方案，不收取任何费用。详情请关注成都保险咨询网官网。</property>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">question</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.TextAttributeType" id="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">best_answer</property>
+          <property name="type" idref="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">all_answer</property>
+          <property name="type" idref="0"/>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.common.domain.QueryEntityModelType"/>
+    </object>
+  </property>
+  <property name="roboTechVersion" class="Version">8.0</property>
+</object>

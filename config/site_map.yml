@@ -1,10 +1,10 @@
 site:
   site_name: 网站名称
-  site_domain: www.inruby.com
-  site_email: master@inruby.com
-  site_phone: 400-123-800
-  admin_email: admin@inruby.com
-  admin_confirm_email: inruby@gmail.com
+  site_domain: www.baoxian028.com
+  site_email: baoxian028@163.com
+  site_phone: 13088046550
+  admin_email: baoxian028@163.com
+  admin_confirm_email: baoxian028@163.com
 meta:
   keywords: 互联网咨询团队
   description: 红宝石企业建站、互联网咨询专家

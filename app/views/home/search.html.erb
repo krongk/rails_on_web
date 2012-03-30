@@ -1,0 +1,41 @@
+<% title "#{params[:q]} - 成都保险咨询网" %>
+<% meta_keywords [params[:q], "成都商业保险咨询"].join(' - ') %>
+<% meta_description [params[:q], "成都保险，投保， 保险咨询，保险购买，商业保险，中国平安人寿保险，网址：www.baoxian028.com, 地址：成都市一环路南四段"].join(' - ') %>
+
+<% content_for :left_side_bar do %>
+<h3>类似问题</h3>
+<hr/>
+  <ul>
+  <% @result[:ext_key_arr].each do |ext_key| %>
+    <li><%= link_to ext_key.title, "/search?t=#{ext_key.source}&q=#{ext_key.title}" %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<% if @result[:record_arr].empty? %>
+  <h3>&nbsp;&nbsp;&nbsp;&nbsp; 没有找到相关内容!</h3>
+<% else %>
+  <% @result[:record_arr].each_with_index do |r, index| %>
+    <div class="result" id="<%=index%>">
+      <h3><%= link_to r.title, r.url, :target => '_blank'%> </h3>
+      <p class="green"><%= truncate(r.url, :length => 80, :omission => '...') %> &nbsp;&nbsp; 更新日期：<span><%= r.updated_date %></span></p>
+      <p class="summary"><%= (r.summary).html_safe %></p>
+      <div class="edit_result" id = "<%=index%>">
+
+      </div>
+    </div>
+    <hr/>
+  <% end %>
+
+  <div id="paginate">
+    <%= link_to "第一页", "/search?t=#{@result[:source]}&q=#{params[:q]}&page=1" %>
+    <% (2..10).each do |pn| %>
+      <% if pn == @page %>
+        <span><%= pn %></span>
+      <% else %>
+        <%= link_to pn, "/search?t=#{@result[:source]}&q=#{params[:q]}&page=#{pn}" %>
+      <% end %>
+    <% end %>
+    <%= link_to "下一页", "/search?t=#{@result[:source]}&q=#{params[:q]}&page=#{ params[:page].to_i > 10 ? (params[:page].to_i + 1) : 11}" %>
+  </div>
+<% end %>

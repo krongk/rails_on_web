@@ -1,23 +1,16 @@
-<h1>Listing news_cates</h1>
+<% title ["成都保险咨询网，您投保的好帮手！"].join(' - ') %>
+<% meta_keywords ["成都商业保险咨询"].join(' - ') %>
+<% meta_description ["成都保险，投保， 保险咨询，保险购买，商业保险，中国平安，网址：www.baoxian028.com, 咨询QQ：29928649, 地址：成都市一环路南四段"].join(' - ') %>
+
+
+<h1>信息分类</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @news_cates.each do |news_cate| %>
   <tr>
     <td><%= news_cate.name %></td>
-    <td><%= link_to 'Show', news_cate %></td>
-    <td><%= link_to 'Edit', edit_news_cate_path(news_cate) %></td>
-    <td><%= link_to 'Destroy', news_cate, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to '查看', news_cate %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New News cate', new_news_cate_path %>

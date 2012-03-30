@@ -1,0 +1,36 @@
+<script type="text/javascript">
+  $(function(){
+    $('.side_news').vTicker();
+  });
+  $(function(){
+    $('.side_news1').vTicker({ 
+      speed: 500,
+      pause: 3000,
+      animation: 'fade',
+      mousePause: false,
+      showItems: 3
+    });
+  });
+</script> 
+
+<div id="side_news_list1" >
+<h2> 保险速递</h2>
+<div class="side_news1"><ul>
+  <% NewsItem.recent(8, 1).each_with_index do |item, index| %>
+    <% if index < 3 %>
+        <li><%=link_to item.title, news_item_path(item), :target => "_blank", :title => item.title %><img src="/assets/g_hot.gif"/></li>
+    <% else %>
+        <li><%=link_to item.title, news_item_path(item), :target => "_blank", :title => item.title %></li>
+    <% end %>
+  <% end %>
+</ul></div>
+</div>
+
+<div id="side_news_list2" >
+  <h2> 保险问答</h2>
+  <div class="side_news"><ul>
+  <% NewsItem.recent(25).each_with_index do |item, index| %>
+    <li><%=link_to item.title.truncate(20), news_item_path(item), :target => "_blank" %></li>
+  <% end %>
+  </ul></div>
+</div>

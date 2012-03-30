@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>咨询信息</h1>
+    <table>
+     <tr><td>姓名：</td><td><%= @contact.name %></td></tr>
+     <tr><td>电话：</td><td><%= @contact.phone %></td></tr>
+     <tr><td>QQ：</td><td><%= @contact.qq %></td></tr>
+     <tr><td>咨询内容：</td><td><%= @contact.message %></td></tr>
+     <tr><td>提交时间：</td><td><%= @contact.created_at.to_s %></td></tr>
+    </table>
+  </body>
+</html>

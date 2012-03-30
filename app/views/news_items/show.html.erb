@@ -1,30 +1,41 @@
-<p id="notice"><%= notice %></p>
+<% title [@news_item.title, "成都保险咨询网"].join('-') %>
+<% meta_keywords [@news_item.title,"成都保险咨询网，成都保险，商业保险，人寿保险，车险，中国平安"].join('-') %>
+<% meta_description [@news_item.title,"成都保险咨询网是成都地区专业的保险服务平台，提供免费的商业保险咨询、投保建议等服务！咨询QQ：29928649"].join('-') %>
 
-<p>
-  <b>News cate:</b>
-  <%= @news_item.news_cate %>
-</p>
+<div class='wenba_detail_nav'><a href="/">首页</a> > <%= link_to @news_item.news_cate.name, news_cate_path(@news_item.news_cate)%></div>
 
-<p>
-  <b>Title:</b>
-  <%= @news_item.title %>
-</p>
+<div class='wenba_detail'>
+  <div class='wenba_question'><div class='wenba_question_content'>
+      <h2><%= @news_item.title %></h2>
+        <% unless @news_item.summary.blank? %>
+          <div class="wenba_question_detail">
+            <%= simple_format @news_item.summary %>
+          </div>
+        <% end %>
+      </div></div> 
 
-<p>
-  <b>Body:</b>
-  <%= simple_format @news_item.body %>
-</p>
+  <div class='wenba_answer_list'><div class='wenba_answer_list_content'>
+    <% if @news_item.summary.blank? %>
+      <%= simple_format @news_item.body %>
+    <% else %>
+      <%= simple_format @news_item.body.gsub(/\n+/, '') unless @news_item.body.blank? %>
+    <% end %>
+  </div></div>
+</div> 
 
-<p>
-  <b>External url:</b>
-  <%= @news_item.external_path %>
-</p>
-
-<p>
-  <b>Image url:</b>
-  <%= @news_item.image_path %>
-</p>
-
-
-<%= link_to 'Edit', edit_news_item_path(@news_item) %> |
-<%= link_to 'Back', news_items_path %>
+<br/>
+<%= render :partial => "layouts/bshare" %>
+<div id='content' style="float: right; margin:40px 40px 0 0;"><div id='basic-modal'>
+   <span class = 'phone'><a href="#" class='basic'><span style="color:red;">有问题? 点击：</span><img src="/assets/online_call.gif"/></a></span>
+</div></div>
+<!--相关新闻-->
+<hr/>
+<div class="related">
+ <h3>相关信息</h3>
+ <ul>
+   <% NewsItem.recent_related(@news_item.id).each do |item|%>
+     <li><%= link_to item.title, news_item_path(item.id)%></li>
+   <% end %>
+ </ul>
+</div>
+</div>

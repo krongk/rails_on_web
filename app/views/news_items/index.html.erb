@@ -1,31 +1,14 @@
-<h1>Listing news_items</h1>
+<% title ["成都保险咨询网，您投保的好帮手！"].join(' - ') %>
+<% meta_keywords ["成都商业保险咨询"].join(' - ') %>
+<% meta_description ["成都保险，投保， 保险咨询，保险购买，商业保险，中国平安，网址：www.baoxian028.com, 咨询QQ：29928649, 地址：成都市一环路南四段"].join(' - ') %>
 
-<table>
-  <tr>
-    <th>News cate</th>
-    <th>Title</th>
-    <th>Body</th>
-    <th>External url</th>
-    <th>Image url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
+<h1>信息列表</h1>
+
+<ul>
 <% @news_items.each do |news_item| %>
-  <tr>
-    <td><%= news_item.news_cate %></td>
-    <td><%= news_item.title %></td>
-    <td><%= news_item.body.truncate(40) %></td>
-    <td><%= news_item.external_path %></td>
-    <td><%= news_item.image_path %></td>
-    <td><%= link_to 'Show', news_item %></td>
-    <td><%= link_to 'Edit', edit_news_item_path(news_item) %></td>
-    <td><%= link_to 'Destroy', news_item, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <li><%= link_to news_item.title, news_item %></li>
 <% end %>
-</table>
+</ul>
 
-<br />
-
-<%= link_to 'New News item', new_news_item_path %>
+<%= will_paginate @news_items %>

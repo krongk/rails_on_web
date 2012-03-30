@@ -15,7 +15,7 @@ RailsOnWeb::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -57,4 +57,18 @@ RailsOnWeb::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  #send mailer
+  config.action_mailer.perform_deliveries = true
+  config.action_controller.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "mydomain.com",
+    :authentication => :login,
+    :user_name => "kenrome",
+    :password => "inruby.com"
+  }
 end

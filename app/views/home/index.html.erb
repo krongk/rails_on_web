@@ -1,10 +1,39 @@
-<pre>
-颜色搭配
-http://www.colorcombos.com/color-schemes/135/ColorCombo135.html
+<% title ["成都保险咨询网，您投保的好帮手！"].join(' - ') %>
+<% meta_keywords ["成都商业保险咨询"].join(' - ') %>
+<% meta_description ["成都保险，投保， 保险咨询，保险购买，商业保险，中国平安，网址：www.baoxian028.com, 咨询QQ：29928649, 地址：成都市一环路南四段"].join(' - ') %>
 
-Omero Logo 颜色：cc0066
-</pre>
-<%= link_to "图片处理", '/home/img' %><br/>
-<%= link_to "幻灯片导航", '/home/slide_nav' %><br/>
-<%= link_to "Jquery+Image导航", '/home/nav_img_and_jquery' %><br/>
-<%= link_to "Jquery+Image导航2", '/home/nav_img_and_jquery2' %><br/>
+
+<%= render :partial => "layouts/slider_img" %>
+<%= render :partial => "layouts/slider_case" %>
+
+<!-- start pinpai -->
+<div class="index_main_list">
+  <div class="index_main_list_content">
+    <table width="100%">
+     <tr><td width="320px" valign="top"><h3 class="title">成都保险信息</h3>
+         <ul>
+           <% NewsItem.recent(20,19).each_with_index do |item, index| %>
+            <li><%=link_to item.title, news_item_path(item), :target => "_blank" %></li>
+           <% end %>
+        </ul>
+     </td><td valign="top"><h3 class="title">保险咨询问答</h3>
+       <ul>
+       <% NewsItem.recent(20, 5).each_with_index do |item, index| %>
+        <li><%=link_to item.title, news_item_path(item), :target => "_blank" %></li>
+       <% end %> 
+  </ul>
+     </td></tr>
+    </table>
+  </div>
+</div>
+<!-- end pinpai -->
+
+<!-- start liucheng -->
+<div id='content'><div id='basic-modal'>
+  <div style="padding: 6px;"><a href="#" class='basic'><img src="/assets/liucheng.jpg" /></a></div>
+</div></div>
+<!-- end liucheng -->
+
+<!-- begin product list -->
+<%= render :partial => "layouts/product_list" %>
+<!-- end product list -->

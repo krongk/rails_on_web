@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
  *
@@ -6,14 +7,14 @@
  *
  * @note            Many thanks to Ansgar Hein (http://www.anatom5.de) for contribution
  *
- * @copyright       Copyright 2005-2011, Dirk Jesse
+ * @copyright       Copyright 2005-2010, Dirk Jesse
  * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.3.1
- * @revision        $Revision: 501 $
- * @lastmodified    $Date: 2011-06-18 17:27:44 +0200 (Sa, 18 Jun 2011) $
+ * @version         3.2.1
+ * @revision        $Revision: 455 $
+ * @lastmodified    $Date: 2010-01-01 17:33:05 +0100 (Fr, 01. Jan 2010) $
  */
 
 @media screen, projection
@@ -36,7 +37,7 @@
     border:1px #ddd solid;
     background:#fafafa;
     margin:0 0 1em 0;
-    padding:0.5em;
+    padding: 0.5em;
   }
   
   .yform legend {
@@ -140,7 +141,7 @@
 
   /* General form styling  | Allgemeine Formatierung des Formulars */
   .yform { overflow:hidden; }
-  .yform fieldset { display:block; zoom:1; }
+  .yform fieldset { overflow:hidden; }
   .yform label { display:block; cursor:pointer; }
   .yform legend { background:transparent; border:0; padding:0 0.5em; }
   .yform .message { display:block; margin-bottom:0.5em; color:#666; }
@@ -151,32 +152,17 @@
   /* Highlight mandatory fields | Pflichtfeldkennzeichnung hervorheben */
   .yform sup { color:#800; font-weight:bold; }
 
-  /* per row float clearing | zeilenweises Float-Clearing */
-  fieldset:after,
-  .yform div.type-text:after,
-  .yform div.type-select:after,
-  .yform div.type-check:after,
-  .yform div.type-button:after {
-    clear:both;
-    content:".";
-    display:block;
-    font-size:0;
-    height:0;
-    visibility:hidden;
-  }
-
   /* styling containing DIV elements | Gestaltung der kapselnden DIV-Elemente */
   .yform div.type-text,
   .yform div.type-select,
   .yform div.type-check,
   .yform div.type-button {
-	display:block;
     margin:0.5em 0;
     padding:3px 0.5em;  
     position:relative;
-	zoom:1; 
+    overflow:hidden;
   }
-  
+
   .yform div.type-button {
     padding:3px 0em;  
   }
@@ -309,7 +295,7 @@
   * @valid no
   */
   
-  /* all IE */ 
+  /* all IE */
   .yform { padding-top:0\9; }
   .yform fieldset { padding:0 5px\9; padding-top:1em\9; }
   .yform legend { position:absolute\9; top:-.5em\9; *left:0\9; }

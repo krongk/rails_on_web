@@ -22,12 +22,12 @@ class ApplicationController < ActionController::Base
  #   "site_phone"=>"400-123-800", 
  #   "admin_email"=>"admin@omero-china.com", 
  #   "admin_confirm_email"=>"omero.china@gmail.com"}
-  unless $sites
-    $sites = {}
-    Site.all.each do |s|
-      $sites[s.name.to_sym] = s.value
-    end
-  end
+  # unless $sites
+  #   $sites = {}
+  #   Site.all.each do |s|
+  #     $sites[s.name.to_sym] = s.value
+  #   end
+  # end
 
   private
   def find_region(region)

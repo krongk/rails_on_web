@@ -1,13 +1,16 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
-gem 'mysql2', '0.3.7'
+#on home
+#gem 'mysql2', '0.3.7'
+#on office
+gem 'mysql2', '0.3.11'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+
+gem 'sass-rails',   '~> 3.1.4'
+gem 'coffee-rails', '~> 3.1.1'
+gem 'uglifier', '>= 1.0.3'
+
 
 gem 'jquery-rails', '1.0.14'
 gem 'devise', '1.5.0'
@@ -18,11 +21,11 @@ gem 'devise', '1.5.0'
 gem "will_paginate", "3.0.pre2"
 
 #===Chinese url parser
-#gem 'htmlentities'
+gem 'htmlentities'
 
-#==Forager
-# gem 'mechanize', '2.0.1'
-# gem 'hpricot', '0.8.4'
+#==forager
+gem 'mechanize', '2.0.1'
+gem 'hpricot', '0.8.4'
 
 #==I18n
 gem 'rails-i18n', '0.1.8'

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="kapow.robot.common.domain.DomainModel">
+  <property name="entityModels" class="kapow.robot.common.domain.EntityModels">
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">the_account_input</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">login</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType" id="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">wait_second</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.IntegerAttributeType"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">url</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">account_id</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.IntegerAttributeType" id="1"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">password</property>
+          <property name="type" idref="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">process_count</property>
+          <property name="type" idref="1"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">is_talk</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.CharacterAttributeType" id="2"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">is_tag</property>
+          <property name="type" idref="2"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">is_guess</property>
+          <property name="type" idref="2"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">is_comment</property>
+          <property name="type" idref="2"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">is_quora</property>
+          <property name="type" idref="2"/>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.common.domain.QueryEntityModelType"/>
+    </object>
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">talk_input</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">talk_id</property>
+          <property name="type" idref="1"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">content</property>
+          <property name="type" idref="0"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">content_url</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType"/>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.common.domain.QueryEntityModelType"/>
+    </object>
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">tag_input</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">tag_id</property>
+          <property name="type" idref="1"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">tag_name</property>
+          <property name="type" idref="0"/>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.common.domain.QueryEntityModelType"/>
+    </object>
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">quora_input</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">quora_id</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.IntegerAttributeType"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">question</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType" id="3"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">answer</property>
+          <property name="type" idref="3"/>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.common.domain.QueryEntityModelType"/>
+    </object>
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">quora_result</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">quora_id</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.IntegerAttributeType"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">url</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType"/>
+          <property name="useWhenComparingObjects" class="Boolean">true</property>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.plugin.common.domain.entitymodeltype.StandardExtractableEntityModelType"/>
+    </object>
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">comment_input</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">comment_id</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.IntegerAttributeType"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">content</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType"/>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.common.domain.QueryEntityModelType"/>
+    </object>
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">comment</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">account_id</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.IntegerAttributeType"/>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">content</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType"/>
+          <property name="useWhenComparingObjects" class="Boolean">true</property>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.plugin.common.domain.entitymodeltype.StandardExtractableEntityModelType"/>
+    </object>
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">talk</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">account_id</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.IntegerAttributeType"/>
+          <property name="useWhenComparingObjects" class="Boolean">true</property>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">content</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.TextAttributeType"/>
+          <property name="useWhenComparingObjects" class="Boolean">true</property>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.plugin.common.domain.entitymodeltype.StandardExtractableEntityModelType"/>
+    </object>
+  </property>
+  <property name="roboTechVersion" class="Version">8.0</property>
+</object>

@@ -1,0 +1,9 @@
+defaults: &base
+  adapter: mysql2
+  username: root
+  password: kenrome001
+  host: 127.0.0.1
+
+development:
+  <<: *base
+  database: insurance_forager

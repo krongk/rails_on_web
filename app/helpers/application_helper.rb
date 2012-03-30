@@ -14,7 +14,12 @@ module ApplicationHelper
   def meta_description(meta_description)
   	content_for(:meta_description){ meta_description}
   end
-
+  
+  def cate_banner(cate)
+    img = ['baoxian028-pinpai.jpg', 'baoxian028-che.jpg', 'baoxian028-che2.jpg', 'baoxian028-green_sky.jpg', 
+      'baoxian028-up_with_you.jpg', 'b-che.jpg', 'bg-1.jpg', 'b-family.jpg', 'b-job.jpg', 'b-kids.jpg', 'b-kids2.jpg', 'job_banner.jpg'][rand(12)]
+    return %{<a href="/tuan/index.html" target="_blank"><img src="/assets/#{img}" width="660px"/></a>}.html_safe
+  end
   #链接菜单导航，如：首页/关于我们
   #input: nav_bar [['首页', '/'], ['关于', '/about']]
   def nav_bar(bar_arr)

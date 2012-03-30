@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="kapow.robot.robomaker.robot.type.GenericRobot2" serializationversion="1">
+  <property name="roboTechVersion" class="String">8.0</property>
+  <property name="startModelObjects" class="kapow.robot.robomaker.state.ModelObjects"/>
+  <property name="queryParameters" class="kapow.robot.robomaker.state.ModelObjects"/>
+  <property name="proxyServerConfiguration" class="kapow.util.net.ProxyServerConfiguration" serializationversion="0"/>
+  <property name="httpClientType" class="kapow.util.net.httpclient.HttpClientType">
+    <property name="enum-name" class="String">APACHE</property>
+  </property>
+  <property name="privateHTTPCacheEnabled" class="Boolean">true</property>
+  <property name="privateHTTPCacheSize" class="Integer">2048</property>
+  <property name="comment">
+    <null/>
+  </property>
+  <property name="id" class="Integer">-1</property>
+  <property name="transitionGraph" class="Body">
+    <blockBeginStep class="BlockBeginStep" id="0"/>
+    <steps class="ArrayList">
+      <object class="Transition" id="1">
+        <property name="name" class="String">Load Page</property>
+        <property name="stateProcessor" class="LoadPage2">
+          <property name="browserConfigurationSpecification" class="kapow.robot.plugin.common.support.browser2.BrowserConfigurationSpecification" serializationversion="6">
+            <property name="ancestorProvider" class="kapow.robot.plugin.common.support.browser2.StepBrowserConfigurationSpecificationAncestorProvider"/>
+          </property>
+          <property name="urlProvider" class="kapow.robot.plugin.common.stepaction.urlprovider2.ValueURLProvider2">
+            <property name="URL" class="String">http://t.qq.com/</property>
+          </property>
+        </property>
+        <property name="nodeFinderList" class="kapow.robot.robomaker.state.document.nodefinder.list.NodeFinderList"/>
+        <property name="errorHandler" class="kapow.robot.robomaker.robot.ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="id" class="Integer">0</property>
+      </object>
+      <object class="End" id="2">
+        <property name="id" class="Integer">1</property>
+      </object>
+    </steps>
+    <blockEndStep class="BlockEndStep"/>
+    <edges class="ArrayList">
+      <object class="kapow.robot.robomaker.robot.TransitionEdge">
+        <from idref="0"/>
+        <to idref="1"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="kapow.robot.robomaker.robot.TransitionEdge">
+        <from idref="1"/>
+        <to idref="2"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+    </edges>
+  </property>
+  <property name="nextTransitionId" class="Integer">3</property>
+  <property name="browserConfigurationSpecification" class="kapow.robot.plugin.common.support.browser2.BrowserConfigurationSpecification" serializationversion="6">
+    <property name="ancestorProvider" class="kapow.robot.plugin.common.support.browser2.RobotDefaultBrowserConfigurationSpecificationAncestorProvider"/>
+  </property>
+</object>

@@ -1,0 +1,49 @@
+<!-- jquery slideshow -->
+<script type="text/javascript">
+  function slideSwitch() {
+    var $current = $("#slideshow div.current");
+    // 判断div.current个数为0的时候 $current的取值
+    if ( $current.length == 0 ) $current = $("#slideshow div:last");
+    // 判断div.current存在时则匹配$current.next(),否则转到第一个div
+    var $next =  $current.next().length ? $current.next() : $("#slideshow div:first");
+    $current.addClass('prev');  
+    $next.css({opacity: 0.0}).addClass("current").animate({opacity: 1.0}, 1000, function() {
+        //因为原理是层叠,删除类,让z-index的值只放在轮转到的div.current,从而最前端显示
+        $current.removeClass("current prev");
+      });
+  }
+
+  $(function() {
+    $("#slideshow span").css("opacity","0.7");
+    $(".current").css("opacity","1.0");
+    
+    // 设定时间为3秒(1000=1秒)
+    setInterval( "slideSwitch()", 3000 ); 
+  });
+</script>
+<div id="slideshow">
+    <div class="current">
+        <a href="q_life.html" target="_blank"><img src="/assets/b-family.jpg" alt="" width="680px" /></a>
+        <span>人寿保险</span>
+    </div>
+   <div>
+    <a href="jobs.html" target="_blank"><img src="/assets/b-job.jpg" alt="" width="680px"/></a>
+    <span>招贤纳士</span>
+    </div>
+   <div>
+    <a href="contact.html" target="_blank"><img src="/assets/b-about.jpg" alt="" width="680px"/></a>
+    <span>关于我们</span>
+    </div>
+   <div>
+        <a href="p_car.html" target="_blank"><img src="/assets/b-che2.jpg" alt="" width="680px"/></a>
+        <span>汽车商业保险</span>
+    </div>
+    <div>
+        <a href="q_kids.html" target="_blank"><img src="/assets/b-kids.jpg" alt="" width="680px"/></a>
+        <span>少儿保险</span>
+    </div>
+  <div>
+        <a href="p_jiankang.html" target="_blank"><img src="/assets/b-kids2.jpg" alt="" width="680px"/></a>
+        <span>健康保险</span>
+    </div>
+</div>   

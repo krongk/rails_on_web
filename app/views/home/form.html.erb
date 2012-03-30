@@ -1,0 +1,5 @@
+<% if flash[:notice] %>
+  <div class="warning"><%=flash[:notice]%></div>
+<% end %>
+
+<%= render :partial => "layouts/form" %>

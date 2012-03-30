@@ -1,0 +1,203 @@
+<!-- start scrool -->
+<script type="text/javascript">
+    var SellerScroll = function(options) {
+    this.SetOptions(options);
+    this.lButton = this.options.lButton;
+    this.rButton = this.options.rButton;
+    this.oList = this.options.oList;
+    this.showSum = this.options.showSum;
+
+    this.iList = $("#" + this.options.oList + " > li");
+    this.iListSum = this.iList.length;
+    this.iListWidth = this.iList.outerWidth(true);
+    this.moveWidth = (this.iListWidth * this.showSum) + 6;
+
+    this.dividers = Math.ceil(this.iListSum / this.showSum); //共分为多少块
+    this.moveMaxOffset = (this.dividers - 1) * this.moveWidth;
+    this.LeftScroll();
+    this.RightScroll();
+};
+SellerScroll.prototype = {
+    SetOptions: function(options) {
+        this.options = {
+            lButton: "left_scroll",
+            rButton: "right_scroll",
+            oList: "sliding",
+            showSum: 2 //一次滚动多少个items
+        };
+        $.extend(this.options, options || {});
+    },
+    ReturnLeft: function() {
+        return isNaN(parseInt($("#" + this.oList).css("left"))) ? 0 : parseInt($("#" + this.oList).css("left"));
+    },
+    LeftScroll: function() {
+        if (this.dividers == 1) return;
+        var _this = this,
+        currentOffset;
+        $("#" + this.lButton).click(function() {
+            currentOffset = _this.ReturnLeft();
+            if (currentOffset == 0) {
+                for (var i = 1; i <= _this.showSum; i++) {
+                    $(_this.iList[_this.iListSum - i]).prependTo($("#" + _this.oList));
+                }
+                $("#" + _this.oList).css({
+                    left: -_this.moveWidth
+                });
+                $("#" + _this.oList + ":not(:animated)").animate({
+                    left: "+=" + _this.moveWidth
+                },
+                {
+                    duration: "slow",
+                    complete: function() {
+                        for (var j = _this.showSum + 1; j <= _this.iListSum; j++) {
+                            $(_this.iList[_this.iListSum - j]).prependTo($("#" + _this.oList));
+                        }
+                        $("#" + _this.oList).css({
+                            left: -_this.moveWidth * (_this.dividers - 1)
+                        });
+                    }
+                });
+            } else {
+                $("#" + _this.oList + ":not(:animated)").animate({
+                    left: "+=" + _this.moveWidth
+                },
+                "slow");
+            }
+        });
+    },
+    RightScroll: function() {
+        if (this.dividers == 1) return;
+        var _this = this,
+        currentOffset;
+        $("#" + this.rButton).click(function() {
+            currentOffset = _this.ReturnLeft();
+            if (Math.abs(currentOffset) >= _this.moveMaxOffset) {
+                for (var i = 0; i < _this.showSum; i++) {
+                    $(_this.iList[i]).appendTo($("#" + _this.oList));
+                }
+                $("#" + _this.oList).css({
+                    left: -_this.moveWidth * (_this.dividers - 2)
+                });
+
+                $("#" + _this.oList + ":not(:animated)").animate({
+                    left: "-=" + _this.moveWidth
+                },
+                {
+                    duration: "slow",
+                    complete: function() {
+                        for (var j = _this.showSum; j < _this.iListSum; j++) {
+                            $(_this.iList[j]).appendTo($("#" + _this.oList));
+                        }
+                        $("#" + _this.oList).css({
+                            left: 0
+                        });
+                    }
+                });
+            } else {
+                $("#" + _this.oList + ":not(:animated)").animate({
+                    left: "-=" + _this.moveWidth
+                },
+                "slow");
+            }
+        });
+    }
+};
+$(document).ready(function() {
+    var ff = new SellerScroll();
+});
+</script>
+
+<div class="box">
+    <div class="inslp">
+        <a class="box-l" id="left_scroll" title="上一页"></a>
+        <div class="udwid">
+            <ul id="sliding" class="clear">
+                <li>
+                    <dl>
+                        <dt><img src="/assets/products//lp1.jpg" alt="少儿"></dt>
+                        <dd class="tlp"><a href="kids.html" target="_blank">少儿保险</a></dd>
+                        <dd>最低100元起即可保障孩子全年意外和疾病风险，为宝贝护航，帮父母分忧。
+                        <a href="kids" class="idet" target="_blank" rel="nofollow">查看详情</a></dd>
+                    </dl>
+              </li>
+                <li>
+                    <dl>
+                        <dt><img src="/assets/products//lp2.jpg" alt="老年人"></dt>
+                        <dd class="tlp"><a href="old.html" target="_blank">老年人保险</a></dd>
+                        <dd>60岁以上老人投保的高额意外伤害和医疗保障，救援服务和医疗垫付功能让儿女更放心。
+                        <a href="old.html" class="idet" target="_blank" rel="nofollow">查看详情</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="/assets/products//lp3.jpg" alt="汽车保险"></dt>
+                        <dd class="tlp"><a href="p_car.html" target="_blank">有车一族</a></dd>
+                        <dd>驾驶意外风险远高于普通意外，需要量身定做的意外保险，全面呵护您和亲友的驾乘安全。
+                       <a href="p_car.html" class="idet" target="_blank" rel="nofollow">查看详情</a></dd>
+                    </dl>
+                </li> <li>
+                    <dl>
+                        <dt><img src="/assets/products//lp11.jpg" alt="人寿保险"></dt>
+                        <dd class="tlp"><a href="life.html" target="_blank">人寿保险</a></dd>
+                        <dd>提供重大疾病，癌症等长期保障，保费返还，不幸身故/重疾，可获一笔应急资金
+                       <a href="life.html" class="idet" target="_blank" rel="nofollow">查看详情</a></dd>
+                    </dl>
+                </li>
+               
+                <li>
+                    <dl>
+                        <dt><img src="/assets/products//lp5.jpg" alt="万能险"></dt>
+                        <dd class="tlp"><a href="q_wanneng.html" target="_blank">万能险</a></dd>
+                        <dd>双重保障 保额可变， 天天生息 月月复利，转换年金 养老储蓄。
+                        <a href="q_wanneng.html" class="idet" target="_blank" rel="nofollow">查看详情</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="/assets/products//lp6.jpg" alt="养老"></dt>
+                        <dd class="tlp"><a href="q_yanglao.html" target="_blank">养老保险</a></dd>
+                        <dd>年年给付  双倍养老，短期积累  终身回报，领取有保证  最少可领二十年。
+                        <a href="q_yanglao.html" class="idet" target="_blank" rel="nofollow">查看详情</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="/assets/products//lp7.jpg" alt="分红保险"></dt>
+                        <dd class="tlp"><a href="q_fenhong.html" target="_blank">分红保险</a></dd>
+                        <dd>短期投入  长期收益， 低额起交  轻松购买， 额外分红添收益 三重保障更安心。
+                        <a href="q_fenhong.html" class="idet" target="_blank" rel="nofollow">查看详情</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="/assets/products//lp8.jpg" alt="意外保险"></dt>
+                        <dd class="tlp"><a href="q_accident.html" target="_blank">意外保险</a></dd>
+                        <dd>提供因意外伤害，交通意外等造成的身故、残疾、烧烫伤，住院误工津贴及住院护理津贴。
+                        <a href="q_accident.html" class="idet" target="_blank" rel="nofollow">查看详情</a></dd>
+                    </dl>
+                </li>
+        <li>
+                    <dl>
+                        <dt><img src="/assets/products//lp9.jpg" alt="女性保险"></dt>
+                        <dd class="tlp"><a href="q_shengyu.html" target="_blank">女性保险</a></dd>
+                        <dd>专为女性设计，含女性特有疾病保障，就能保障女性全年的健康和意外风险。
+                        <a href="q_shengyu.html" class="idet" target="_blank" rel="nofollow">查看详情</a></dd>
+                    </dl>
+                </li>
+                 <li>
+                    <dl>
+                        <dt><img src="/assets/products//lp4.jpg" alt="旅行"></dt>
+                        <dd class="tlp"><a href="q_travel.html" target="_blank">旅游保险</a></dd>
+                        <dd>超低价个人、团队旅游意外险， 24小时自助投保，实时获取电子保单。
+                        <a href="q_travel.html" class="idet" target="_blank" rel="nofollow">查看详情</a></dd>
+                    </dl>
+                </li>
+               
+               
+               <strong></strong>
+        
+          </ul>
+        </div>
+        <a class="box-r" id="right_scroll" title="下一页"></a>
+  </div>
+</div>

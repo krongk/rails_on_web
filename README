@@ -1,14 +1,4 @@
-== Rails on Web 
-  Rails on Web is rails integration for build a company site.
-  Use Rails on Web, you just need a blueprint.
+替换保险公司的语法：
+\n{2}(.*)\n(.*(?:\n.+)*)
 
-=== How To:
-  1. download srouce
-  2. bundle install
-  3. modify config/site_map.yml
-  4. rake 
-    db:migrate
-    rails_on_web:init_all_data
-    rails_on_web:generate_all_page
-  5. rails server
-   
+\n\n<li><a href="/search?q=\1">\1</a>\n\2</li>

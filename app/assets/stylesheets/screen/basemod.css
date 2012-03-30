@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+@media screen, projection
+{
+
+  body { overflow-y:scroll; margin: 0px; }
+
+  /*------------------------------------------------------------------------------------------------------*/
+  
+  body { background:#fff url("../../images/bg-2.jpg") repeat-x top left fixed; padding:0px 0; }
+
+  body { text-align:center; }
+  .page_margins { text-align:left; margin:0 auto; }
+
+  .page_margins { min-width:740px; max-width:80em;}
+  .page { padding:0 10px 10px 10px; }
+
+
+  #header {
+    color:#000;
+    /*background:#fff repeat-x top left; */
+    padding:45px 0em 0.5em 20px;
+	background: url(".../../images/bg-2.jpg") repeat-x top left fixed;
+  }
+
+  #topnav { color:#aaa; background:transparent; }
+
+  /* (en) adjustment of main navigation */
+  /* (de) Anpassung der Hauptnavigation */
+  #nav ul { margin-left:0px; }
+
+  #main { background:#fff;padding:10px; }
+
+  #footer {
+    color:#666;
+    background:#f9f9f9;
+    padding:10px 20px;
+    border-top:5px #efefef solid;
+    line-height:1.5em;
+  }
+
+  /*------------------------------------------------------------------------------------------------------*/
+
+  /**
+   * (en) Formatting content container
+   * (de) Formatierung der Inhalts-Container
+   *
+     /**
+   * (en) Repositioning content container
+   * (de) Neupositionierung der Content Container
+   *
+   * |-------------------------------|
+   * | #header                       |
+   * |-------------------------------|
+   * | #col3   | #col1               |
+   * | flexible| 75%                 |
+   * |         | #col1_1    #col1_2  |
+   * |         | 50%     |   50%     |
+   * |-------------------------------|
+   * | #footer                       |
+   * |-------------------------------|
+   */
+  /* #col1 becomes main column | Linke float-Spalte wird zur Inhaltsspalte */
+	  #col1 { width: 75%; }
+	
+	  /* extend page2 */
+	  #col1_1 { width: 50%; float:right;}
+	  #col1_1_content { padding-left: 10px; padding-right: 20px; }
+
+	  #col1_2 { margin-right: 50%; margin-left: 0; }
+	  #col1_2_content { padding-left: 20px; padding-right: 10px; }
+
+	  /* #col3 moves to the right | Linken Randabstand anpassen - #col3 wird zur Randspalte */
+	  #col3 { margin-left:75.5%; margin-right:0; }
+	  #col3_content {
+    	padding-left: 4px;
+    	padding-right: 0px;
+    }
+
+	.detail {}
+	.detail #col1 { width: 67.5%; font-size:110.00%; line-height: 28px; }
+	.detail #col3 { margin-left: 67.5%; margin-right:0; border-right:1px #efefef solid;background:#f9f9f9;}
+	.detail #col3_content { padding-right: 4px;}
+
+	.page2 {font-size:110.00%;}
+	.page2 #col1 { width: 35%; border-right:1px #efefef solid;background:#f9f9f9;}
+	.page2 #col2, #col2_content { display:none }
+	.page2 #col3 { margin-left: 35%; margin-right:0; }
+	.page2 #col3_content { padding-left: 10px; padding-right: 20px; }
+ /**
+  * ------------------------------------------------------------------------------------------------- #
+  *
+  * (en) Styling of layout specific elements
+  * (de) Gestaltung layoutabhängiger Elemente
+  */
+
+  #header h1 {
+    font-weight:bold;
+    font-size:2.5em;
+    letter-spacing:-2px;
+    line-height:65%;
+    color:#000;
+  }
+
+  #header span { color:#999; }
+  #topnav a { color:#999; font-weight:normal; background:transparent; text-decoration:none; }
+  #topnav a:focus,
+  #topnav a:hover,
+  #topnav a:active { text-decoration:underline; background-color:transparent; }
+
+  #footer a { color:#999; background:transparent; font-weight:bold; }
+  #footer a:focus,
+  #footer a:hover,
+  #footer a:active {color:#4D87C7; background-color:transparent; text-decoration:underline; }
+
+ /**
+  * ------------------------------------------------------------------------------------------------- #
+  *
+  * Skiplinks 
+  *
+  * (en) Visual styling for skiplink navigation
+  * (de) Visuelle Gestaltung der Skiplink-Navigation
+  *
+  * @section content-skiplinks
+  */
+  
+  #skiplinks a.skip:focus,
+  #skiplinks a.skip:active { 
+	color:#fff; 
+	background:#333; 
+	border-bottom:1px #000 solid;
+	padding:10px 0;
+	text-decoration:none;
+  }
+/**
+  * on index */
+  #index_news {background: url(../../images/lanmu_bg.jpg) no-repeat; padding:0px 0; color:#1d619c;}
+  #index_news h2{color:#fff; padding: 10px 0 4px 20px; font-size:14px;}
+}
+  #col3 h2 {
+  	font-size: 14px;
+  	color: #666;
+  	background-color: #F5F4E2;
+  	padding: 4px;
+  	margin: 0px;
+  	border-bottom-width: 1px;
+  	border-bottom-style: solid;
+  	border-bottom-color: #cccc99;
+  }
+
+.ins_logo_box {
+	margin: 0px;
+	padding: 0px;
+}
+.ins_logo_box ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.ins_logo_box  li {
+	margin: 4px;
+	float: left;
+	width: 106px;
+}
+.ins_logo_box li img {
+	vertical-align: middle;
+}
+.ins_logo_box li a {
+    padding: 4px 0;
+	display:block;
+	border: 1px solid #EEECCC;
+}
+.ins_logo_box li a:hover {
+	background-color: #F5F4E2;
+	border: 1px solid #ddd;
+}

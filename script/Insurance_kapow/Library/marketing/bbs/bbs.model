@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="kapow.robot.common.domain.DomainModel">
+  <property name="entityModels" class="kapow.robot.common.domain.EntityModels">
+    <object class="kapow.robot.common.domain.EntityModel">
+      <property name="name" class="String">bbs_input</property>
+      <property name="attributeModels" class="kapow.robot.common.domain.AttributeModels">
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">category</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.StringAttributeType" id="0"/>
+          <property name="defaultValue" class="String">kids</property>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">title</property>
+          <property name="type" idref="0"/>
+          <property name="defaultValue" class="String">关于少儿保险的问题</property>
+          <property name="required" class="Boolean">true</property>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">content</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.TextAttributeType"/>
+          <property name="defaultValue" class="String">每个孩子，都是父母的亲宝宝，爱不释手。
+同时，随着宝宝的降生，随之而来的宝宝的健康，成长，教育问题就出现了，
+考虑为孩子准备一个长期的保险，是许多家长的优先考虑。
+成都保险咨询网(baoxian028。 com)专门提供免费的保险咨询服务，您有需要，请联系查看~</property>
+          <property name="required" class="Boolean">true</property>
+        </object>
+        <object class="kapow.robot.common.domain.AttributeModel" serializationversion="0">
+          <property name="name" class="String">page_html</property>
+          <property name="type" class="kapow.robot.plugin.common.domain.HTMLCodeAttributeType"/>
+        </object>
+      </property>
+      <property name="entityModelType" class="kapow.robot.common.domain.QueryEntityModelType"/>
+    </object>
+  </property>
+  <property name="roboTechVersion" class="Version">8.0</property>
+</object>
