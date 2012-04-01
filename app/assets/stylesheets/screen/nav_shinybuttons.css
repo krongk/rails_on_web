@@ -1,0 +1,268 @@
+@charset "UTF-8";
+/**
+ * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
+ *
+ * (en) Horizontal list navigation "Shiny Buttons"
+ * (de) Horizontale Navigationsliste "Shiny Buttons"
+ *
+ * @copyright       Copyright 2005-2010, Dirk Jesse
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         3.2.1
+ * @revision        $Revision:392 $
+ * @lastmodified    $Date:2009-07-05 12:18:40 +0200 (So, 05. Jul 2009) $
+ */
+
+@media all
+{
+  .hlist {
+    /* (en) containing floats in IE */
+    /* (de) Einfassen der Floats im IE */
+    width:100%;
+    overflow:hidden;
+    /* (en) containing floats in all other browsers */
+    /* (de) Einfassen der Floats in allen anderen Browsern */
+    float:left;
+    display:inline;
+    /* (en|de) Bugfix:IE - collapsing horizontal margins */
+    position:relative;
+    /* (en) Repeat the main color from the image */
+    /* (de) Wiederholung der Hauptfarbe aus der Bilddatei */
+    /*background:#c0c0c0 url("images/shiny_buttons/background.png") repeat-x center right; */
+  	background: #1d619c;
+      border-top:0px #333 solid;
+      border-bottom:0px #333 solid;
+      line-height:0;
+  	margin:0;
+  }
+
+  .hlist ul {
+    margin:0;
+    padding:0;
+    /* (en|de) Bugfix:IE - Doubled Float Margin Bug */
+    display:inline;
+    float:left; /* LTR */
+    /* (en) Left margin of the first button  */
+    /* (de) Abstand des ersten Buttons vom linken Rand  */
+    border-left:0px #ff3300 solid;
+    border-right:0px #ff3300 solid;
+  }
+
+  .hlist ul li {
+    border-left:0px #ff3300 solid;
+    border-right:0px #ff3300 solid;
+    /* (en|de) Bugfix:IE - Doubled Float Margin Bug */
+    display:inline;
+    float:left; /* LTR */
+    font-size:1.2em;
+    line-height:1.5em;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+  }
+
+  .hlist ul li a,
+  .hlist ul li strong {
+    background:transparent;
+    color:#fff;
+    display:block;
+    font-size:1em;
+    font-weight:bold;
+    margin:0;
+    padding:0.5em 0.8em 0.5em 0.8em;
+    text-decoration:none;
+    width:auto;
+  }
+
+  .hlist ul li a:focus,
+  .hlist ul li a:hover,
+  .hlist ul li a:active  { background:#eeeccc; color:#333; text-decoration:none; outline: 0 none; }
+
+  .hlist ul li.active {
+    /* (en) Repeat the main color from the image */
+    /* (de) Wiederholung der Hauptfarbe aus der Bilddatei */
+    background:#eeeccc url("..images/shiny_buttons/background_active.png") repeat-x center right;
+    border-left:0px #444 solid;
+    border-right:0px #888 solid;
+  }
+
+  .hlist ul li.active strong,
+  .hlist ul li.active a:focus,
+  .hlist ul li.active a:hover,
+  .hlist ul li.active a:active { background:transparent; color:#fff; text-decoration:none; }
+
+/****************************************************************/
+   .hlist2 {
+	margin:0;
+    padding:0;
+    /* (en) containing floats in IE */
+    /* (de) Einfassen der Floats im IE */
+    width:100%;
+    overflow:hidden;
+    /* (en) containing floats in all other browsers */
+    /* (de) Einfassen der Floats in allen anderen Browsern */
+    float:left;
+    display:inline;
+    /* (en|de) Bugfix:IE - collapsing horizontal margins */
+    position:relative;
+    /* (en) Repeat the main color from the image */
+    /* (de) Wiederholung der Hauptfarbe aus der Bilddatei */
+    /*background:#c0c0c0 url("images/shiny_buttons/background.png") repeat-x center right; */
+	background: #cccc99;
+  }
+
+  .hlist2 ul {
+    margin:0;
+    padding:0;
+    /* (en|de) Bugfix:IE - Doubled Float Margin Bug */
+    display:inline;
+    float:left; /* LTR */
+    /* (en) Left margin of the first button  */
+    /* (de) Abstand des ersten Buttons vom linken Rand  */
+    border-left:0px #ff3300 solid;
+    border-right:0px #ff3300 solid;
+  }
+
+  .hlist2 ul li {
+    border-left:0px #ccc solid;
+    border-right:0px #ff3300 solid;
+    /* (en|de) Bugfix:IE - Doubled Float Margin Bug */
+    display:inline;
+    float:left; /* LTR */
+    font-size:1.0em;
+    line-height:1.0em;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+  }
+
+  .hlist2 ul li a,
+  .hlist2 ul li strong {
+    background:transparent;
+    color:#1d619c;
+    display:block;
+    font-size:1em;
+    font-weight:normal;
+    margin:0;
+    padding:0.5em 0.8em 0.5em 0.8em;
+    text-decoration:none;
+    width:auto;
+  }
+
+  .hlist2 ul li a:focus,
+  .hlist2 ul li a:hover,
+  .hlist2 ul li a:active  { background:#eeeccc; color:#333; text-decoration:none; outline: 0 none; }
+
+  .hlist2 ul li.active {
+    /* (en) Repeat the main color from the image */
+    /* (de) Wiederholung der Hauptfarbe aus der Bilddatei */
+    background:#999966 url("..images/shiny_buttons/background_active.png") repeat-x center right;
+    border-left:0px #444 solid;
+    border-right:0px #888 solid;
+  }
+
+  .hlist2 ul li.active strong,
+  .hlist2 ul li.active a:focus,
+  .hlist2 ul li.active a:hover,
+  .hlist2 ul li.active a:active { background:transparent; color:#fff; text-decoration:none; }
+
+/****************************************************************/
+   .hlist3 {
+    /* (en) containing floats in IE */
+    /* (de) Einfassen der Floats im IE */
+    width:100%;
+    overflow:hidden;
+    /* (en) containing floats in all other browsers */
+    /* (de) Einfassen der Floats in allen anderen Browsern */
+    float:left;
+    display:inline;
+    /* (en|de) Bugfix:IE - collapsing horizontal margins */
+    position:relative;
+    /* (en) Repeat the main color from the image */
+    /* (de) Wiederholung der Hauptfarbe aus der Bilddatei */
+    /*background:#c0c0c0 url("images/shiny_buttons/background.png") repeat-x center right; */
+	background: #eeeccc;
+  }
+
+  .hlist3 ul {
+    margin:0;
+    padding:0;
+    /* (en|de) Bugfix:IE - Doubled Float Margin Bug */
+    display:inline;
+    float:left; /* LTR */
+    /* (en) Left margin of the first button  */
+    /* (de) Abstand des ersten Buttons vom linken Rand  */
+    border-left:0px #ff3300 solid;
+    border-right:0px #ff3300 solid;
+  }
+	
+  .hlist3 ul li {
+    border-left:1px #ccc solid;
+    border-right:0px #ff3300 solid;
+    /* (en|de) Bugfix:IE - Doubled Float Margin Bug */
+    display:inline;
+    float:left; /* LTR */
+    font-size:1.0em;
+    line-height:1.0em;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+  }
+  .hlist3 ul li a,
+  .hlist3 ul li strong {
+    background:transparent;
+    color:#1d619c;
+    display:block;
+    font-size:1em;
+    font-weight:normal;
+    margin:0;
+    padding:0.5em 0.8em 0.5em 0.8em;
+    text-decoration:none;
+    width:auto;
+  }
+
+  .hlist3 ul li a:focus,
+  .hlist3 ul li a:hover,
+  .hlist3 ul li a:active  { background:#fff; color:#333; text-decoration:none; outline: 0 none; }
+
+  .hlist3 ul li.active {
+    /* (en) Repeat the main color from the image */
+    /* (de) Wiederholung der Hauptfarbe aus der Bilddatei */
+    background:#999966 url("..images/shiny_buttons/background_active.png") repeat-x center right;
+    border-left:0px #444 solid;
+    border-right:0px #888 solid;
+  }
+
+  .hlist3 ul li.active strong,
+  .hlist3 ul li.active a:focus,
+  .hlist3 ul li.active a:hover,
+  .hlist3 ul li.active a:active { background:transparent; color:#fff; text-decoration:none; }
+    /*side bar*/
+  .side_nav{
+	margin-bottom: 12px;
+	border: 1px solid #CC9;
+	background: #fff;
+}
+  .side_nav  ul li{
+	  border: 0px #ccc solid;
+  }
+  .side_nav  ul li a{
+	 display: block;
+	 padding: 4px;
+
+  }
+  .side_nav h2{
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #cccc99;
+	margin: 0px;
+	padding: 4px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CC6;
+	letter-spacing: 0.3em;
+	color: #1d619c;
+  }
+}

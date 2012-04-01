@@ -66,8 +66,6 @@
   h5 { font-size:116.67%; }                    /* 14px */
   h6 { font-size:116.67%; }                    /* 14px */
 
-  h1.cate_title{ font-size: 20px; color: #1d619c; background-color: #eee; margin: 0px; padding: 4px;}
-  h3.title{ font-size: 16px; color: #1d619c; background-color: #eee; margin: 0px; padding: 4px;}
   /* --- Lists | Listen  -------------------------------------------------------------------------------- */
 
   ul, ol, dl { line-height:1.5em; margin:0 0 1em 1em; }
@@ -204,8 +202,6 @@
 
  .insurance_base{padding: 8px; margin-left: 4px;}
  .base_nav{ background:#fff8f8; margin:4px; padding: 4px; border:1px solid #ccc;}
- .cate_banner{background:#fff8f8; margin:0 0 10px 0; padding: 2px; border:1px solid #ccc;}
- 
  /**
   * ---paginage---------------------------------- #
   */

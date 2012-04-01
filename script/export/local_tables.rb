@@ -17,6 +17,16 @@ module ForagerLocal
 		set_table_name 'hexun_post_format'
 	end
 
+	class WenbaRunKey < LocalBase
+		set_table_name 'wenba_run_key'
+		has_many :wenba_posts
+	end
+
+	class WenbaPost < LocalBase
+		set_table_name 'wenba_post'
+		belongs_to :wenba_run_key
+	end
+
 	class WenbaPostFormat < LocalBase
 		set_table_name 'wenba_post_format'
 	end

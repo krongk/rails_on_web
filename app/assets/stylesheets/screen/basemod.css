@@ -1,7 +1,68 @@
 @charset "UTF-8";
 
-@media screen, projection
-{
+ /**
+  * @section browser reset
+  * @see     http://www.yaml.de/en/documentation/css-components/base-stylesheet.html
+  */
+
+  /* (en) Global reset of paddings and margins for all HTML elements */
+  /* (de) Globales Zurücksetzen der Innen- und Außenabstände für alle HTML-Elemente */
+  * { margin:0; padding:0; }
+
+  /* (en) Correction:margin/padding reset caused too small select boxes. */
+  /* (de) Korrektur:Das Zurücksetzen der Abstände verursacht zu kleine Selectboxen. */
+  option { padding-left:0.4em; } /* LTR */
+  select { padding:1px; }
+
+ /**
+  * (en) Global fix of the Italics bugs in IE 5.x and IE 6
+  * (de) Globale Korrektur des Italics Bugs des IE 5.x und IE 6
+  *
+  * @bugfix
+  * @affected   IE 5.x/Win, IE6
+  * @css-for    IE 5.x/Win, IE6
+  * @valid      yes
+  */
+  * html body * { overflow:visible; }
+  * html iframe, * html frame { overflow:auto; }
+  * html frameset { overflow:hidden; }
+
+  body {
+    /* (en) Fix for rounding errors when scaling font sizes in older versions of Opera browser */
+    /* (de) Beseitigung von Rundungsfehler beim Skalieren von Schriftgrößen in älteren Opera Versionen */
+    font-size:100.01%;
+
+    /* (en) Standard values for colors and text alignment */
+    /* (de) Vorgabe der Standardfarben und Textausrichtung */
+    background:#fff;
+    color:#000;
+    text-align:left; /* LTR */
+  }
+
+  /* (en) avoid visible outlines on DIV containers in Webkit browsers */
+  /* (de) Vermeidung sichtbarer Outline-Rahmen in Webkit-Browsern */
+  div { outline:0 none; }
+
+  /* (en) Clear borders for <fieldset> and <img> elements */
+  /* (de) Rahmen für <fieldset> und <img> Elemente löschen */
+  fieldset, img { border:0 solid; }
+
+  /* (en) new standard values for lists, blockquote and cite */
+  /* (de) Neue Standardwerte für Listen & Zitate */
+  ul, ol, dl { margin:0 0 1em 1em; } /* LTR */
+  li {
+    line-height:1.5em;
+    margin-left:0.8em; /* LTR */
+  }
+
+  dt { font-weight:bold; }
+  dd { margin:0 0 1em 0.8em; } /* LTR */
+
+  blockquote { margin:0 0 1em 0.8em; } /* LTR */
+
+  blockquote:before, blockquote:after,
+  q:before, q:after { content:""; }
+
 
   body { overflow-y:scroll; margin: 0px; }
 
@@ -15,21 +76,20 @@
   .page_margins { min-width:740px; max-width:80em;}
   .page { padding:0 10px 10px 10px; }
 
+  #nav, #main, #footer { clear:both; }
 
-  #header {
-    color:#000;
-    /*background:#fff repeat-x top left; */
-    padding:45px 0em 0.5em 20px;
-	background: url(".../../images/bg-2.jpg") repeat-x top left fixed;
+  #header{
+    background: #fff;
+    height: 100px;
+  }
+  #topnav{
+    float: left;
+    margin-left: 600px;
   }
 
-  #topnav { color:#aaa; background:transparent; }
-
-  /* (en) adjustment of main navigation */
-  /* (de) Anpassung der Hauptnavigation */
   #nav ul { margin-left:0px; }
 
-  #main { background:#fff;padding:10px; }
+  #main { background:#fff;padding:0px; }  
 
   #footer {
     color:#666;
@@ -67,10 +127,12 @@
 	  #col1_1 { width: 50%; float:right;}
 	  #col1_1_content { padding-left: 10px; padding-right: 20px; }
 
-	  #col1_2 { margin-right: 50%; margin-left: 0; }
-	  #col1_2_content { padding-left: 20px; padding-right: 10px; }
-
-	  /* #col3 moves to the right | Linken Randabstand anpassen - #col3 wird zur Randspalte */
+    #col33{margin-left: 75%; margin-right:0;}
+    #col33_content {
+      padding-left: 4px;
+      padding-right: 0px;
+    }
+		  /* #col3 moves to the right | Linken Randabstand anpassen - #col3 wird zur Randspalte */
 	  #col3 { margin-left:75.5%; margin-right:0; }
 	  #col3_content {
     	padding-left: 4px;
@@ -94,19 +156,8 @@
   * (de) Gestaltung layoutabhängiger Elemente
   */
 
-  #header h1 {
-    font-weight:bold;
-    font-size:2.5em;
-    letter-spacing:-2px;
-    line-height:65%;
-    color:#000;
-  }
+  
 
-  #header span { color:#999; }
-  #topnav a { color:#999; font-weight:normal; background:transparent; text-decoration:none; }
-  #topnav a:focus,
-  #topnav a:hover,
-  #topnav a:active { text-decoration:underline; background-color:transparent; }
 
   #footer a { color:#999; background:transparent; font-weight:bold; }
   #footer a:focus,
@@ -136,7 +187,7 @@
   * on index */
   #index_news {background: url(../../images/lanmu_bg.jpg) no-repeat; padding:0px 0; color:#1d619c;}
   #index_news h2{color:#fff; padding: 10px 0 4px 20px; font-size:14px;}
-}
+
   #col3 h2 {
   	font-size: 14px;
   	color: #666;
@@ -153,12 +204,13 @@
 	padding: 0px;
 }
 .ins_logo_box ul {
+  float: left;
 	margin: 0px;
 	padding: 0px;
 	list-style-type: none;
 }
 .ins_logo_box  li {
-	margin: 4px;
+	margin: 2px;
 	float: left;
 	width: 106px;
 }

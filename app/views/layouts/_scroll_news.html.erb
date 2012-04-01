@@ -30,7 +30,7 @@
   <h2> 保险问答</h2>
   <div class="side_news"><ul>
   <% NewsItem.recent(25).each_with_index do |item, index| %>
-    <li><%=link_to item.title.truncate(20), news_item_path(item), :target => "_blank" %></li>
+    <li><%=link_to item.title.truncate(18), news_item_path(item), :target => "_blank" %></li>
   <% end %>
   </ul></div>
 </div>
