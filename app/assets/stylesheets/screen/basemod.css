@@ -66,6 +66,49 @@
 
   body { overflow-y:scroll; margin: 0px; }
 
+/**
+  * @section base layout | Basis Layout
+  * @see     http://www.yaml.de/en/documentation/css-components/base-stylesheet.html
+  *
+  * |-------------------------------|
+  * | #header                       |
+  * |-------------------------------|
+  * | #col1   | #col3     | #col2   |
+  * | 200 px  | flexible  | 200px   |
+  * |-------------------------------|
+  * | #footer                       |
+  * |-------------------------------|
+  */
+
+  #header { position:relative; }
+
+  /* (en) Text Alignment for #topnav content */
+  /* (de) Textausrichtung für #topnav Inhalte */
+  #topnav { text-align: right; }  /* LTR */
+
+  /* (en) Absolute positioning only within #header */
+  /* (de) Absolute Positionierung erfolgt nur innerhalb von #header */
+  #header #topnav {
+    position:absolute;
+    top: 10px;
+    right: 10px; /* LTR */
+  }
+
+  /* (en) Backup for correct positioning */
+  /* (de) Absicherung korrekte Positionierung */
+  #header, #nav, #main, #footer { clear:both; }
+
+  /* (en/de) Standard: 200 Pixel */
+  #col1 { float: left; width: 200px }
+  /* (en/de) Standard: 200 Pixel */
+  #col2 { float:right; width: 200px }
+  /* (en) Standard: center column with flexible width */
+  /* (de) Standard: Flexible mittlere Spalte */
+  #col3 { width:auto; margin: 0 200px }
+
+  /* (en) Preparation for absolute positioning within content columns */
+  /* (de) Vorbereitung für absolute Positionierungen innerhalb der Inhaltsspalten */
+  #col1_content, #col2_content, #col3_content { position:relative; }
   /*------------------------------------------------------------------------------------------------------*/
   
   body { background:#fff url("../../images/bg-2.jpg") repeat-x top left fixed; padding:0px 0; }
@@ -82,10 +125,6 @@
     background: #fff;
     height: 100px;
   }
-  #topnav{
-    float: left;
-    margin-left: 600px;
-  }
 
   #nav ul { margin-left:0px; }
 
@@ -101,6 +140,8 @@
 
   /*------------------------------------------------------------------------------------------------------*/
 
+
+ /*------------------------------------------------------------------------------------------------------*/
   /**
    * (en) Formatting content container
    * (de) Formatierung der Inhalts-Container
