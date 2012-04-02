@@ -122,7 +122,7 @@
   #nav, #main, #footer { clear:both; }
 
   #header{
-    background: #fff;
+    background: #fff!important;
     height: 100px;
   }
 
