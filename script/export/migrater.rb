@@ -25,8 +25,8 @@ class Migrator
 		c_post.news_cate_id     = c_category.id
 		c_post.title            = l_post.title
 		c_post.original_url     = l_post.url
-		c_post.meta_keywords    = "#{l_post.category}, 成都保险咨询网，www.baoxian028.com"
-		c_post.meta_description = "#{l_post.category}, 成都保险咨询网(www.baoxian028.com)提供专业的商业保险理财咨询服务！咨询QQ：2576455908"
+		c_post.meta_keywords    = "#{l_post.category}, #{l_post.title}, 成都保险咨询网，www.baoxian028.com"
+		c_post.meta_description = "#{l_post.category}, #{l_post.title}, 成都保险咨询网(www.baoxian028.com)提供专业的商业保险理财咨询服务!"
 
 		c_post.body  = l_post.respond_to?(:content) ? l_post.content : %{<div class='best_answer'><span class='d_t'>回答：</span>#{l_post.best_answer.to_s.gsub(/\n{2,}/, '<br>').gsub(/\n/, '<br>')}</div>\n#{l_post.formated_all_answer.to_s.gsub(/<div id='answer(\d+)' class='answer_d'>/, '<div id="answer\1" class="answer_d"><span class="d_t">\1</span>')}}
 
