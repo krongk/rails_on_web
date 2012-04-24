@@ -1,0 +1,21 @@
+<% title [@tag.name, "成都保险咨询网"].join('-') %>
+<% meta_keywords [@tag.meta_key].join('-') %>
+<% meta_description [@tag.meta_description].join('-') %>
+
+
+<div style="padding:20px;">
+<h2><%=link_to @tag.name, "/search?q=#{@tag.name}", :target => "_blank" %></h2>
+<hr/>
+
+<ul class="category">
+<% unless @news_items.nil? %>
+ <% @news_items.each do |item| %>
+   <li class="level_1"><%= link_to item.title, news_item_path(item), :target => "_blank", :title => item.title%></li>
+ <% end %>
+<% end %>
+</ul>
+<br/>
+<%= render :partial => "layouts/bshare" %>
+<br/>
+<%=will_paginate @news_items, :next_label => "下一页", :prev_label => "上一页"%>
+</div>

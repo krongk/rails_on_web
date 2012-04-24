@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120226123149) do
+ActiveRecord::Schema.define(:version => 20120424100851) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -89,14 +89,20 @@ ActiveRecord::Schema.define(:version => 20120226123149) do
   create_table "news_items", :force => true do |t|
     t.integer  "news_cate_id"
     t.string   "title"
+    t.text     "summary"
     t.text     "body"
-    t.string   "external_path"
+    t.string   "external_url"
+    t.string   "original_url"
     t.string   "image_path"
+    t.string   "meta_keywords",    :limit => 512
+    t.string   "meta_description", :limit => 1024
+    t.integer  "sort_id",                          :default => 100000
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "news_items", ["news_cate_id"], :name => "index_news_items_on_news_cate_id"
+  add_index "news_items", ["original_url"], :name => "unq__original_url", :unique => true
 
   create_table "page_parts", :force => true do |t|
     t.integer "page_id"
@@ -178,6 +184,15 @@ ActiveRecord::Schema.define(:version => 20120226123149) do
   end
 
   add_index "sites", ["name"], :name => "index_sites_on_name", :unique => true
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.integer  "weight",           :default => 0
+    t.string   "meta_key",         :default => "成都保险咨询网(www.baoxian028.com)"
+    t.string   "meta_description", :default => "成都保险咨询网(www.baoxian028.com)"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

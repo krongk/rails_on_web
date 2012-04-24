@@ -1,5 +1,7 @@
 RailsOnWeb::Application.routes.draw do
 
+  resources :tags
+
   resources :contacts
 
   resources :comments

@@ -1,0 +1,15 @@
+#encoding: utf-8
+zh-CN:
+  activerecord:
+    models:
+      tag: '标签'
+    attributes:
+      tag:
+        name: '名称'
+        weight: '权重'
+        meta_key: 'Meta关键词'
+        meta_description: 'Meta 描述'
+    errors:
+      tag: !!null 
+  helpers:
+    tag: !!null 

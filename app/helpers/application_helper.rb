@@ -63,4 +63,12 @@ module ApplicationHelper
     return str.html_safe
   end
 
+  #计算标签的权重,wet => tag.weight, level => class总数
+  def weight(wet, level)
+    wet = wet.to_i if wet
+    return 1 if wet.nil?
+    level = level.to_i if level
+    return 1 if level.nil?
+    return wet/(1000/level)
+  end
 end

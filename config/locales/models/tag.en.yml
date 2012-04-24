@@ -1,0 +1,15 @@
+---
+en:
+  active_record:
+    models:
+      tag: Tag
+    attributes:
+      tag:
+        name: Name
+        weight: Weight
+        meta_key: Meta key
+        meta_description: Meta description
+    errors:
+      tag: !!null 
+  helpers:
+    tag: !!null 

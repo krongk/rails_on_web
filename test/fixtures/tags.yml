@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  weight: 1
+  meta_key: MyString
+  meta_description: MyString
+
+two:
+  name: MyString
+  weight: 1
+  meta_key: MyString
+  meta_description: MyString

@@ -1,0 +1,12 @@
+<% title ["成都保险咨询"].join(' - ') %>
+<% meta_keywords ["热门标签，成都商业保险咨询"].join(' - ') %>
+<% meta_description ["成都保险，投保， 保险咨询，保险购买，商业保险，中国平安，网址：www.baoxian028.com"].join(' - ') %>
+
+
+<div style="padding:20px;">
+<h1>热门标签</h1>
+<hr/>
+<% @tags.each do |tag| %>
+  <span class="tag"><%=link_to tag.name, tag, :title => tag.name, :class => "rand#{weight(tag.weight, 12)}", :target => "_blank"%></span>
+<% end %>
+</div>

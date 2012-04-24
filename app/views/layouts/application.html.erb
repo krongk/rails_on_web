@@ -32,9 +32,19 @@
       <!-- begin: #col3 static column -->
       <div id="col3" role="main">
       <div id="col3_content" class="clearfix">
-        成都保险咨询网欢迎您！
+        <span style="padding:10px;">成都保险咨询网欢迎您！</span>
         <%= render :partial => "layouts/scroll_news" %>
         <%= render :partial => "layouts/side_general" %>
+        <%if params[:action] == 'index' %>
+          <br/>
+          <div style="border:1px solid #ddd; padding:4px; margin:10px 0;">
+            <h2>热门标签</h2>
+            <hr/>
+            <% Tag.recent(10).each do |tag| %>
+              <span class="tag"><%=link_to tag.name, tag, :title => tag.name, :class => "rand#{weight(tag.weight, 12)}", :target => "_blank"%></span>
+            <% end %>
+          </div>
+        <%end %>
       </div>
       <div id="ie_clearing">&nbsp;</div>
       <!-- End: IE Column Clearing -->
