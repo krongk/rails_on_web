@@ -49,29 +49,3 @@ function setfrme()
 	fr.height=theight-30;
 }
 //在线咨询 end
-
-//google counter start
- var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-10508960-6']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-//google counter end
-
-
-//IE img hack
-//resize callme.png on IE 6
-//  if(navigator.userAgent.indexOf("MSIE")>0) { 
-//   var sad = document.getElementsByTagName("img");
-//   var callme =  /(bannerx|baojianhui|90zn)/;
-//   for(var i = 0; i < sad.length; i++){
-//     if (callme.test(sad[i].src)){
-//       sad[i].width = 220;
-     
-//     }
-//   }
-// }
