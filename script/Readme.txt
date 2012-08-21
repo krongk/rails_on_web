@@ -11,8 +11,22 @@
           baoxian028/script/export/migrator.rb
           注意： 
             migrator.rb 会同时将hexun_post_format 和wenba_post_format的数据迁移过去
-            将本地的baoxian028.news_items清空，然后作migrate, 做完以后，备份news_items到服务器上的另外一个数据库，然后插入到最新服务器数据库：
+          步骤：
+            将服务器的common 数据库备份到本地 =>　然后运行migrator.rb　=> 将本地最新common数据库备份到服务器。
             
-
+   保险产品forager:
+      1. 初始化wenba_product_run_key:
+        保险产品URL：
+        http://p.xiangrikui.com/xianzhong/xzgs_10_10.html
+        http://p.xiangrikui.com/xianzhong/xzgs_20_10.html
+        http://p.xiangrikui.com/xianzhong/xzgs_3100_10.html
+        
+        SQL初始化：
+        set @index = 0;
+        #loop do below
+        select @index := @index + 10;
+        insert into wenba_product_run_key(url) values(concat('http://p.xiangrikui.com/xianzhong/xzgs_', @index, '_10.html'));
+      2. 运行：wenba_product.robot
+      
   2. common
       在commono数据库（baoxian028）中检查每次新添加的news_cate, 将其合并到已有的栏目中去，否则在网页中显示不出来。

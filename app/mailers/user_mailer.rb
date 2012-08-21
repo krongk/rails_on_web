@@ -3,6 +3,7 @@ class UserMailer < ActionMailer::Base
  
   def notice_contact_email(contact)
     @contact = contact
-    mail(:to => ['29928649@qq.com', '2576455908@qq.com'], :subject => %{#{Time.now().strftime("%Y-%m-%d")}: Notice of newly insurance customer})
+    mail(:from => 'master@ainibaba.com', :to => ['29928649@qq.com'], :subject => %{#{Time.now().strftime("%Y-%m-%d")}: #{contact.name}})
+    mail(:from => 'master@ainibaba.com', :to => ['2576455908@qq.com'], :subject => %{#{Time.now().strftime("%Y-%m-%d")}: #{contact.name}})
   end
 end

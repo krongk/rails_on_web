@@ -1,5 +1,11 @@
 RailsOnWeb::Application.routes.draw do
-
+  get 'product_cates/page/:page', to: 'product_cates#index'
+  get 'product_cates/page/:page/page/:page', to: 'product_cates#show'
+  get 'product_items/page/:page', to: 'product_items#index'
+  get 'news_cates/page/:page', to: 'news_cates#index'
+  get 'news_items/page/:page', to: 'news_items#index'
+  get 'pages/page/:page', to: 'pages#index'
+  
   resources :tags
 
   resources :contacts

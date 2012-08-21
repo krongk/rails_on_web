@@ -2,17 +2,19 @@
 <html> 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta http-equiv="Content-Language" content="zh-cn" />
+  <meta http-equiv="Content-Language" content="ZH-cn" />
   <meta name="robots" content="all" />
   <meta name="author" content="baoxian028.com" />
-  <meta name="Copyright" content="Cd Baoxian028 Lcd, All Rights Reserved." />
   <title><%= yield(:title)%> </title>
   <meta name="keywords" content="<%= yield(:meta_keywords)%>" />
   <meta name="description" content="<%= yield(:meta_description)%>" />
     
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <!--[if IE]>
+    <link href="/ie_style.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  <%= csrf_meta_tag unless @page_caching %>
 </head> 
  
 <body> 
@@ -35,6 +37,7 @@
         <span style="padding:10px;">成都保险咨询网欢迎您！</span>
         <%= render :partial => "layouts/scroll_news" %>
         <%= render :partial => "layouts/side_general" %>
+
         <%if params[:action] == 'index' %>
           <br/>
           <div style="border:1px solid #ddd; padding:4px; margin:10px 0;">

@@ -1,10 +1,15 @@
 #encoding: utf-8
 class PagesController < ApplicationController
   before_filter :authenticate_admin_user!, :except => [:index, :show, :en]
+  caches_page :index, :show
+  before_filter(only: [:index, :show]) { @page_caching = true }
+  cache_sweeper :page_sweeper
+
+
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    @pages = Page.order('updated_at DESC').paginate(:per_page => 30, :page => params[:page] || 1)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +20,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
+    @is_product = false
     #params can be id or path_name
     if params[:id] =~ /^\d+$/
       @page = Page.where(:id => params[:id]).limit(1).first
@@ -24,12 +30,11 @@ class PagesController < ApplicationController
     @page = Page.find(1) if @page.nil?
 
     #special action 
-    case @page.path_name
+    case @page.menu_match
+    when 'product'
+      @is_product = true
     when 'english'
       redirect_to "/en/#{params[:id]}"
-      return
-    when 'product'
-      redirect_to product_cates_url
       return
     end
 

@@ -1,23 +1,23 @@
-<h1>Listing product_cates</h1>
+<% title ["保险产品大全", "成都保险，保险咨询网"].join(' - ') %>
+<% meta_keywords ["保险产品", "成都保险", "商业保险咨询"].join(' - ') %>
+<% meta_description ["保险，成都保险，投保， 保险咨询，保险购买，商业保险，中国平安，咨询QQ：29928649, 专业团队为你提供保险咨询办理服务，聪明选择，受益终生！"].join(' - ') %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="product">
+<h1>保险产品列表</h1>
 
+<ul>
 <% @product_cates.each do |product_cate| %>
-  <tr>
-    <td><%= product_cate.name %></td>
-    <td><%= link_to 'Show', product_cate %></td>
-    <td><%= link_to 'Edit', edit_product_cate_path(product_cate) %></td>
-    <td><%= link_to 'Destroy', product_cate, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <li>
+    <h2><%= link_to product_cate.name, product_cate_path(product_cate) %></h2>
+    <ul>
+      <% ProductItem.recent(10, product_cate.name).each do |item| %>
+        <li><%= link_to item.title, product_item_path(item), :target => '_blank' %></li>
+      <% end %>
+    </ul>
+  </li>
 <% end %>
-</table>
+</ul>
 
 <br />
-
-<%= link_to 'New Product cate', new_product_cate_path %>
+<%= will_paginate @product_cates %>
+</div>

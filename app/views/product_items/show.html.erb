@@ -1,35 +1,22 @@
-<p id="notice"><%= notice %></p>
+<% title [@product_item.title, "保险产品大全", "成都保险，保险咨询网"].join(', ') %>
+<% meta_keywords [@product_item.title, "保险产品", "成都保险", "商业保险咨询"].join(', ') %>
+<% meta_description [@product_item.title, "保险，成都保险，投保，咨询，保险购买，商业保险，中国平安，咨询QQ：29928649, 专业团队为你提供保险咨询办理服务，聪明选择，受益终生！"].join(',') %>
 
-<p>
-  <b>Product cate:</b>
-  <%= @product_item.product_cate %>
-</p>
+<div class="product">
+<h1 class="title"><%= @product_item.title %>
+  <span class="sub_h1">[<%= link_to @product_item.product_cate.name, product_cate_path(@product_item.product_cate) %>]</span>
+</h1>
 
-<p>
-  <b>Name:</b>
-  <%= @product_item.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @product_item.description %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @product_item.price %>
-</p>
-
-<p>
-  <b>Image url:</b>
-  <%= @product_item.image_url %>
-</p>
-
-<p>
-  <b>Is visible:</b>
-  <%= @product_item.is_visible %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_item_path(@product_item) %> |
-<%= link_to 'Back', product_items_path %>
+<% if @product_item.product_cate.name == "中国平安" %>
+  <div class="notice">
+      <li style="color: #636563; font-family: rooney-web; font-style: italic; margin-top: 20px; margin-right: 10px; margin-bottom: 20px; margin-left: 10px; border-style: initial; border-color: initial; border-image: initial; font: inherit; vertical-align: baseline; display: inline-block; height: 15px; background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; border-width: 0px; padding: 0px;">
+      <a id="product_modal" style="border-style: initial; border-color: #deded6; border-image: initial; font: inherit; vertical-align: baseline; outline-width: 0px; outline-style: initial; outline-color: initial; color: #ffffff; text-decoration: none; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: #c1161c; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; -webkit-box-shadow: #999999 3px 3px 3px 2px; box-shadow: #999999 3px 3px 3px 2px; border-width: 0px; padding: 10px; margin: 0px;"  href="#" >
+      <span><span>
+        <img src="/assets/pic9.gif"/>点击此处提交您的信息，即送价值50元的平安意外保险卡一张
+      </span></span></a></li>
+  </div>
+<% end %>
+<div class="desc">
+  <%= @product_item.description.html_safe %>
+</div>
+</div>

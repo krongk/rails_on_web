@@ -1,6 +1,8 @@
 SELECT count(*) from news_items;
 70361
 
+SELECT is_processed, count(*) from wenba_run_key group by 1;
+
 SELECT is_processed, count(*) from wenba_post group by 1;
 
 

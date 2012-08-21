@@ -111,7 +111,7 @@
   #col1_content, #col2_content, #col3_content { position:relative; }
   /*------------------------------------------------------------------------------------------------------*/
   
-  body { background:#fff url("../../images/bg-2.jpg") repeat-x top left fixed; padding:0px 0; }
+  body { background:#fff url("/assets/images/bg-2.jpg") repeat-x top left fixed; padding:0px 0; }
 
   body { text-align:center; }
   .page_margins { text-align:left; margin:0 auto; }
@@ -122,7 +122,7 @@
   #nav, #main, #footer { clear:both; }
 
   #header{
-    background: #fff!important;
+    background: #fff;
     height: 100px;
   }
 

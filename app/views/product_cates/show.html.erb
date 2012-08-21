@@ -1,10 +1,14 @@
-<p id="notice"><%= notice %></p>
+<% title [@product_cate.name, "成都保险，保险咨询网"].join(' - ') %>
+<% meta_keywords [@product_cate.name, "保险产品", "成都保险", "商业保险咨询"].join(' - ') %>
+<% meta_description [@product_cate.name, "保险，成都保险，投保， 保险咨询，保险购买，商业保险，中国平安，咨询QQ：29928649, 专业团队为你提供保险咨询办理服务，聪明选择，受益终生！"].join(' - ') %>
+<div class="product">
+<h1>保险产品: <%= link_to @product_cate.name, product_cate_path(@product_cate) %></h1>
 
-<p>
-  <b>Name:</b>
-  <%= @product_cate.name %>
-</p>
+<ul>
+  <% ProductItem.recent(10, @product_cate.name).each do |item| %>
+    <li><%= link_to item.title, product_item_path(item), :target => '_blank' %></li>
+  <% end %>
+</ul>
 
-
-<%= link_to 'Edit', edit_product_cate_path(@product_cate) %> |
-<%= link_to 'Back', product_cates_path %>
+<br />
+</div>

@@ -30,7 +30,12 @@ jQuery(function ($) {
     // Load dialog on click
     $('#basic-modal .basic').click(function (e) {
         $('#basic-modal-content').modal();
+        return false;
+    });
 
+    // Load dialog on product show view.
+    $('#product_modal').click(function (e) {
+        $('#basic-modal-content').modal();
         return false;
     });
 });

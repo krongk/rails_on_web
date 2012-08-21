@@ -46,7 +46,7 @@ class Migrator
 		['WenbaPostFormat', 'HexunPostFormat'].each do |klass|
 			mod = eval "ForagerLocal::#{klass}"
 			loop  do
-				result = mod.where(:is_migrated => 'n').limit(5)
+				result = mod.where(:is_migrated => 'n').limit(500)
 				puts count += result.size
 				break if result.size == 0
 				result.each do |l_post|

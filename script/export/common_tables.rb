@@ -20,4 +20,12 @@ module ForagerCommon
 		belongs_to :news_cate
 	end
 
+	#product
+	class ProductCate < CommonBase
+		has_many :product_items
+	end
+	class ProductItem < CommonBase
+		belongs_to :product_cate
+	end
+
 end

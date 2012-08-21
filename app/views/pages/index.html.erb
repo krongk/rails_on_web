@@ -1,36 +1,15 @@
-<h1>Listing pages</h1>
+<% title ["保险咨询", "成都保险咨询网，投保好帮手！"].join(',') %>
+<% meta_keywords ["保险咨询", "保险,保险网,买保险,网上买保险,在线投保,成都保险咨询网,成都保险,商业保险,人寿保险"].join(',') %>
+<% meta_description ["保险咨询", "成都保险咨询网是成都地区最专业的保险网，设有人寿保险,少儿保险,医疗保险,平安人寿,平安车险，保险投保案例,保险咨询问答,保险博客等栏目，为您提供保险产品的咨询购买理赔保全一站式服务！是您投保的好帮手！咨询QQ：29928649"].join('-') %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Parent</th>
-    <th>Position</th>
-    <th>Menu match</th>
-    <th>Show in menu</th>
-    <th>Deletable</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table width="100%">
 
 <% @pages.each do |page| %>
   <tr>
-    <td><%= page.title %></td>
-    <td><%= page.body %></td>
-    <td><%= page.parent_id %></td>
-    <td><%= page.position %></td>
-
-    <td><%= page.menu_match %></td>
-    <td><%= page.show_in_menu %></td>
-    <td><%= page.deletable %></td>
-    <td><%= link_to 'Show', page %></td>
-    <td><%= link_to 'Edit', edit_page_path(page) %></td>
-    <td><%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %></td>
+    <td width="100%"><%= link_to page.title, page_path(page), :target => '_blank'%></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Page', new_page_path %>
+<%= will_paginate @pages %>

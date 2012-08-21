@@ -1,7 +1,17 @@
-<% title @page.title %>
-<% meta_keywords @page.meta_keywords %>
-<% meta_description @page.meta_description %>
+<% title [@page.title, "成都保险咨询网，投保好帮手！"].join(',') %>
+<% meta_keywords [@page.meta_keywords, "保险,保险网,买保险,网上买保险,在线投保,成都保险咨询网,成都保险,商业保险,人寿保险"].join(',') %>
+<% meta_description [@page.meta_description, "成都保险咨询网是成都地区最专业的保险网，设有人寿保险,少儿保险,医疗保险,平安人寿,平安车险，保险投保案例,保险咨询问答,保险博客等栏目，为您提供保险产品的咨询购买理赔保全一站式服务！是您投保的好帮手！咨询QQ：29928649"].join('-') %>
 
 <div id="page">
   <%= simple_format @page.body %>
 </div>
+
+
+<% if @is_product %>
+  <hr/>
+  <ul>
+   <% Page.recent(20,'product').each_with_index do |item, index| %>
+     <%= page_tag_li(item) %>
+   <% end %>
+</ul>
+<% end %>

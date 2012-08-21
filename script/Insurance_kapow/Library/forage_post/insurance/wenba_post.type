@@ -8,7 +8,7 @@
   </prologue>
   <property name="attributes" class="kapow.robot.common.domain.Attributes">
     <object class="kapow.robot.common.domain.Attribute" serializationversion="0">
-      <property name="name" class="String">run_key_id</property>
+      <property name="name" class="String">wenba_run_key_id</property>
       <property name="type" class="kapow.robot.plugin.common.domain.IntegerAttributeType"/>
     </object>
     <object class="kapow.robot.common.domain.Attribute" serializationversion="0">

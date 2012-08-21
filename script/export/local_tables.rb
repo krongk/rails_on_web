@@ -31,4 +31,8 @@ module ForagerLocal
 		set_table_name 'wenba_post_format'
 	end
 
+	class WenbaProduct < LocalBase
+		set_table_name 'wenba_product'
+	end
+
 end

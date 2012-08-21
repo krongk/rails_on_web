@@ -16,7 +16,8 @@ module BaiduWeb
 	  def search(key_word, options)
 	  	result = {:record_arr => [], :ext_key_arr => [], :source => 'web'}
 
-	  	@ic = Iconv.new("UTF-8//IGNORE", "GBK//IGNORE")
+	  	#Baidu changed GBK to UTF-8
+	  	#@ic = Iconv.new("UTF-8//IGNORE", "GBK//IGNORE")
 
 	  	@key_word = key_word
 	  	return result if @key_word.blank?
@@ -48,7 +49,8 @@ module BaiduWeb
 		#debug
 		# File.open(File.join(File.dirname(__FILE__), 'baidu_result.html'), "w"){|f| f.write(@ic.iconv(spage.body))}
 
-		doc = Hpricot(@ic.iconv(spage.body))
+		#doc = Hpricot(@ic.iconv(spage.body))
+		doc = Hpricot(spage.body)
 
 	  	#- this is hack on linux:
 	  	#case1:
