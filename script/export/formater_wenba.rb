@@ -24,9 +24,9 @@ class Formater
 			return if f_post.title.blank? || f_post.formated_all_answer.blank?
 			f_post.save!
 
-			 # a = ForagerLocal::WenbaPost.find(l_post.id)
-    #     a.is_processed = 'y'
-    #     a.save!
+	    a = ForagerLocal::WenbaPost.find(l_post.id)
+      a.is_processed = 'y'
+      a.save!
 	  rescue => ex
 		    puts ex.message
         # a = ForagerLocal::WenbaPost.find(l_post.id)
@@ -52,15 +52,17 @@ class Formater
 	private
 	def get_title(title)
 	  return nil if title =~ /^[0-9.,\/~，。？！ +]+$/
-	  title
+	  title = title.gsub(/^[^0-9a-z\u4e00-\u9fa5]/, '')
 	end
+	#/[\u4e00-\u9fa5]*/  中文 
 
 	def get_content(content)
 	  content = content.gsub(/\*+/, '')
 	  content = content.gsub(/^[0-9０８０３* +~,.，。]+$/, '')
-	  content = content.gsub(/QQ/, 'QQ(29928649)')
+	  content = content.gsub(/QQ/, 'QQ: 29928649')
 	  content = content.gsub(/[a-z:\/.-_+]*xiangrikui[a-z:\/.-_+]*/, '')
 	  content = content.gsub(/向日葵|葵网/, '成都保险咨询网')
+	  content = content.gsub(/^[^0-9a-z\u4e00-\u9fa5]/, '')
 	end
 end
 

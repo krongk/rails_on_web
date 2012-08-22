@@ -5,7 +5,7 @@ class ProductItemsController < InheritedResources::Base
   cache_sweeper :product_item_sweeper
 
   def index
-    @product_items = ProductItem.joins(:product_cate).order('product_cates.id ASC').paginate(:per_page => 40, :page => params[:page] || 1)
+    @product_items = ProductItem.joins(:product_cate).order('product_cates.id ASC').paginate(:per_page => 20, :page => params[:page] || 1)
   end
   
   def show

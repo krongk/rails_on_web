@@ -5,10 +5,11 @@
 <h1>保险产品: <%= link_to @product_cate.name, product_cate_path(@product_cate) %></h1>
 
 <ul>
-  <% ProductItem.recent(10, @product_cate.name).each do |item| %>
+  <% @product_items.each do |item| %>
     <li><%= link_to item.title, product_item_path(item), :target => '_blank' %></li>
   <% end %>
 </ul>
 
 <br />
+<%= will_paginate @product_items %>
 </div>

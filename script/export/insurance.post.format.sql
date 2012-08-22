@@ -7,39 +7,6 @@ INSURANCES =[
 中国人寿,新华人寿, 泰康人寿, 合众人寿, 平安人寿, 太平洋人寿, 长城保险, 华泰人寿, 太平人寿, 友邦保险,
 信诚人寿, 中英人寿, 中宏人寿, 首创安泰, 中航三星, 广电日生人寿, 太平洋安泰, 中德安联人寿, 恒安标准人寿]
 
-SELECT is_processed, count(*) from wenba_run_key group by 1;
-SELECT count(*) from wenba_post;
-SELECT is_processed, count(*) from wenba_post group by 1;
-
-SELECT mod(0,3);
-#
-set @id = 0;
-update wenba_run_key set batch_id = ( @id := mod(@id + 1, 3));
-SELECT batch_id, count(*) from wenba_run_key group by 1;
-
-#
-SELECT * from resume where is_exported = 'n';
-
-create database kapow_logdb_xj
-
-
-#
-SELECT is_processed, count(*) from hexun_run_key group by 1;
-SELECT count(*) from hexun_post;
-
-SELECT * from wenba_post where is_processed = 'f' LIMIT 100;
-
-update hexun_run_key set is_processed = 'n' where is_processed in('-','c','x')
-update wenba_run_key set is_processed = 'n' where is_processed in('f');
-
-update wenba_post set is_processed = 'n' where is_processed = 'f' LIMIT 100;
-
-#category
-SELECT r.category, count(*) from hexun_post p JOIN hexun_run_key r on p.hexun_run_key_id = r.id group by 1 order by count(*) desc;
-SELECT r.category, count(*) from wenba_post p JOIN wenba_run_key r on p.run_key_id = r.id group by 1 order by count(*) desc;
-
-SELECT category from hexun_run_key group by 1;
-SELECT category from wenba_run_key group by 1;
 
 #post
 
@@ -336,8 +303,6 @@ update hexun_post set content = replace(content, '【来源：东方早报】', 
 update hexun_post set content = replace(content, '本栏目由本报联合北京保险行业协会、北京保险学会主办\n', '');
 update hexun_post set content = replace(content, '（本案例由天安保险提供）\n', '');
 
-DELETE from hexun_post where id = 4929;
-DELETE from hexun_post where id in(5103);
 
 #3.----------------------------------------------------- copy to hexun_post_format
 drop table hexun_post_format;

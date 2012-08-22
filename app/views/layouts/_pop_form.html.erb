@@ -34,10 +34,11 @@
               </div>
               <div class="field">
                 <label for="contact_message">信息</label><br />
-                <textarea class="required chinese" cols="60" id="contact_message" name="contact[message]" rows="8"></textarea>
+                <textarea class="required" cols="60" id="contact_message" name="contact[message]" rows="8"></textarea>
               </div>
               <div class="actions">
-                <input name="commit" type="submit" value="提 交" />
+                <input name="commit" type="submit" id="submit" value="提 交" />
+                <span id="submit_tip">&nbsp;</span>
               </div>
             </form>
         </div>

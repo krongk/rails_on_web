@@ -37,10 +37,11 @@
 <div class="index_main_list">
   <div class="index_main_list_content">
     <table width="100%">
-     <tr><td width="320px" valign="top"><h3 class="title">保险产品介绍</h3>
+     <tr><td width="100%" valign="top">
+         <h3 class="title">保险产品介绍</h3>
          <ul>
-           <% Page.recent(20,'product').each_with_index do |item, index| %>
-             <%= page_tag_li(item) %>
+           <% ProductItem.recent(10,'平安人寿').each_with_index do |item, index| %>
+             <%= product_item_tag_li(item) %>
            <% end %>
         </ul>
      </td></tr>

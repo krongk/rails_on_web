@@ -7,7 +7,7 @@
   <span class="sub_h1">[<%= link_to @product_item.product_cate.name, product_cate_path(@product_item.product_cate) %>]</span>
 </h1>
 
-<% if @product_item.product_cate.name == "中国平安" %>
+<% if @product_item.product_cate.name =~ /平安/ %>
   <div class="notice">
       <li style="color: #636563; font-family: rooney-web; font-style: italic; margin-top: 20px; margin-right: 10px; margin-bottom: 20px; margin-left: 10px; border-style: initial; border-color: initial; border-image: initial; font: inherit; vertical-align: baseline; display: inline-block; height: 15px; background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; border-width: 0px; padding: 0px;">
       <a id="product_modal" style="border-style: initial; border-color: #deded6; border-image: initial; font: inherit; vertical-align: baseline; outline-width: 0px; outline-style: initial; outline-color: initial; color: #ffffff; text-decoration: none; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: #c1161c; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; -webkit-box-shadow: #999999 3px 3px 3px 2px; box-shadow: #999999 3px 3px 3px 2px; border-width: 0px; padding: 10px; margin: 0px;"  href="#" >

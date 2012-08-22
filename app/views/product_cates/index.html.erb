@@ -13,6 +13,7 @@
       <% ProductItem.recent(10, product_cate.name).each do |item| %>
         <li><%= link_to item.title, product_item_path(item), :target => '_blank' %></li>
       <% end %>
+      <li><%= link_to "查看更多...", product_cate_path(product_cate), :target => '_blank' %></li>
     </ul>
   </li>
 <% end %>
