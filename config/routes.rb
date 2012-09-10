@@ -25,7 +25,7 @@ RailsOnWeb::Application.routes.draw do
   resources :news_items
 
   resources :news_cates
-
+  get "home/happy_teachers_day"
   get "home/index"
   get "home/search"
   get "home/form"

@@ -44,4 +44,7 @@ class HomeController < ApplicationController
   def site_map
   end
 
+  def happy_teachers_day
+    render "home/happy_teachers_day", :layout => nil
+  end
 end

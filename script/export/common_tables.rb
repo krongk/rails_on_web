@@ -28,4 +28,16 @@ module ForagerCommon
 		belongs_to :product_cate
 	end
 
+	#page
+	class Page < CommonBase
+		has_many :page_parts
+	end
+	class PagePart < CommonBase
+		belongs_to :page
+		belongs_to :part
+	end
+	class Part < CommonBase
+		has_many :page_parts
+	end
+
 end

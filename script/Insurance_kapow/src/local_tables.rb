@@ -14,3 +14,6 @@ end
 
 class WenbaRunKey < LocalTableBase
 end
+
+class AskRunKey < LocalTableBase
+end

@@ -35,4 +35,14 @@ module ForagerLocal
 		set_table_name 'wenba_product'
 	end
 
+	#ask
+	class AskRunKey < LocalBase
+		set_table_name 'ask_run_key'
+		has_many :ask_posts
+	end
+	class AskPost < LocalBase
+		set_table_name 'ask_post'
+		belongs_to :ask_run_key
+	end
+
 end

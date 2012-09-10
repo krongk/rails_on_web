@@ -21,6 +21,8 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @is_product = false
+    @is_ask = false
+    @is_ask = params[:ask]
     #params can be id or path_name
     if params[:id] =~ /^\d+$/
       @page = Page.where(:id => params[:id]).limit(1).first
@@ -31,6 +33,8 @@ class PagesController < ApplicationController
 
     #special action 
     case @page.menu_match
+    when 'ask'
+      @is_ask = true
     when 'product'
       @is_product = true
     when 'english'

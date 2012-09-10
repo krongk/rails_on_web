@@ -1,4 +1,5 @@
 class Page < ActiveRecord::Base
+  has_many :page_parts
 
   def self.recent(count, menu_match = nil)
     if menu_match

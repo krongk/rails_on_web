@@ -1,0 +1,6 @@
+<% if @page %>
+  <% @page.page_parts.each do |item| %>
+    <h2><%=item.part.title%></h2>
+      <%=item.part.body.html_safe %>   
+  <% end %>
+<% end %>
