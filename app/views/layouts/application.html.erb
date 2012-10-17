@@ -50,8 +50,9 @@
               <h2>热门标签</h2>
               <hr/>
               <% Tag.recent(10).each do |tag| %>
-                <span class="tag"><%=link_to tag.name, tag, :title => tag.name, :class => "rand#{weight(tag.weight, 12)}", :target => "_blank"%></span>
+                <span class="tag"><%=link_to tag.name, tag, :title => tag.name, :class => "tag_link rand#{weight(tag.weight, 12)}", :target => "_blank"%></span>
               <% end %>
+              <%= render :partial => "layouts/product_li" %>
             </div>
           <% end %>
         <% end %>

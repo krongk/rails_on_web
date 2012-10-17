@@ -31,6 +31,8 @@ RailsOnWeb::Application.routes.draw do
   get "home/form"
   get "home/location"
   get "home/site_map"
+  get "home/get_cdhrss"
+  
   match "form" => "home#form"
   match "search" => "home#search"
   

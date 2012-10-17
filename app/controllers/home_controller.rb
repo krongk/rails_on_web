@@ -47,4 +47,9 @@ class HomeController < ApplicationController
   def happy_teachers_day
     render "home/happy_teachers_day", :layout => nil
   end
+
+  ##result = {:title => nil, :url => nil, :date => nil, :body => nil}
+  def get_cdhrss
+    @result = Forager.get_cdhrss
+  end
 end

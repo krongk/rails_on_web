@@ -53,11 +53,9 @@ ActiveAdmin::Dashboards.build do
     end
   end
 
-  section :"最新产品列表" do
+  section :"采集任务" do
     ul do
-      ProductItem.recent(10).collect do |item|
-        li link_to item.title, admin_product_item_path(item)
-      end
+      li link_to "成都市人社局", "/home/get_cdhrss"
     end
   end
 

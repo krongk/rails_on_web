@@ -45,4 +45,9 @@ module ForagerLocal
 		belongs_to :ask_run_key
 	end
 
+  #news_item
+  class NewsItem < LocalBase
+		self.set_table_name 'news_item'
+	end
+	
 end

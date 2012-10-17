@@ -3,7 +3,7 @@
 <% meta_description ["成都保险咨询网是成都地区最专业的保险网，设有人寿保险,少儿保险,医疗保险,平安人寿,平安车险，保险投保案例,保险咨询问答,保险博客等栏目，为您提供保险产品的咨询购买理赔保全一站式服务！是您投保的好帮手！咨询QQ：29928649"].join(',') %>
 
 <%= render :partial => "layouts/slider_img" %>
-<%= render :partial => "layouts/slider_case" %>
+
 
 <!-- start pinpai -->
 <div class="index_main_list">
@@ -27,30 +27,23 @@
 </div>
 <!-- end pinpai -->
 
+<%= render :partial => "layouts/slider_case" %>
+
+<!-- start pinpai -->
+
+<!-- end pinpai -->
+
 <!-- start liucheng -->
 <div id='content'><div id='basic-modal'>
   <div style="padding: 6px;"><a href="#" class='basic'><img src="/assets/liucheng.jpg" /></a></div>
 </div></div>
 <!-- end liucheng -->
 
-<!-- start pinpai -->
-<div class="index_main_list">
-  <div class="index_main_list_content">
-    <table width="100%">
-     <tr><td width="100%" valign="top">
-         <h3 class="title">保险产品介绍</h3>
-         <ul>
-           <% ProductItem.recent(10,'平安人寿').each_with_index do |item, index| %>
-             <%= product_item_tag_li(item) %>
-           <% end %>
-        </ul>
-     </td></tr>
-    </table>
-  </div>
-</div>
-<!-- end pinpai -->
+<!-- begin product list -->
+<%= render :partial => "layouts/news_cate_list" %>
+<!-- end product list -->
 
 <!-- begin product list -->
-<%= render :partial => "layouts/product_list" %>
+<%# render :partial => "layouts/product_list" %>
 <!-- end product list -->
 

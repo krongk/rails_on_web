@@ -1,0 +1,14 @@
+<div class="index_main_list">
+  <div class="index_main_list_content">
+    <table width="100%">
+     <tr><td width="100%" valign="top">
+         <h3 class="title">保险产品推荐</h3>
+         <ul>
+           <% ProductItem.recent(5,'平安人寿').each_with_index do |item, index| %>
+             <%= product_item_tag_li(item) %>
+           <% end %>
+        </ul>
+     </td></tr>
+    </table>
+  </div>
+</div>
