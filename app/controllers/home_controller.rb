@@ -13,6 +13,11 @@ class HomeController < ApplicationController
       render 'form', :layout => false
       return
     end
+    if params[:q] =~ /习近平/
+      params[:q] = '保险'
+    end
+    params[:q] = '保险 ' + params[:q]
+    
     @ic = Iconv.new('UTF-8//IGNORE', 'gb2312//IGNORE')
     @ic2 = Iconv.new('gb2312//IGNORE', 'UTF-8//IGNORE')
     @coder = HTMLEntities.new
