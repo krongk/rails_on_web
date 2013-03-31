@@ -1,13 +1,18 @@
 # encoding: utf-8
-load 'forager.rb'
+#load 'forager.rb'
 
 class HomeController < ApplicationController
+  caches_page :index
+  
   def index
 
   end
 
   #syixia engine
   def search
+    render :text => 'yes baby!'
+    return 
+
     if params[:q].blank?
       flash[:notice] = "请输入搜索关键词！"
       render 'form', :layout => false
