@@ -31,8 +31,8 @@ class Cd12333Worker
 	    		:original_url => detail_url,
 	    		:title => title,
 	    		:body => table.inner_html,
-	    		:meta_keywords => "#{title} 成都社保局 成都保险咨询网"，
-	    		:meta_description => "#{title}"
+	    		:meta_keywords => "#{title} 成都社保局 成都保险咨询网",
+	    		:meta_description => desc
 	    	)
 	    	puts "done tr: #{detail_url}"
 	    end
