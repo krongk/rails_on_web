@@ -11,7 +11,7 @@ class Cd12333Worker
 	    list_url = "http://www.cdhrss.gov.cn/1233/mail_more.jsp"
 	    page = Nokogiri::HTML(open(list_url))
 	    trs = page.css("div.rightside1").css("table tr")
-	    return if trs.nil || trs.empty? 
+	    return if trs.empty? 
 	    trs.each do |tr|
 	    	#get detail url
 	    	next if tr.css("td a").empty?
