@@ -1,4 +1,5 @@
-source 'http://rubygems.org'
+#source 'http://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.1.0'
 #on home
@@ -50,5 +51,6 @@ gem 'geo_location'
  #dependenc
 gem 'nokogiri'
 
+gem 'sidekiq'
 #===
 gem 'chinese_pinyin'

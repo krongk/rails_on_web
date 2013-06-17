@@ -24,14 +24,14 @@ class Formater
 			return if f_post.title.blank? || f_post.formated_all_answer.blank?
 			f_post.save!
 
-	    a = ForagerLocal::WenbaPost.find(l_post.id)
-      a.is_processed = 'y'
-      a.save!
+			ForagerLocal::WenbaPost.connection.execute("update wenba_post set is_processed = 'y' where id = #{l_post.id}")
+	    # a = ForagerLocal::WenbaPost.find_by_id(l_post.id)
+     #  a.is_processed = 'y'
+     #  a.save!
+      #ForagerLocal::WenbaPost.update(l_post.id, :is_processed => 'y')
 	  rescue => ex
 		    puts ex.message
-        # a = ForagerLocal::WenbaPost.find(l_post.id)
-        # a.is_processed = 'f'
-        # a.save!
+		    ForagerLocal::WenbaPost.connection.execute("update wenba_post set is_processed = 'f' where id = #{l_post.id}")
 	  end
 	end
 

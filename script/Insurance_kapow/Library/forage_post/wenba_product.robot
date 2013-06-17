@@ -3,6 +3,7 @@
   <prologue>
     <saved-by-versions>
       <version>8.2.1</version>
+      <version>8.2.7</version>
     </saved-by-versions>
     <referenced-types>
       <type name="wenba_product"/>
@@ -1300,11 +1301,11 @@ img</property>
         <property name="nodeFinderList" class="NodeFinderList">
           <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
             <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
-              <property name="value" class="String">.*.div.div.div</property>
+              <property name="value" class="String">.*.div</property>
             </property>
             <property name="attributeName" idref="12"/>
             <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
-              <property name="text" class="String">cnt_zs</property>
+              <property name="text" class="String">cp_list cp_list1</property>
             </property>
           </object>
         </property>
@@ -1329,11 +1330,11 @@ img</property>
         <property name="nodeFinderList" class="NodeFinderList">
           <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
             <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
-              <property name="value" class="String">.*.div.div.div</property>
+              <property name="value" class="String">.*.div</property>
             </property>
             <property name="attributeName" idref="12"/>
             <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
-              <property name="text" class="String">cpts</property>
+              <property name="text" class="String">feature</property>
             </property>
           </object>
         </property>
@@ -1350,7 +1351,7 @@ img</property>
       <object class="Transition" serializationversion="0" id="22">
         <property name="name" class="String">Extract Shili</property>
         <property name="stepAction" class="Extract" serializationversion="1">
-          <property name="domToTextConverter" class="kapow.robot.plugin.common.support.vtopia.converter.StructuredTextOutputtingHTMLDOMToTextConverter"/>
+          <property name="domToTextConverter" class="kapow.robot.plugin.common.support.vtopia.converter.HTMLTextOutputtingHTMLDOMToTextConverter"/>
           <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
             <property name="name" class="String">wenba_product.shili</property>
           </property>
@@ -1358,11 +1359,11 @@ img</property>
         <property name="nodeFinderList" class="NodeFinderList">
           <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
             <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
-              <property name="value" class="String">.*.div.div.div</property>
+              <property name="value" class="String">.*.div</property>
             </property>
             <property name="attributeName" idref="12"/>
             <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
-              <property name="text" class="String">tbsl</property>
+              <property name="text" class="String">cp_kuang</property>
             </property>
           </object>
         </property>
@@ -1377,64 +1378,6 @@ img</property>
         <property name="enabled" idref="4"/>
       </object>
       <object class="Transition" serializationversion="0" id="23">
-        <property name="name" class="String">Extract Zeren</property>
-        <property name="stepAction" class="Extract" serializationversion="1">
-          <property name="domToTextConverter" class="kapow.robot.plugin.common.support.vtopia.converter.StructuredTextOutputtingHTMLDOMToTextConverter"/>
-          <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
-            <property name="name" class="String">wenba_product.zeren</property>
-          </property>
-        </property>
-        <property name="nodeFinderList" class="NodeFinderList">
-          <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
-            <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
-              <property name="value" class="String">.*.div</property>
-            </property>
-            <property name="attributeName" class="String" id="24">id</property>
-            <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
-              <property name="text" class="String">duty</property>
-            </property>
-          </object>
-        </property>
-        <property name="errorHandler" class="ErrorHandler" serializationversion="0">
-          <property name="reportingViaAPI" class="Boolean">false</property>
-          <property name="reportingViaLog" class="Boolean">false</property>
-          <property name="controlFlow" class="kapow.robot.robomaker.robot.ControlFlow$IgnoreAndContinue"/>
-        </property>
-        <property name="comment">
-          <null/>
-        </property>
-        <property name="enabled" idref="4"/>
-      </object>
-      <object class="Transition" serializationversion="0" id="25">
-        <property name="name" class="String">Extract Zemian</property>
-        <property name="stepAction" class="Extract" serializationversion="1">
-          <property name="domToTextConverter" class="kapow.robot.plugin.common.support.vtopia.converter.StructuredTextOutputtingHTMLDOMToTextConverter"/>
-          <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
-            <property name="name" class="String">wenba_product.zemian</property>
-          </property>
-        </property>
-        <property name="nodeFinderList" class="NodeFinderList">
-          <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
-            <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
-              <property name="value" class="String">.*.div</property>
-            </property>
-            <property name="attributeName" idref="24"/>
-            <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
-              <property name="text" class="String">expet</property>
-            </property>
-          </object>
-        </property>
-        <property name="errorHandler" class="ErrorHandler" serializationversion="0">
-          <property name="reportingViaAPI" class="Boolean">false</property>
-          <property name="reportingViaLog" class="Boolean">false</property>
-          <property name="controlFlow" class="kapow.robot.robomaker.robot.ControlFlow$IgnoreAndContinue"/>
-        </property>
-        <property name="comment">
-          <null/>
-        </property>
-        <property name="enabled" idref="4"/>
-      </object>
-      <object class="Transition" serializationversion="0" id="26">
         <property name="name" class="String">Extract Wenda</property>
         <property name="stepAction" class="Extract" serializationversion="1">
           <property name="domToTextConverter" class="kapow.robot.plugin.common.support.vtopia.converter.StructuredTextOutputtingHTMLDOMToTextConverter"/>
@@ -1445,11 +1388,11 @@ img</property>
         <property name="nodeFinderList" class="NodeFinderList">
           <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
             <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
-              <property name="value" class="String">.*.div.div.div</property>
+              <property name="value" class="String">.*.div</property>
             </property>
             <property name="attributeName" idref="12"/>
             <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
-              <property name="text" class="String">cpdy_k</property>
+              <property name="text" class="String">cp_l_k</property>
             </property>
           </object>
         </property>
@@ -1463,12 +1406,12 @@ img</property>
         </property>
         <property name="enabled" idref="4"/>
       </object>
-      <object class="Transition" serializationversion="0" id="27">
+      <object class="Transition" serializationversion="0" id="24">
         <property name="name" class="String">Store in Database</property>
         <property name="stepAction" class="StoreInDatabase" serializationversion="0">
           <property name="db" class="kapow.robot.plugin.common.support.expression.stringexpr.DBNameValueStringExpression">
             <property name="value" class="kapow.util.db.DBName">
-              <property name="name" class="String" id="28">insurance</property>
+              <property name="name" class="String" id="25">insurance</property>
             </property>
           </property>
           <property name="variableName" class="kapow.robot.plugin.common.support.VariableName">
@@ -1482,12 +1425,12 @@ img</property>
         </property>
         <property name="enabled" idref="4"/>
       </object>
-      <object class="Transition" serializationversion="0" id="29">
+      <object class="Transition" serializationversion="0" id="26">
         <property name="name" class="String">Query Database</property>
         <property name="stepAction" class="QueryDatabase2" serializationversion="0">
           <property name="databaseName" class="kapow.robot.plugin.common.support.expression.stringexpr.DBNameValueStringExpression">
             <property name="value" class="kapow.util.db.DBName">
-              <property name="name" idref="28"/>
+              <property name="name" idref="25"/>
             </property>
           </property>
           <property name="sql" class="String">"SELECT * FROM wenba_product_run_key WHERE is_processed = 'n'"</property>
@@ -1513,14 +1456,14 @@ img</property>
         </property>
         <property name="enabled" idref="4"/>
       </object>
-      <object class="End" id="30"/>
-      <object class="BranchPoint" id="31"/>
-      <object class="Transition" serializationversion="0" id="32">
+      <object class="End" id="27"/>
+      <object class="BranchPoint" id="28"/>
+      <object class="Transition" serializationversion="0" id="29">
         <property name="name" class="String">Execute SQL</property>
         <property name="stepAction" class="ExecuteSQL2" serializationversion="0">
           <property name="databaseName" class="kapow.robot.plugin.common.support.expression.stringexpr.DBNameValueStringExpression">
             <property name="value" class="kapow.util.db.DBName">
-              <property name="name" idref="28"/>
+              <property name="name" idref="25"/>
             </property>
           </property>
           <property name="sql" class="Expression" serializationversion="1">
@@ -1535,7 +1478,7 @@ img</property>
         </property>
         <property name="enabled" idref="4"/>
       </object>
-      <object class="Transition" serializationversion="0" id="33">
+      <object class="Transition" serializationversion="0" id="30">
         <property name="name" class="String">flag = f</property>
         <property name="stepAction" class="AssignVariable" serializationversion="1">
           <property name="stringExpr" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
@@ -1552,7 +1495,7 @@ img</property>
         </property>
         <property name="enabled" idref="4"/>
       </object>
-      <object class="Transition" serializationversion="0" id="34">
+      <object class="Transition" serializationversion="0" id="31">
         <property name="name" class="String">flag=y?</property>
         <property name="stepAction" class="TestValue" serializationversion="0">
           <property name="condition" class="Expression" serializationversion="1">
@@ -1567,7 +1510,7 @@ img</property>
         </property>
         <property name="enabled" idref="4"/>
       </object>
-      <object class="Transition" serializationversion="0" id="35">
+      <object class="Transition" serializationversion="0" id="32">
         <property name="name" class="String">flag=y</property>
         <property name="stepAction" class="AssignVariable" serializationversion="1">
           <property name="stringExpr" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
@@ -1584,12 +1527,105 @@ img</property>
         </property>
         <property name="enabled" idref="4"/>
       </object>
+      <object class="Transition" serializationversion="0" id="33">
+        <property name="name" class="String">Click </property>
+        <property name="stepAction" class="Click">
+          <property name="browserConfigurationSpecification" class="kapow.robot.plugin.common.support.browser2.BrowserConfigurationSpecification" serializationversion="11">
+            <property name="ancestorProvider" class="kapow.robot.plugin.common.support.browser2.StepBrowserConfigurationSpecificationAncestorProvider"/>
+          </property>
+        </property>
+        <property name="nodeFinderList" class="NodeFinderList">
+          <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
+            <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+              <property name="value" class="String">.*.div.p.a</property>
+            </property>
+          </object>
+        </property>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="4"/>
+      </object>
+      <object class="Transition" serializationversion="0" id="34">
+        <property name="name" class="String">Extract Zeren</property>
+        <property name="stepAction" class="Extract" serializationversion="1">
+          <property name="domToTextConverter" class="kapow.robot.plugin.common.support.vtopia.converter.StructuredTextOutputtingHTMLDOMToTextConverter"/>
+          <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
+            <property name="name" class="String">wenba_product.zeren</property>
+          </property>
+        </property>
+        <property name="nodeFinderList" class="NodeFinderList">
+          <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
+            <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+              <property name="value" class="String">.*.div</property>
+            </property>
+            <property name="attributeName" class="String">id</property>
+            <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
+              <property name="text" class="String">kuang</property>
+            </property>
+          </object>
+        </property>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0">
+          <property name="reportingViaAPI" class="Boolean">false</property>
+          <property name="reportingViaLog" class="Boolean">false</property>
+          <property name="controlFlow" class="kapow.robot.robomaker.robot.ControlFlow$IgnoreAndContinue"/>
+        </property>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="4"/>
+      </object>
+      <object class="Transition" serializationversion="0" id="35">
+        <property name="name" class="String">Click 投保示例</property>
+        <property name="stepAction" class="Click">
+          <property name="browserConfigurationSpecification" class="kapow.robot.plugin.common.support.browser2.BrowserConfigurationSpecification" serializationversion="11">
+            <property name="ancestorProvider" class="kapow.robot.plugin.common.support.browser2.StepBrowserConfigurationSpecificationAncestorProvider" id="36"/>
+          </property>
+        </property>
+        <property name="nodeFinderList" class="NodeFinderList">
+          <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
+            <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+              <property name="value" class="String">.*.div.ul.li[2].a</property>
+            </property>
+            <property name="attributeName" class="String">class</property>
+            <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
+              <property name="text" class="String">tab-li-a-xq</property>
+            </property>
+          </object>
+        </property>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="4"/>
+      </object>
+      <object class="Transition" serializationversion="0" id="37">
+        <property name="name" class="String">Click 产品咨询</property>
+        <property name="stepAction" class="Click">
+          <property name="browserConfigurationSpecification" class="kapow.robot.plugin.common.support.browser2.BrowserConfigurationSpecification" serializationversion="11">
+            <property name="ancestorProvider" idref="36"/>
+          </property>
+        </property>
+        <property name="nodeFinderList" class="NodeFinderList">
+          <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
+            <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+              <property name="value" class="String">.*.div.p[2].a</property>
+            </property>
+          </object>
+        </property>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="4"/>
+      </object>
     </steps>
     <blockEndStep class="BlockEndStep"/>
     <edges class="ArrayList">
       <object class="TransitionEdge">
         <from idref="5"/>
-        <to idref="29"/>
+        <to idref="26"/>
         <attachment>
           <null/>
         </attachment>
@@ -1610,7 +1646,7 @@ img</property>
       </object>
       <object class="TransitionEdge">
         <from idref="13"/>
-        <to idref="34"/>
+        <to idref="31"/>
         <attachment>
           <null/>
         </attachment>
@@ -1652,84 +1688,91 @@ img</property>
       </object>
       <object class="TransitionEdge">
         <from idref="20"/>
-        <to idref="21"/>
+        <to idref="34"/>
         <attachment>
           <null/>
         </attachment>
       </object>
       <object class="TransitionEdge">
         <from idref="21"/>
-        <to idref="22"/>
-        <attachment>
-          <null/>
-        </attachment>
-      </object>
-      <object class="TransitionEdge">
-        <from idref="22"/>
-        <to idref="23"/>
-        <attachment>
-          <null/>
-        </attachment>
-      </object>
-      <object class="TransitionEdge">
-        <from idref="23"/>
-        <to idref="25"/>
-        <attachment>
-          <null/>
-        </attachment>
-      </object>
-      <object class="TransitionEdge">
-        <from idref="25"/>
-        <to idref="26"/>
-        <attachment>
-          <null/>
-        </attachment>
-      </object>
-      <object class="TransitionEdge">
-        <from idref="26"/>
-        <to idref="27"/>
-        <attachment>
-          <null/>
-        </attachment>
-      </object>
-      <object class="TransitionEdge">
-        <from idref="27"/>
         <to idref="35"/>
         <attachment>
           <null/>
         </attachment>
       </object>
       <object class="TransitionEdge">
-        <from idref="29"/>
-        <to idref="31"/>
+        <from idref="22"/>
+        <to idref="37"/>
         <attachment>
           <null/>
         </attachment>
       </object>
       <object class="TransitionEdge">
-        <from idref="31"/>
-        <to idref="6"/>
+        <from idref="23"/>
+        <to idref="24"/>
         <attachment>
           <null/>
         </attachment>
       </object>
       <object class="TransitionEdge">
-        <from idref="31"/>
+        <from idref="24"/>
         <to idref="32"/>
         <attachment>
           <null/>
         </attachment>
       </object>
       <object class="TransitionEdge">
-        <from idref="32"/>
+        <from idref="26"/>
+        <to idref="28"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="28"/>
+        <to idref="6"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="28"/>
+        <to idref="29"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="29"/>
+        <to idref="27"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="30"/>
+        <to idref="19"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="31"/>
         <to idref="30"/>
         <attachment>
           <null/>
         </attachment>
       </object>
       <object class="TransitionEdge">
+        <from idref="32"/>
+        <to idref="10"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="TransitionEdge">
         <from idref="33"/>
-        <to idref="19"/>
+        <to idref="21"/>
         <attachment>
           <null/>
         </attachment>
@@ -1743,7 +1786,14 @@ img</property>
       </object>
       <object class="TransitionEdge">
         <from idref="35"/>
-        <to idref="10"/>
+        <to idref="22"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="37"/>
+        <to idref="23"/>
         <attachment>
           <null/>
         </attachment>

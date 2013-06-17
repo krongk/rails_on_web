@@ -1,9 +1,9 @@
 RailsOnWeb::Application.routes.draw do
   get 'product_cates/page/:page', to: 'product_cates#index'
-  get 'product_cates/page/:page/page/:page', to: 'product_cates#show'
+  get 'product_cates/:id/page/:page', to: 'product_cates#show'
   get 'product_items/page/:page', to: 'product_items#index'
   get 'news_cates/page/:page', to: 'news_cates#index'
-  get 'news_items/page/:page', to: 'news_items#index'
+  
   get 'pages/page/:page', to: 'pages#index'
   
   resources :tags
@@ -18,13 +18,17 @@ RailsOnWeb::Application.routes.draw do
 
   resources :resource_cates
 
-  resources :product_items
+  resources :product_items, :except => :index
 
-  resources :product_cates
+  resources :product_cates, :only => [:index, :show]
 
-  resources :news_items
+  resources :news_items, :except => :index
+  get 'news_items/page/:page', to: 'news_items#index'
+  
+  #resources :news_cates
+  resources :news_cates, :only => [:index, :show]
+  get "news_cates/:id(/pages/:page)" => "news_cates#show", :as => :news_cates
 
-  resources :news_cates
   get "home/happy_teachers_day"
   get "home/index"
   get "home/search"

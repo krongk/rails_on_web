@@ -8,5 +8,7 @@ class NewsCatesController < InheritedResources::Base
     @news_cate = params[:id] =~ /\d+/ ? NewsCate.find_by_id(params[:id]) : NewsCate.find_by_en_name(params[:id])
     @news_cate ||= NewsCate.find(1)
     @news_items = @news_cate.news_items.paginate(:per_page => 55, :page => params[:page] || 1) 
+
+    Cd12333Worker.perform_async if @news_cate.name == '12333'
   end
 end

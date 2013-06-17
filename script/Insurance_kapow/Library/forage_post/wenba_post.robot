@@ -4,6 +4,7 @@
     <saved-by-versions>
       <version>8.0</version>
       <version>8.2.1</version>
+      <version>8.2.7</version>
     </saved-by-versions>
     <referenced-types>
       <type name="post_input"/>
@@ -165,9 +166,9 @@
               <element class="String">overrideEncodingProvider</element>
               <element class="String">numOfAttempts</element>
               <element class="String">formEncoding</element>
-              <element class="String">httpCacheModeString</element>
-              <element class="String">useCookies</element>
               <element class="String">overrideMimeTypeProvider</element>
+              <element class="String">useCookies</element>
+              <element class="String">httpCacheModeString</element>
               <element class="String">language</element>
               <element class="String">userAgentProvider</element>
               <element class="String">timeout</element>
@@ -450,11 +451,7 @@
               <property name="referenceNodeIndex" class="kapow.robot.robomaker.state.document.nodefinder.referencenode.ReferenceNodeIndex"/>
             </property>
             <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
-              <property name="value" class="String">.*.div</property>
-            </property>
-            <property name="attributeName" class="String">class</property>
-            <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
-              <property name="text" class="String">wtxi</property>
+              <property name="value" class="String">.*.p</property>
             </property>
           </object>
         </property>
@@ -485,7 +482,7 @@
         <property name="name" class="String">no answer?</property>
         <property name="stepAction" class="TestTag" serializationversion="1">
           <property name="pattern" class="kapow.robot.plugin.common.support.expression.stringexpr.PatternValueStringExpression">
-            <property name="value" class="String">.*class="answer".*</property>
+            <property name="value" class="String">.*class="reply_content".*</property>
           </property>
           <property name="include" class="Boolean">true</property>
         </property>
@@ -550,7 +547,7 @@
             </property>
             <property name="attributeName" class="String">class</property>
             <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
-              <property name="text" class="String">ask</property>
+              <property name="text" class="String">bz pa1 wbD_pa2</property>
             </property>
           </object>
         </property>
@@ -564,7 +561,7 @@
         <property name="name" class="String">For Each Tag Path</property>
         <property name="stepAction" class="ForEachTagPath">
           <property name="nodePath" class="String">DIV</property>
-          <property name="classes" class="String">answer</property>
+          <property name="classes" class="String">reply_content</property>
         </property>
         <property name="nodeFinderList" class="NodeFinderList">
           <object class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.DefaultReferenceNodeAwareNodeFinder" serializationversion="3">
@@ -593,7 +590,7 @@
             </property>
             <property name="attributeName" class="String">class</property>
             <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
-              <property name="text" class="String">main_left</property>
+              <property name="text" class="String">left fl mt10</property>
             </property>
           </object>
         </property>
@@ -623,7 +620,7 @@
             </property>
             <property name="attributeName" class="String">class</property>
             <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
-              <property name="text" class="String">youtiwen</property>
+              <property name="text" class="String">reply_content</property>
             </property>
           </object>
         </property>
