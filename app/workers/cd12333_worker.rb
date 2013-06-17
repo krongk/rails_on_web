@@ -31,7 +31,7 @@ class Cd12333Worker
 	    	news_cate.news_items.create(
 	    		:original_url => detail_url,
 	    		:title => title,
-	    		:body => table.inner_html,
+	    		:body => %{<table border="1">#{table.inner_html.gsub(/(\/1233\/writeEmail.jsp)/, '/contacts/new').gsub(/\/images\/rbtn02.jpg/, '/assets/pic9.gif')}</table>},
 	    		:meta_keywords => "#{title} 成都社保局 成都保险咨询网",
 	    		:meta_description => desc
 	    	)
