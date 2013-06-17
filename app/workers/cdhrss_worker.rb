@@ -2,17 +2,17 @@
 require 'open-uri'
 require 'nokogiri'
 
-class Cd12333Worker
+class CdhrssWorker
   include Sidekiq::Worker
 
   def perform
   	flag = false
   	begin
-  		@news_cate = NewsCate.find_by_en_name("cd12333")
-	    puts 'foraging 12333 comments: http://www.cdhrss.gov.cn/1233/mail_more.jsp'
-	    list_url = "http://www.cdhrss.gov.cn/1233/mail_more.jsp"
+  		@news_cate = NewsCate.find_by_en_name("cdhrss")
+	    puts 'foraging : http://www.cdhrss.gov.cn/openALLCommonPage.jsp'
+	    list_url = "http://www.cdhrss.gov.cn/openALLCommonPage.jsp"
 	    page = Nokogiri::HTML(open(list_url))
-	    trs = page.css("div.rightside1").css("table tr")
+	    trs = page.css("div.right10").css("table tr")
 	    return if trs.empty? 
 	    trs.each do |tr|
 	    	#get detail url
@@ -24,18 +24,18 @@ class Cd12333Worker
 	    	#check dup
 	    	return if NewsItem.find_by_original_url(detail_url)
 	    	detail_page = Nokogiri::HTML(open(detail_url))
-	    	table = detail_page.css("div.right10 table")
-	    	next if table.empty?
-	    	title = table.css("tr")[0].css("td")[-1].inner_text
-	    	next if title.nil?
-	    	desc = table.inner_text.gsub(/\s+/, ",")
+
+	    	title = detail_page.css("td.hongse22")[0].inner_text
+	    	body = detail_page.css("table").css("table").css("table").css("table").css("table")[0].inner_text
+	    	
+	    	next if title.nil? || body.nil?
 	    	
 	    	@news_cate.news_items.create(
 	    		:original_url => detail_url,
 	    		:title => title,
-	    		:body => %{<table border="1">#{table.inner_html.gsub(/(\/1233\/writeEmail.jsp)/, '/contacts/new').gsub(/\/images\/rbtn02.jpg/, '/assets/pic9.gif')}</table>},
+	    		:body => body,
 	    		:meta_keywords => "#{title} 成都社保局 成都保险咨询网",
-	    		:meta_description => desc
+	    		:meta_description => title
 	    	)
 	    	flag = true
 	    	puts "done tr: #{detail_url}"

@@ -1,5 +1,5 @@
 # encoding: utf-8
-#load 'forager.rb'
+require 'forager'
 
 class HomeController < ApplicationController
   caches_page :index
@@ -58,8 +58,11 @@ class HomeController < ApplicationController
     render "home/happy_teachers_day", :layout => nil
   end
 
-  ##result = {:title => nil, :url => nil, :date => nil, :body => nil}
   def get_cdhrss
-    @result = Forager.get_cdhrss
+    CdhrssWorker.perform_async
+  end
+  #
+  def start_sidekiq_cd12333
+    Cd12333Worker.perform_async
   end
 end

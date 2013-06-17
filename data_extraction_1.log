@@ -1,0 +1,23 @@
+# Logfile created on 2013-06-17 16:00:12 +0800 by logger.rb/31641
+Net::HTTP::Get: /openALLCommonPage.jsp
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.4) Gecko/20030624
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => www.cdhrss.gov.cn
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => TongWeb-http/1.1
+response-header: set-cookie => JSESSIONID=m04t28iku3wKgAFABQ;Path=/
+response-header: date => Mon, 17 Jun 2013 07:37:00 GMT
+response-header: connection => Keep-Alive
+response-header: content-type => text/html;charset=GBK
+response-header: transfer-encoding => chunked
+Read 365 bytes (365 total)
+Read 4 bytes (369 total)
+Read 2898 bytes (3267 total)
+Read 4356 bytes (7623 total)
+Read 938 bytes (8561 total)
+Read 5127 bytes (13688 total)
+Read 459 bytes (14147 total)
+saved cookie: JSESSIONID=m04t28iku3wKgAFABQ

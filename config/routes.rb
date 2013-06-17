@@ -36,7 +36,7 @@ RailsOnWeb::Application.routes.draw do
   get "home/location"
   get "home/site_map"
   get "home/get_cdhrss"
-  
+  get "home/start_sidekiq_cd12333"
   match "form" => "home#form"
   match "search" => "home#search"
   
