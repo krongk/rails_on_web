@@ -26,7 +26,7 @@ class CdhrssWorker
 	    	detail_page = Nokogiri::HTML(open(detail_url))
 
 	    	title = detail_page.css("td.hongse22")[0].inner_text
-	    	body = detail_page.css("table").css("table").css("table").css("table").css("table")[0].inner_text
+	    	body  = detail_page.css("div[@class='detail'] table[2] table").css("table").css("table")[2].inner_text
 	    	
 	    	next if title.nil? || body.nil?
 	    	
