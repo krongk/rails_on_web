@@ -9,6 +9,6 @@ class NewsCatesController < InheritedResources::Base
     @news_cate ||= NewsCate.find(1)
     @news_items = @news_cate.news_items.paginate(:per_page => 55, :page => params[:page] || 1) 
 
-    Cd12333Worker.perform_async if @news_cate.name == 'cd12333'
+    Cd12333Worker.perform_async if @news_cate.en_name == 'cd12333'
   end
 end

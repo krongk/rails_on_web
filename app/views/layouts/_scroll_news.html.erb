@@ -27,9 +27,9 @@
 </div>
 
 <div id="side_news_list2" >
-  <h2> 保险问答</h2>
+  <h2> 成都社保咨询&nbsp;&nbsp;<a href="http://www.cdhrss.gov.cn/" target="_blank"><span style="color:red;">12333热线</span></a> </h2>
   <div class="side_news"><ul>
-  <% NewsItem.recent(25).each_with_index do |item, index| %>
+  <% NewsItem.recent(25, 80).each_with_index do |item, index| %>
     <li><%=link_to item.title.truncate(18), news_item_path(item), :target => "_blank" %></li>
   <% end %>
   </ul></div>

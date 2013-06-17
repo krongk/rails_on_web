@@ -16,7 +16,7 @@
 
   <div class='wenba_answer_list'><div class='wenba_answer_list_content'>
     <% if @news_item.summary.blank? %>
-      <%= simple_format @news_item.body %>
+      <%= @news_item.body =~ /<table/i ? @news_item.body.html_safe : simple_format(@news_item.body) %>
     <% else %>
       <%= simple_format @news_item.body.gsub(/\n+/, '') unless @news_item.body.blank? %>
     <% end %>
