@@ -6,7 +6,7 @@ class Cd12333Worker
   include Sidekiq::Worker
 
   def perform
-  	# begin
+  	begin
 	    puts 'foraging 12333 comments: http://www.cdhrss.gov.cn/1233/mail_more.jsp'
 	    list_url = "http://www.cdhrss.gov.cn/1233/mail_more.jsp"
 	    page = Nokogiri::HTML(open(list_url))
@@ -27,7 +27,7 @@ class Cd12333Worker
 	    	title = table.css("tr")[0].css("td")[-1].inner_text
 	    	next if title.nil?
 	    	desc = table.inner_text.gsub(/\s+/, ",")
-	    	news_cate = NewsCate.find_by_or_create_name("cd12333")
+	    	news_cate = NewsCate.find_by_name("cd12333")
 	    	news_cate.news_items.create(
 	    		:original_url => detail_url,
 	    		:title => title,
@@ -37,8 +37,8 @@ class Cd12333Worker
 	    	)
 	    	puts "done tr: #{detail_url}"
 	    end
-	  # rescue => ex
-	  # 	puts ex.message
-	  # end
+	  rescue => ex
+	  	puts ex.message
+	  end
   end
 end
