@@ -27,7 +27,7 @@ class Cd12333Worker
 	    	title = table.css("tr")[0].css("td")[-1].inner_text
 	    	next if title.nil?
 	    	desc = table.inner_text.gsub(/\s+/, ",")
-	    	news_cate = NewsCate.find_by_name("cd12333")
+	    	news_cate = NewsCate.find_by_en_name("cd12333")
 	    	news_cate.news_items.create(
 	    		:original_url => detail_url,
 	    		:title => title,
