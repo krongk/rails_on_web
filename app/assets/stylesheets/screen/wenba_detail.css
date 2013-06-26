@@ -17,38 +17,27 @@
 	padding-left: 6px;
 	font-size: 24px;
 	font-weight: bold;
+	line-height: 35px;
 	color: #1D619C;
 }
 .wenba_detail .wenba_question {
-	background-color: #CEF0DB;
-	border: 1px solid #A4E3BC;
 	margin-bottom: 10px;
 }
 .wenba_detail .wenba_question .wenba_question_content {
 	margin: 4px;
 	background-color: #FFF;
-	border: 4px solid #DDF4E6;
 	text-align: left;
 	color: #248AC8;
 }
 .wenba_question_content .wenba_question_detail {
 	padding: 12px;
-	border-top-width: 1px;
-	border-top-style: dotted;
-	border-top-color: #799DD2;
 }
 
 .wenba_answer_list .best_answer {
 	padding: 4px;
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-	border-bottom-color: #8DBAE2;
 	margin-bottom: 4px;
 }
 .wenba_answer_list .answer_d {
-	border-bottom-width: 2px;
-	border-bottom-style: dotted;
-	border-bottom-color: #8DBAE2;
 	margin: 12px;
 	padding-bottom: 10px;
 }
@@ -70,16 +59,47 @@
 }
 
 .wenba_detail .wenba_answer_list {
-	background-color: #8DBAE2;
-	border: 1px solid #5497D3;
+	border: 3px solid #eee;
 }
 .wenba_answer_list .wenba_answer_list_content {
 	background-color: #FFF;
 	text-align: left;
-	margin: 4px;
 	padding: 10px;
-	border: 4px solid #9FC5E6;
-	line-height: 30px;
-	font-size: 14px;
+	line-height: 2em;
+	font-size: 1.2em;
 }
   /* --- general text formatting | Allgemeine Textauszeichnung ------------------------------------------ */
+ul.category{
+	margin: 0px;
+}
+ul.category li{
+	margin: 10px 0;
+}
+/***********/
+.title-list ul {
+	margin: 0px;
+	padding: 0px;
+}
+.title-list ul li {
+	float: left;
+	width: 100px;
+	min-height: 25px;
+	max-height: 40px;
+	margin: 5px;
+	padding: 4px 0 0 0;
+	list-style-type: none;
+	border: 1px solid #CCC;
+	display: block;
+	background-color: #f9f9f9;
+}
+.title-list ul li a {
+	text-decoration: none;
+	text-align: center;
+	vertical-align: bottom;
+	display: block;
+	font-size: 14px;
+}
+.title-list ul li:hover {
+	background-color: #cccc99;
+	font-weight: 500;
+}

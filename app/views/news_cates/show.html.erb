@@ -2,7 +2,6 @@
 <% meta_keywords [@news_cate.name, "保险,保险网,买保险,网上买保险,在线投保,成都保险咨询网,成都保险,商业保险,人寿保险"].join(',') %>
 <% meta_description [@news_cate.name, "成都保险咨询网是成都地区最专业的保险网，设有人寿保险,少儿保险,医疗保险,平安人寿,平安车险，保险投保案例,保险咨询问答,保险博客等栏目，为您提供保险产品的咨询购买理赔保全一站式服务！是您投保的好帮手！咨询QQ：29928649"].join('-') %>
 
-<h1 class="cate_title"><%= @news_cate.name %></h1>
 <div class="cate_banner">
     <%= cate_banner @news_cate.name %>
 </div>
@@ -22,17 +21,20 @@
 <% end %>
 </ul>
 
-<table border=0><tr>
-<td width="350px">
+<div style="width: 100%; position: relative;">
+    <div style="width: 350px; float: left; margin-right: 10px;">
 <ul class="category">
 <% unless items1.nil? %>
  <% items1.each do |item| %>
-   <li class="level_1"><%= link_to item.title, news_item_path(item), :target => "_blank", :title => item.title%></li>
+   <li class="level_1"><%= link_to item.title, news_item_path(item), :target => "_blank", :title => item.title%>
+    <i><%=item.updated_at.blank? ? Time.now.strftime("(%Y-%m-%d)") : item.updated_at.strftime("(%Y-%m-%d)")  %></i>
+   </li>
  <% end %>
 <% end %>
 </ul>
 
-</td><td>
+</div>
+<div style="margin-left: 360px;">
 <ul class="category">
 <% unless items2.nil? %>
  <% items2.each do |item| %>
@@ -40,9 +42,13 @@
  <% end %>
 <% end %>
 </ul>
-</td>
-</tr></table>
-<br/>
+</div>
+</div>
+
+
+<div style="display: block; width: 600px; float: left;">
+  <br/>
 <%= render :partial => "layouts/bshare" %>
 <br/>
 <%=will_paginate @news_items, :next_label => "下一页", :prev_label => "上一页"%>
+</div>

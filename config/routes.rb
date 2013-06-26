@@ -23,11 +23,12 @@ RailsOnWeb::Application.routes.draw do
   resources :product_cates, :only => [:index, :show]
 
   resources :news_items, :except => :index
-  get 'news_items/page/:page', to: 'news_items#index'
+  get 'news_items/(page/:page)', to: 'news_items#index'
   
   #resources :news_cates
-  resources :news_cates, :only => [:index, :show]
   get "news_cates/:id(/pages/:page)" => "news_cates#show", :as => :news_cates
+  resources :news_cates, :only => [:index, :show]
+  
 
   get "home/happy_teachers_day"
   get "home/index"

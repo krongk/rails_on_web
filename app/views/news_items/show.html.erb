@@ -7,6 +7,10 @@
 <div class='wenba_detail'>
   <div class='wenba_question'><div class='wenba_question_content'>
       <h2><%= @news_item.title %></h2>
+        <span>
+          &nbsp;更新时间：<%= @news_item.updated_at.strftime "%Y-%m-%d" %> &nbsp;&nbsp;
+          <%=link_to "来源引用", @news_item.original_url, :target => '_blank' %>
+        </span>
         <% unless @news_item.summary.blank? %>
           <div class="wenba_question_detail">
             <%= simple_format @news_item.summary %>
