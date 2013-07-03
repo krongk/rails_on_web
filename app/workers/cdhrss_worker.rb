@@ -9,6 +9,8 @@ class CdhrssWorker
   	flag = false
   	begin
   		@news_cate = NewsCate.find_by_en_name("cdhrss")
+  		@news_cate ||= NewsCate.find(1)
+ 
 	    puts 'foraging : http://www.cdhrss.gov.cn/openALLCommonPage.jsp'
 	    list_url = "http://www.cdhrss.gov.cn/openALLCommonPage.jsp"
 	    page = Nokogiri::HTML(open(list_url))

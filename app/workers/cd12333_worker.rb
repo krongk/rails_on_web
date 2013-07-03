@@ -9,6 +9,9 @@ class Cd12333Worker
   	flag = false
   	begin
   		@news_cate = NewsCate.find_by_en_name("cd12333")
+  		@news_cate || = NewsCate.find_by_en_name("cheng-du-she-bao-12333-re-xian")
+  		@news_cate || = NewsCate.find_by_name("成都社保12333热线")
+  		return if @news_cate.nil?
 	    puts 'foraging 12333 comments: http://www.cdhrss.gov.cn/1233/mail_more.jsp'
 	    list_url = "http://www.cdhrss.gov.cn/1233/mail_more.jsp"
 	    page = Nokogiri::HTML(open(list_url))
