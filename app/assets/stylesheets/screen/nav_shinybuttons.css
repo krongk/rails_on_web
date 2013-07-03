@@ -51,13 +51,13 @@
   }
 
   .hlist ul li {
-    border-left:0px #ff3300 solid;
-    border-right:0px #ff3300 solid;
+    border-right:0px #eee solid;
+    border-bottom:0px #eee solid;
     /* (en|de) Bugfix:IE - Doubled Float Margin Bug */
     display:inline;
     float:left; /* LTR */
     font-size:1.2em;
-    line-height:1.5em;
+    line-height:1.2em;
     list-style-type:none;
     margin:0;
     padding:0;
@@ -71,7 +71,7 @@
     font-size:1em;
     font-weight:bold;
     margin:0;
-    padding:0.5em 0.8em 0.5em 0.8em;
+    padding:0.5em;
     text-decoration:none;
     width:auto;
   }

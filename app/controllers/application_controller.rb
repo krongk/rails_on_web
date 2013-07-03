@@ -1,7 +1,13 @@
 #encoding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  #before_filter :locate
+  before_filter :load_news_cates
+
+  def load_news_cates
+    news_cates = NewsCate.all
+    news_cates3 = news_cates.group_by{|i| news_cates.index(i)%3}
+    Rails.cache.write('news_cates3', news_cates3)
+  end
 
   def locate
   	#ip = request.remote_id
