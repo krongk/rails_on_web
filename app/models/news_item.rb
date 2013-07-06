@@ -1,6 +1,7 @@
 class NewsItem < ActiveRecord::Base
   belongs_to :news_cate
-  after_create :expire_cache
+  after_save :expire_cache
+  after_create :expire_cate_cache
 
   def self.recent(count, cate = 0, image = false)
     conditions = cate > 0 ? "news_cate_id = #{cate}" : "true"
@@ -18,9 +19,15 @@ class NewsItem < ActiveRecord::Base
   end
   
   def expire_cache
-    cache_path = File.join(Rails.root, 'public', 'news_cates', self.news_cate.en_name + '.html')
-    if File.exist?(cache_path)
-      FileUtils.rm_rf cache_path
-    end
+    cache_path = File.join(Rails.root, 'public', 'news_items', self.id.to_s + '.html')
+    FileUtils.rm_rf cache_path if File.exist?(cache_path)
   end
+
+  def expire_cate_cache
+    cache_cate_path = File.join(Rails.root, 'public', 'news_cates', self.en_name + '.html')
+    cache_cate_dir = File.join(Rails.root, 'public', 'news_cates', self.en_name)
+    FileUtils.rm_rf cache_cate_path if File.exist?(cache_cate_path)
+    FileUtils.rm_rf cache_cate_dir if File.exist?(cache_cate_dir)
+  end
+
 end

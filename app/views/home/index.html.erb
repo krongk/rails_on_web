@@ -11,13 +11,13 @@
     <table width="100%">
      <tr><td width="320px" valign="top"><h3 class="title">成都保险信息</h3>
          <ul>
-           <% NewsItem.recent(10,19).each_with_index do |item, index| %>
+           <% NewsItem.recent(10,1).each_with_index do |item, index| %>
             <li><%=link_to item.title, news_item_path(item), :target => "_blank" %><%=show_hot_gif %></li>
            <% end %>
         </ul>
      </td><td valign="top"><h3 class="title">保险咨询问答</h3>
        <ul>
-       <% NewsItem.recent(10, 5).each_with_index do |item, index| %>
+       <% NewsItem.recent(10, rand(10) + 2).each_with_index do |item, index| %>
         <li><%=link_to item.title, news_item_path(item), :target => "_blank" %><%=show_hot_gif %></li>
        <% end %> 
   </ul>
