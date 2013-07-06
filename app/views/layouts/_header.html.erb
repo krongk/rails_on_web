@@ -33,14 +33,14 @@
   <div class="hlist2">
   <ul id='nav_post' class='nav_post'>
     <% Rails.cache.read('news_cates3')[1].each do |item| %>
-      <li><%=link_to item.name, news_cate_path(item), :target => "_blank"%></li>
+      <li><%=link_to item.name, news_cate_path(item.en_name), :target => "_blank"%></li>
     <% end %>
   </ul>
   </div>
   <div class="hlist3">
   <ul id='nav_wenba' class='nav_wenba'>
     <% Rails.cache.read('news_cates3')[2].each do |item| %>
-      <li><%=link_to item.name, news_cate_path(item), :target => "_blank"%></li>
+      <li><%=link_to item.name, news_cate_path(item.en_name), :target => "_blank"%></li>
     <% end %>
     
   </ul>

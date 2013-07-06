@@ -21,6 +21,7 @@ lastScrollY=lastScrollY+percent;
 suspendcode12="<DIV id=\"lovexin12\" style='left:22px;POSITION:absolute;TOP:100px;z-index:100'>";
 
 var recontent='<p><span style="color:blue; font-weight:600;">==在线咨询==</span><br>'
+ + '<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=77632132&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:77632132:41" alt="成都保险咨询网" title="成都保险咨询网"></a><br>'
  + '<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=29928649&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:29928649:41" alt="成都保险咨询网" title="成都保险咨询网"></a><br>'
  + '<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2576455908&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2576455908:41" alt="www.baoxian028.com" title="www.baoxian028.com"></a><br>'  
  + '<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2586308980&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2586308980:41" alt="www.baoxian028.com" title="www.baoxian028.com"></a><br>'  

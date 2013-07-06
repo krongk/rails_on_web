@@ -32,14 +32,5 @@
 <div id='content' style="float: right; margin:40px 40px 0 0;"><div id='basic-modal'>
    <span class = 'phone'><a href="#" class='basic'><span style="color:red;">有问题? 点击：</span><img src="/assets/online_call.gif"/></a></span>
 </div></div>
-<!--相关新闻-->
-<hr/>
-<div class="related">
- <h3>相关信息</h3>
- <ul>
-   <% NewsItem.recent_related(@news_item.id).each do |item|%>
-     <li><%= link_to item.title, news_item_path(item.id)%></li>
-   <% end %>
- </ul>
-</div>
+
 </div>

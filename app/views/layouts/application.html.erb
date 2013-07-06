@@ -45,6 +45,19 @@
           <%= render :partial => "layouts/scroll_news" %>
           <%= render :partial => "layouts/side_general" %>
         <% end %>
+
+        <!--相关新闻-->
+        <hr/>
+        <br>
+        <div class="related">
+         <h2>最新新闻快读(<%=NewsItem.last.id %>)</h2>
+         <table>
+           <% NewsItem.recent_related(NewsItem.last.id).each do |item|%>
+             <tr><td><%= link_to item.title.to_s.truncate(13), news_item_path(item.id)%><i>(<%=item.updated_at.strftime("%Y-%m-%d")%>)</i></td></tr>
+           <% end %>
+         </table>
+        </div>
+
       </div>
       <div id="ie_clearing">&nbsp;</div>
       <!-- End: IE Column Clearing -->

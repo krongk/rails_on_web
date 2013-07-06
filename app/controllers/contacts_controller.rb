@@ -5,7 +5,13 @@ class ContactsController < InheritedResources::Base
 
   def create
     @contact = Contact.new(params[:contact])
-    if @contact.message !~ /[\u4e00-\u9fa5]+/ #must contains chinese
+    if Contact.find_by_phone_and_message(@contact.phone, @contact.message)
+      flash[:notice] = "信息已经提交过了，不用重复提交。"
+      redirect_to "/"
+      return
+    end
+
+    if @contact.message !~ /[\u4e00-\u9fa5]+/ || @contact.message =~ /link|href|http|www/ #must contains chinese
       flash[:notice] = "信息提交失败, 请重新填写"
       redirect_to new_contact_path
       return
