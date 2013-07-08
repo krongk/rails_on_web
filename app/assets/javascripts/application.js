@@ -6,8 +6,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-//= require tinymce
+//= require jquery.simplemodal
+//= require jquery.validate
+//= require jquery.validate.sext
+//= require jquery.vticker
+//= require tags
+// require_tree .
+
 
 
 /*
