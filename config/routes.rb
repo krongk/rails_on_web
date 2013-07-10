@@ -39,6 +39,8 @@ RailsOnWeb::Application.routes.draw do
   get "home/get_cdhrss"
   get "home/start_sidekiq_cd12333"
   get "home/start_sidekiq_sina_news"
+  get "home/start_sidekiq_china_insurance"
+
   match "form" => "home#form"
   match "search" => "home#search"
   

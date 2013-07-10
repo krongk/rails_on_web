@@ -61,6 +61,10 @@ ActiveAdmin::Dashboards.build do
       li link_to "(12333热线地址)", "http://www.cdhrss.gov.cn/1233/mail_more.jsp", :target => 'blank'
       li link_to "启动新浪保险新闻采集", "home/start_sidekiq_sina_news", :target => 'blank'
       li link_to "(新浪保险新闻)", "http://roll.finance.sina.com.cn/finance/bx3/bxxw_xydt/index.shtml", :target => 'blank'
+
+      li link_to "启动中国保险新闻采集", "home/start_sidekiq_china_insurance", :target => 'blank'
+      li link_to "(中国保险新闻)", "http://www.china-insurance.com/news-center/", :target => 'blank'
+
     end
   end
 

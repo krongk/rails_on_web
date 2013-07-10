@@ -65,8 +65,15 @@ class HomeController < ApplicationController
   def start_sidekiq_cd12333
     Cd12333Worker.perform_async
   end
+  
   def start_sidekiq_sina_news
     SinaNewsWorker.perform_async
+    render :text => "done"
+    return
+  end
+
+  def start_sidekiq_china_insurance
+    ChinaInsuranceWorker.perform_async
     render :text => "done"
     return
   end
