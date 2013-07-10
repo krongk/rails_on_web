@@ -1,3 +1,4 @@
+#encoding: utf-8
 class NewsCatesController < InheritedResources::Base
   before_filter :authenticate_admin_user!, :except => [:index, :show]
   caches_page :index, :show
