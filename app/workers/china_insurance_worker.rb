@@ -29,7 +29,7 @@ class ChinaInsuranceWorker
   			list_url = "http://www.china-insurance.com/news-center/" + k
   			puts 'foraging comments: ' + list_url
 	  		news_cate = NewsCate.find_or_create_by_name(v)
-	  		return if news_cate.nil?
+	  		next if news_cate.nil?
 		    
 		    forage_news(news_cate, list_url)
 		  end
@@ -57,7 +57,7 @@ class ChinaInsuranceWorker
 			
 			title = detail_page.css("td h1").inner_text
 			title = detail_page.css("p.f20b").inner_text if title.blank?
-			body  = detail_page.css("td[height='670']").inner_html
+			body  = detail_page.css("td[height='670']").inner_text
 			next if title.blank? || body.blank?
 
 			#check dup of news
