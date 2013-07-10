@@ -1,7 +1,7 @@
 class NewsItem < ActiveRecord::Base
   belongs_to :news_cate
   after_save :expire_cache
-  after_create :expire_cate_cache
+  after_create :expire_cate_cache, :count_news
   self.per_page = 50
   
   def self.recent(count, cate = 0, image = false)
@@ -33,6 +33,10 @@ class NewsItem < ActiveRecord::Base
     FileUtils.rm_rf cache_cate_path if File.exist?(cache_cate_path)
     FileUtils.rm_rf cache_cate_path2 if File.exist?(cache_cate_path2)
     FileUtils.rm_rf cache_cate_dir if File.exist?(cache_cate_dir)
+  end
+
+  def count_news
+    NewCate.update(self.news_cate_id, :news_count => self.news_cate.news_count + 1)
   end
 
 end

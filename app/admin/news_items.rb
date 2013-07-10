@@ -8,13 +8,19 @@ ActiveAdmin.register NewsItem do
   index do 
     column :id
     column :title do |item|
+      link_to '预览', news_item_path(item), :target => '_blank'
+    end
+    column :title do |item|
       link_to item.title || '<空>', admin_news_item_path(item)
+    end
+    column :original_url do |item|
+      link_to item.original_url, item.original_url, :target => "_blank"
     end
     column :image_path do |item|
       unless item.image_path.blank?
         image_tag(item.image_path, :width => 60) 
       else
-        "没有图片"
+        "(无)"
       end
     end
     column :external_url

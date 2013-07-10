@@ -20,7 +20,7 @@ class SinaNewsWorker
 	    	#get detail url
 	    	next if tr.css("a").empty?
 	    	detail_url = tr.css("a")[0]['href']
-	    	next if detail_url.nil?
+	    	next if detail_url.blank?
 
 	    	#check dup
 	    	return if NewsItem.find_by_original_url(detail_url)
@@ -29,12 +29,13 @@ class SinaNewsWorker
 	    	title = detail_page.css("#artibodyTitle").inner_text
 	    	body  = detail_page.css("#artibody").inner_text
 	    	
-	    	next if title.nil? || body.nil?
+	    	next if title.blank? || body.blank?
 	    	
 	    	@news_cate.news_items.create(
 	    		:original_url => detail_url,
+	    		:is_foraged => 'y',
 	    		:title => title,
-	    		:body => body,
+	    		:body => body.gsub(/\n+/, "\n"),
 	    		:meta_keywords => "#{title}-保险新闻",
 	    		:meta_description => "#{title}, 保险新闻, 成都保险，保险行业"
 	    	)

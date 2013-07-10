@@ -8,7 +8,8 @@ class CdhrssWorker
   def perform
   	flag = false
   	begin
-  		@news_cate = NewsCate.find_by_en_name("cdhrss")
+  		@news_cate = NewsCate.find_by_name("保险成都")
+  		@news_cate ||= NewsCate.find_by_name("成都人社局")
   		@news_cate ||= NewsCate.find(1)
  
 	    puts 'foraging : http://www.cdhrss.gov.cn/openALLCommonPage.jsp'
@@ -21,7 +22,7 @@ class CdhrssWorker
 	    	next if tr.css("td a").empty?
 	    	url = tr.css("td a")[0]['href']
 	    	detail_url = (URI.parse(list_url) + url).to_s
-	    	next if detail_url.nil?
+	    	next if detail_url.blank?
 
 	    	#check dup
 	    	return if NewsItem.find_by_original_url(detail_url)
@@ -30,10 +31,11 @@ class CdhrssWorker
 	    	title = detail_page.css("td.hongse22")[0].inner_text
 	    	body  = detail_page.css("div[@class='detail'] table[2] table").css("table").css("table")[2].inner_text
 	    	
-	    	next if title.nil? || body.nil?
+	    	next if title.blank? || body.blank?
 	    	
 	    	@news_cate.news_items.create(
 	    		:original_url => detail_url,
+	    		:is_foraged => 'y',
 	    		:title => title,
 	    		:body => body,
 	    		:meta_keywords => "#{title} 成都社保局 成都保险咨询网",
