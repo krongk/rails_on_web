@@ -57,7 +57,7 @@ class ChinaInsuranceWorker
 			
 			title = detail_page.css("td h1").inner_text
 			title = detail_page.css("p.f20b").inner_text if title.blank?
-			body  = detail_page.css("td[height='670']")
+			body  = detail_page.css("td[height='670']").inner_html
 			next if title.blank? || body.blank?
 
 			#check dup of news
