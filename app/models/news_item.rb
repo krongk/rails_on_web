@@ -42,7 +42,7 @@ class NewsItem < ActiveRecord::Base
   def assign_original_url
     return unless self.original_url.blank?
     self.original_url = "/news_items/#{self.id}"
-    self.save
+    self.save!
   end
 
 end
