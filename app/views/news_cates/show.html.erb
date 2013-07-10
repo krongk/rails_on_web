@@ -2,53 +2,62 @@
 <% meta_keywords [@news_cate.name, "保险,保险网,买保险,网上买保险,在线投保,成都保险咨询网,成都保险,商业保险,人寿保险"].join(',') %>
 <% meta_description [@news_cate.name, "成都保险咨询网是成都地区最专业的保险网，设有人寿保险,少儿保险,医疗保险,平安人寿,平安车险，保险投保案例,保险咨询问答,保险博客等栏目，为您提供保险产品的咨询购买理赔保全一站式服务！是您投保的好帮手！咨询QQ：29928649"].join('-') %>
 
-<div class="cate_banner">
-    <%= cate_banner @news_cate.name %>
-</div>
 
-<% items1, items2, items3 = @news_items.in_groups_of(25, false) %>
+<% items3 = [] %>
+<% 3.times{|i| items3 << @news_items.shift} %>
+<% items1, items2 = @news_items.partition{|i| i.id%2 ==  0} %>
+
 <ul class="category">
-<% unless items3.nil? %>
  <% items3.each do |item| %>
      <li class="level_1">
         <h3><%= link_to item.title, news_item_path(item), :target => "_blank", :title => item.title%></h3>
         <div class="level_2">
             <% content = item.summary.blank? ? item.body : item.summary %>
             <%=  strip_tags(content).to_s.gsub(/[ ]+|\s+|\t+|\n+/, '').truncate(200)%>
+            <i><%=item.updated_at.blank? ? Time.now.strftime("(%Y-%m-%d)") : item.updated_at.strftime("(%Y-%m-%d)")  %></i>
         </div>
     </li>
  <% end %>
-<% end %>
 </ul>
 
 <div style="width: 100%; position: relative;">
     <div style="width: 350px; float: left; margin-right: 10px;">
 <ul class="category">
-<% unless items1.nil? %>
- <% items1.each do |item| %>
+ <% items1.each_with_index do |item, index| %>
    <li class="level_1"><%= link_to item.title, news_item_path(item), :target => "_blank", :title => item.title%>
     <i><%=item.updated_at.blank? ? Time.now.strftime("(%Y-%m-%d)") : item.updated_at.strftime("(%Y-%m-%d)")  %></i>
    </li>
+   <%if index%5== 0 %>
+     <br>
+   <% end %>
  <% end %>
-<% end %>
 </ul>
+
+<div class="cate_banner">
+    <%= cate_banner @news_cate.name %>
+</div>
 
 </div>
 <div style="margin-left: 360px;">
 <ul class="category">
-<% unless items2.nil? %>
- <% items2.each do |item| %>
-   <li class="level_1"><%= link_to item.title, news_item_path(item), :target => "_blank", :title => item.title%></li>
+ <% items2.each_with_index do |item, index| %>
+   <li class="level_1"><%= link_to item.title, news_item_path(item), :target => "_blank", :title => item.title%>
+      <i><%=item.updated_at.blank? ? Time.now.strftime("(%Y-%m-%d)") : item.updated_at.strftime("(%Y-%m-%d)")  %></i>
+   </li>
+   <%if index%5== 0 %>
+     <br>
+   <% end %>
  <% end %>
-<% end %>
 </ul>
 </div>
 </div>
 
 
 <div style="display: block; width: 600px; float: left;">
+ <%=will_paginate @news_items, :next_label => "下一页", :prev_label => "上一页"%>
+ 
   <br/>
 <%= render :partial => "layouts/bshare" %>
 <br/>
-<%=will_paginate @news_items, :next_label => "下一页", :prev_label => "上一页"%>
+
 </div>

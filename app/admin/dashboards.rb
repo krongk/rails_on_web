@@ -55,10 +55,12 @@ ActiveAdmin::Dashboards.build do
 
   section :"采集任务" do
     ul do
-      li link_to "启动成都社保局新闻", "/home/get_cdhrss"
+      li link_to "启动成都社保局新闻采集", "/home/get_cdhrss"
       li link_to "(成都市人社局地址)", "http://www.cdhrss.gov.cn/openALLCommonPage.jsp", :target => 'blank'
-      li link_to "启动12333热线", "home/start_sidekiq_cd12333", :target => 'blank'
+      li link_to "启动12333热线采集", "home/start_sidekiq_cd12333", :target => 'blank'
       li link_to "(12333热线地址)", "http://www.cdhrss.gov.cn/1233/mail_more.jsp", :target => 'blank'
+      li link_to "启动新浪保险新闻采集", "home/start_sidekiq_sina_news", :target => 'blank'
+      li link_to "(新浪保险新闻)", "http://roll.finance.sina.com.cn/finance/bx3/bxxw_xydt/index.shtml", :target => 'blank'
     end
   end
 

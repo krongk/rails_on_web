@@ -7,3 +7,15 @@
 
  *=require_tree . 
 */
+
+.category {
+	margin: 0px;
+	padding: 10px 20px;
+}
+.category li {
+	font-size: 13px;
+	margin: 10px;
+}
+.category i {
+	font-size: 10px;
+}

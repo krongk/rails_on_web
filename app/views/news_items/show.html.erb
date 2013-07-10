@@ -1,6 +1,6 @@
 <% title [@news_item.title, "成都保险咨询网，投保好帮手！"].join(',') %>
-<% meta_keywords [@news_item.title, "保险,保险网,买保险,网上买保险,在线投保,成都保险咨询网,成都保险,商业保险,人寿保险"].join(',') %>
-<% meta_description [@news_item.title, "成都保险咨询网是成都地区最专业的保险网，设有人寿保险,少儿保险,医疗保险,平安人寿,平安车险，保险投保案例,保险咨询问答,保险博客等栏目，为您提供保险产品的咨询购买理赔保全一站式服务！是您投保的好帮手！咨询QQ：29928649"].join('-') %>
+<% meta_keywords [@news_item.title, @news_item.meta_keywords, "保险,保险网,买保险,网上买保险,在线投保,成都保险咨询网,成都保险,商业保险,人寿保险"].join(',') %>
+<% meta_description [@news_item.title, @news_item.meta_description, "成都保险咨询网是成都地区最专业的保险网，设有人寿保险,少儿保险,医疗保险,平安人寿,平安车险，保险投保案例,保险咨询问答,保险博客等栏目！"].join('-') %>
 
 <div class='wenba_detail_nav'><a href="/">首页</a> > <%= link_to @news_item.news_cate.name, news_cate_path(@news_item.news_cate)%></div>
 
@@ -19,10 +19,13 @@
       </div></div> 
 
   <div class='wenba_answer_list'><div class='wenba_answer_list_content'>
-    <% if @news_item.summary.blank? %>
-      <%= @news_item.body =~ /<table/i ? @news_item.body.html_safe : simple_format(@news_item.body) %>
+    <% unless @news_item.image_path.blank? %>
+      <%= image_tag @news_item.image_path, :title => @news_item.title, :width => 700 %>
+    <% end %>
+    <% if @news_item.is_foraged == 'n' %>
+      <%= @news_item.body.html_safe %>
     <% else %>
-      <%= simple_format @news_item.body.gsub(/\n+/, '') unless @news_item.body.blank? %>
+      <%= simple_format @news_item.body.gsub(/\n+/, '<br>') unless @news_item.body.blank? %>
     <% end %>
   </div></div>
 </div> 
@@ -32,14 +35,5 @@
 <div id='content' style="float: right; margin:40px 40px 0 0;"><div id='basic-modal'>
    <span class = 'phone'><a href="#" class='basic'><span style="color:red;">有问题? 点击：</span><img src="/assets/online_call.gif"/></a></span>
 </div></div>
-<!--相关新闻-->
-<hr/>
-<div class="related">
- <h3>相关信息</h3>
- <ul>
-   <% NewsItem.recent_related(@news_item.id).each do |item|%>
-     <li><%= link_to item.title, news_item_path(item.id)%></li>
-   <% end %>
- </ul>
-</div>
+
 </div>

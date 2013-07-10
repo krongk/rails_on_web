@@ -10,7 +10,17 @@
 	margin-right: 12px;
 }
 .wenba_detail_nav{
-	margin: 10px;
+	background: #1d619c;
+	font-size: 1.2em;
+	color: #fff;
+	margin: 0px;
+	padding: 5px;
+}
+.wenba_detail_nav a:link{
+	color: #fff;
+}
+.wenba_detail_nav a:visited{
+	color: #fff;
 }
 .wenba_question h2 {
 	padding-top: 6px;
@@ -20,11 +30,7 @@
 	line-height: 35px;
 	color: #1D619C;
 }
-.wenba_detail .wenba_question {
-	margin-bottom: 10px;
-}
 .wenba_detail .wenba_question .wenba_question_content {
-	margin: 4px;
 	background-color: #FFF;
 	text-align: left;
 	color: #248AC8;
@@ -35,10 +41,8 @@
 
 .wenba_answer_list .best_answer {
 	padding: 4px;
-	margin-bottom: 4px;
 }
 .wenba_answer_list .answer_d {
-	margin: 12px;
 	padding-bottom: 10px;
 }
 .d_t{

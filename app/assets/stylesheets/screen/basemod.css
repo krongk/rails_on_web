@@ -111,7 +111,7 @@
   #col1_content, #col2_content, #col3_content { position:relative; }
   /*------------------------------------------------------------------------------------------------------*/
   
-  body { background:#fff url("/assets/images/bg-2.jpg") repeat-x top left fixed; padding:0px 0; }
+  body { background:#fff url("/assets/bg.png") repeat-x top left fixed; padding:0px 0; }
 
   body { text-align:center; }
   .page_margins { text-align:left; margin:0 auto; }
@@ -176,6 +176,7 @@
 		  /* #col3 moves to the right | Linken Randabstand anpassen - #col3 wird zur Randspalte */
 	  #col3 { margin-left:75.5%; margin-right:0; }
 	  #col3_content {
+      background: #fff;
     	padding-left: 4px;
     	padding-right: 0px;
     }

@@ -6,8 +6,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-//= require tinymce
+//= require jquery.simplemodal
+//= require jquery.validate
+//= require jquery.validate.sext
+//= require jquery.vticker
+//= require tags
+// require_tree .
+
 
 
 /*
@@ -39,15 +44,4 @@ jQuery(function ($) {
         return false;
     });
 });
-
-
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-10508960-6']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
 

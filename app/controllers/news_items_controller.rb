@@ -5,7 +5,7 @@ class NewsItemsController < InheritedResources::Base
   cache_sweeper :news_item_sweeper
 
   def index
-    @news_items = NewsItem.paginate(:per_page => 40, :page => params[:page] || 1)
+    @news_items = NewsItem.order('updated_at DESC').paginate(:per_page => 40, :page => params[:page] || 1)
   end
   
   def show
