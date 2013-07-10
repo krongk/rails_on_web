@@ -1,7 +1,7 @@
 class NewsItem < ActiveRecord::Base
   belongs_to :news_cate
   after_save :expire_cache
-  after_create :expire_cate_cache, :count_news
+  after_create :expire_cate_cache, :count_news, :assign_original_url
   self.per_page = 50
   
   def self.recent(count, cate = 0, image = false)
@@ -36,7 +36,13 @@ class NewsItem < ActiveRecord::Base
   end
 
   def count_news
-    NewsCate.update(self.news_cate_id, :news_count => self.news_cate.news_count + 1)
+    NewsCate.update(self.news_cate_id, :news_count => self.news_cate.news_items.size)
+  end
+
+  def assign_original_url
+    return unless self.original_url.blank?
+    self.original_url = "/news_items/#{self.id}"
+    self.save
   end
 
 end
