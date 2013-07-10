@@ -63,7 +63,8 @@ class ChinaInsuranceWorker
 			#check dup of news
 			next if NewsItem.find_by_title(title)
 
-			news_cate.news_items.create(
+			NewsItem.create(
+				:news_cate_id => news_cate.id,
 				:original_url => detail_url,
 				:is_foraged => 'y',
 				:title => title,
