@@ -1,93 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset='utf-8'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Rails on web by krongk</title>
 
-  <title>krongk/rails_on_web @ GitHub</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Rails on web</h1>
+        <p>A rails integration for build simple company site.</p>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #1141c5;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #eebe3a; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #eebe3a; }
-    h3 { text-align: center; color: #eebe3a; }
-    a { color: #eebe3a; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+        <p class="view"><a href="https://github.com/krongk/rails_on_web">View the Project on GitHub <small>krongk/rails_on_web</small></a></p>
 
-<body>
-  <a href="https://github.com/krongk/rails_on_web"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-  <div id="container">
+        <ul>
+          <li><a href="https://github.com/krongk/rails_on_web/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/krongk/rails_on_web/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/krongk/rails_on_web">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a name="rails-on-web-" class="anchor" href="#rails-on-web-"><span class="octicon octicon-link"></span></a>Rails on Web 介绍.</h3>
 
-    <div class="download">
-      <a href="https://github.com/krongk/rails_on_web/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/krongk/rails_on_web/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+<p>这是一个Ruby on Rails的定制产品，用于满足一般中小型网站的基本架构，项目集成了一些常用的功能，免去了开发中小型非功能型网站每次都从零开始scaffold的过程。</p>
+
+<pre><code>  1. download git srouce
+  2. bundle install
+  3. modify config/site_map.yml
+  4. rake 
+    db:migrate
+    rails_on_web:init_all_data
+    rails_on_web:generate_all_page
+  5. rails server
+</code></pre>
+
+<h3>
+<a name="" class="anchor" href="#"><span class="octicon octicon-link"></span></a>功能特性</h3>
+
+<ul>
+<li>新闻中心（新闻分类、新闻发布）</li>
+<li>留言系统（基本客户留言、留言后邮件提醒）</li>
+<li>产品管理（产品类别、产品添加）</li>
+<li>页面管理（关于我们、版权声明、联系我们等网站特别页面的创建与管理）</li>
+<li>资源管理（上传图片、视频等)</li>
+<li>后台程序（集成ActiveAdmin)</li>
+</ul><h3>
+<a name="-1" class="anchor" href="#-1"><span class="octicon octicon-link"></span></a>案例展示</h3>
+
+<ul>
+<li>可以任意定制的前台
+　　<img src="http://inruby.com/resource/picture/1/1373531017.jpg" alt="前端页面效果">
+　　<img src="http://inruby.com/resource/picture/1/1373531070.jpg" alt="前端页面效果">
+*　功能齐备的后台
+　　<img src="http://inruby.com/resource/picture/1/1373531096.jpg" alt="后台效果">
+</li>
+</ul><h3>
+<a name="-2" class="anchor" href="#-2"><span class="octicon octicon-link"></span></a>联系</h3>
+
+<p>该项目完全是我私人玩弄Ruby on Rails的小想法，不过减省了我平时开发中的许多麻烦，通过它来搭建国内中小型企业网站完全足够.
+更多关于我可以关注(<a href="https://github.com/krongk" class="user-mention">@krongk</a>)，
+电子邮箱：<a href="mailto:master@inruby.com">master@inruby.com</a>
+名片：<a href="http://www.about.me/kenrome">http://www.about.me/kenrome</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/krongk">krongk</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-
-    <h1><a href="https://github.com/krongk/rails_on_web">rails_on_web</a>
-      <span class="small">by <a href="https://github.com/krongk">krongk</a></span></h1>
-
-    <div class="description">
-      A rails integration for build simple company site.
-    </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-      <p>test</p>
-    
-
-    
-
-    
-      <h2>Install</h2>
-      <p>test</p>
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>krongk (kenrome@gmail.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>krongk (kenrome@gmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/krongk/rails_on_web/zipball/master">zip</a> or
-      <a href="https://github.com/krongk/rails_on_web/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/krongk/rails_on_web</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/krongk/rails_on_web">krongk/rails_on_web</a>
-    </div>
-
-  </div>
-
-</body>
+  </body>
 </html>
